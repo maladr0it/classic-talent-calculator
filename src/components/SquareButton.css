@@ -1,0 +1,42 @@
+.SquareButton {
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  height: 2.75rem;
+  width: 2.75rem;
+}
+
+.SquareButton-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2.25rem;
+  width: 2.25rem;
+  background-size: cover;
+}
+
+.SquareButton-aura {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2.375rem;
+  width: 2.375rem;
+  background-size: cover;
+}
+
+.SquareButton:hover .SquareButton-aura {
+  visibility: visible;
+}
+
+.SquareButton-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
