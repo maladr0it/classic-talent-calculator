@@ -8,11 +8,18 @@ import highlightedBorder from "../assets/border-highlight.png";
 interface Props {
   imageURL: string;
   selected: boolean;
+  style?: React.CSSProperties;
+  className?: string;
 }
 
-export const SquareButton: React.FC<Props> = ({ imageURL, selected }) => {
+export const SquareButton: React.FC<Props> = ({
+  imageURL,
+  selected,
+  className = "",
+  style
+}) => {
   return (
-    <button className="SquareButton">
+    <button className={`SquareButton ${className}`} style={style}>
       <div
         className="SquareButton-icon"
         style={{ backgroundImage: `url(${imageURL})` }}
