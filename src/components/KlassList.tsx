@@ -44,15 +44,16 @@ const KLASSES = [
 
 export const KlassList: React.FC = () => {
   return (
-    <>
-      <h1>CLASS_LIST</h1>
-      <ul className="KlassList">
-        {KLASSES.map((klass, i) => (
-          <li className="KlassList-item" key={klass.name}>
-            <SquareButton imageURL={klass.iconURL} selected={i % 2 === 0} />
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul className="KlassList">
+      {KLASSES.map((klass, i) => (
+        <li className="KlassList-item" key={klass.name}>
+          <SquareButton
+            onClick={() => {}}
+            icon={klass.iconURL}
+            selected={i % 2 === 0}
+          />
+        </li>
+      ))}
+    </ul>
   );
 };

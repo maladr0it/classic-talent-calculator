@@ -6,23 +6,29 @@ import selectedBorder from "../assets/border-gold-selected.png";
 import highlightedBorder from "../assets/border-highlight.png";
 
 interface Props {
-  imageURL: string;
+  onClick: () => void;
+  icon: string;
   selected: boolean;
   style?: React.CSSProperties;
   className?: string;
 }
 
 export const SquareButton: React.FC<Props> = ({
-  imageURL,
+  onClick,
+  icon,
   selected,
   className = "",
   style
 }) => {
   return (
-    <button className={`SquareButton ${className}`} style={style}>
+    <button
+      onClick={onClick}
+      className={`SquareButton ${className}`}
+      style={style}
+    >
       <div
         className="SquareButton-icon"
-        style={{ backgroundImage: `url(${imageURL})` }}
+        style={{ backgroundImage: `url(${icon})` }}
       />
       <div
         className="SquareButton-aura"

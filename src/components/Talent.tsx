@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./Talent.css";
 import { Position } from "./TalentTree";
 import { SquareButton } from "./SquareButton";
 
 interface Props {
-  imageURL: string;
+  icon: string;
   position: Position;
   selected: boolean;
+  name: string;
+  description: (points: number) => string;
+  maxPoints: number;
 }
 
-export const Talent: React.FC<Props> = ({ position, ...rest }) => {
+export const Talent: React.FC<Props> = ({
+  name,
+  description,
+  maxPoints,
+  position,
+  ...rest
+}) => {
+  const [points, setPoints] = useState(0);
+
   return (
-    <SquareButton className="Talent" style={{ gridArea: position }} {...rest} />
+    <div className="Talent-container" style={{ gridArea: position }}>
+      <SquareButton onClick={() => setPoints(points + 1)} {...rest} />
+      <div className="Talent-pointCount">{points}/5</div>
+    </div>
   );
 };

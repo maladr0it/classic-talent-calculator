@@ -1,2 +1,19 @@
-.Talent {
+.Talent-container {
+  position: relative;
+}
+
+.Talent-pointCount {
+  position: absolute;
+  bottom: calc(-1 * var(--sp-xs));
+  right: calc(-1 * var(--sp-xs));
+  padding: var(--sp-xxxs) var(--sp-xxs);
+  background-color: black;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  color: var(--col-inactive-text);
+  pointer-events: none;
+}
+
+.Talent-pointCount--active {
+  color: white;
 }

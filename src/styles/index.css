@@ -6,9 +6,12 @@ body {
   margin: 0;
   font-family: "Helvetica";
 
+  --col-inactive-text: #787878;
+
   --icon-size: 2.75rem;
   --arrow-thickness: 1rem;
 
+  --sp-xxxs: 0.0625rem;
   --sp-xxs: 0.125rem;
   --sp-xs: 0.25rem;
   --sp-sm: 0.5rem;
