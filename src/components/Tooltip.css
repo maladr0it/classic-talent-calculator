@@ -1,0 +1,64 @@
+.Tooltip-container {
+  --max-width: 20rem;
+  position: absolute;
+  width: var(--max-width);
+  pointer-events: none;
+}
+
+.Tooltip-container--topRight {
+  top: 0;
+  right: 0;
+  transform: translate(100%, -100%);
+}
+
+.Tooltip-container--bottomRight {
+  bottom: 0;
+  right: 0;
+  transform: translate(100%, 100%);
+}
+
+.Tooltip-container--bottomLeft {
+  bottom: 0;
+  left: 0;
+  transform: translate(-100%, 100%);
+}
+
+.Tooltip-container--topLeft {
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
+}
+
+.Tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.Tooltip-content {
+  padding: var(--sp-md);
+}
+
+.Tooltip-backgroundContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.Tooltip-background--topLeft {
+  background-position: top left;
+}
+
+.Tooltip-background--topRight {
+  background-position: top right;
+}
+
+.Tooltip-background--bottomLeft {
+  background-position: bottom left;
+}
+
+.Tooltip-background--bottomRight {
+  background-position: bottom right;
+}

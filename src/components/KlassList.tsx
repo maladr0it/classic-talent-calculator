@@ -47,11 +47,7 @@ export const KlassList: React.FC = () => {
     <ul className="KlassList">
       {KLASSES.map((klass, i) => (
         <li className="KlassList-item" key={klass.name}>
-          <SquareButton
-            onClick={() => {}}
-            icon={klass.iconURL}
-            selected={i % 2 === 0}
-          />
+          <SquareButton icon={klass.iconURL} selected={i % 2 === 0} />
         </li>
       ))}
     </ul>
