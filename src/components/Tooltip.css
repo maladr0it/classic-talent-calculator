@@ -11,6 +11,12 @@
   transform: translate(100%, -100%);
 }
 
+.Tooltip-container--topLeft {
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -100%);
+}
+
 .Tooltip-container--bottomRight {
   bottom: 0;
   right: 0;
@@ -21,12 +27,6 @@
   bottom: 0;
   left: 0;
   transform: translate(-100%, 100%);
-}
-
-.Tooltip-container--topLeft {
-  top: 0;
-  left: 0;
-  transform: translate(-100%, -100%);
 }
 
 .Tooltip {

@@ -3,12 +3,16 @@ import React from "react";
 import "./Tooltip.css";
 import tooltipBackground from "../assets/tooltip.png";
 
-interface Props extends React.ComponentPropsWithoutRef<"div"> {}
+export type TooltipPos = "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
+
+interface Props extends React.ComponentPropsWithoutRef<"div"> {
+  position: TooltipPos;
+}
 
 export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
-  ({ children }, ref) => {
+  ({ position, children }, ref) => {
     return (
-      <div className="Tooltip-container Tooltip-container--topRight">
+      <div className={`Tooltip-container Tooltip-container--${position}`}>
         <div ref={ref} className="Tooltip">
           <div className="Tooltip-backgroundContainer">
             <div

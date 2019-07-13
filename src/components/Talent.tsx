@@ -1,6 +1,7 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useState } from "react";
 
 import "./Talent.css";
+import { useTooltipPos } from "../hooks/useTooltipPos";
 import { Position } from "./TalentTree";
 import { Tooltip } from "../components/Tooltip";
 import { SquareButton } from "./SquareButton";
@@ -21,23 +22,19 @@ export const Talent: React.FC<Props> = ({
   position,
   selected
 }) => {
-  const itemRef = useRef<HTMLButtonElement | null>(null);
-  const tooltipRef = useRef<HTMLDivElement | null>(null);
+  const {
+    anchorRef,
+    tooltipRef,
+    tooltipPos,
+    tooltipVisible,
+    setTooltipVisible
+  } = useTooltipPos<HTMLButtonElement>("topRight");
   const [points, setPoints] = useState(0);
-  const [tooltipVisible, setTooltipVisible] = useState(false);
-
-  useLayoutEffect(() => {
-    if (!tooltipVisible || tooltipRef.current === null) {
-      return;
-    }
-
-    // tooltipRef.current.style.backgroundColor = "orange";
-  }, [tooltipVisible]);
 
   return (
     <div className="Talent-container" style={{ gridArea: position }}>
       <SquareButton
-        ref={itemRef}
+        ref={anchorRef}
         onClick={() => setPoints(points + 1)}
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
@@ -46,10 +43,8 @@ export const Talent: React.FC<Props> = ({
       />
       <div className="Talent-pointCount">{points}/5</div>
       {tooltipVisible && (
-        <Tooltip ref={tooltipRef}>
-          <h1 style={{ color: "white", position: "relative" }}>
-            Hello fam fadmfds fdaslfd sfdsa fdsa there
-          </h1>
+        <Tooltip ref={tooltipRef} position={tooltipPos}>
+          <h1 style={{ color: "white", position: "relative" }}>Hello fam</h1>
         </Tooltip>
       )}
     </div>
