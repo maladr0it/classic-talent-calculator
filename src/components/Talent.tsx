@@ -2,6 +2,7 @@ import React from "react";
 
 import "./Talent.css";
 import { useTooltipPos } from "../hooks/useTooltipPos";
+import { useTreeContext } from "../TreeContext";
 import {
   useTalentContext,
   getTalentData,
@@ -14,19 +15,21 @@ import { SquareButton } from "./SquareButton";
 
 interface Props {
   position: Position;
-  tree: string;
   name: string;
 }
 
-export const Talent: React.FC<Props> = ({ tree, name, position }) => {
+export const Talent: React.FC<Props> = ({ name, position }) => {
+  const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
   const pointsSpent = getPointsSpent(state, tree);
   const rank = getTalentRank(state, tree, name);
-  const { icon, description, requiredPoints, maxRank } = getTalentData(
-    state,
-    tree,
-    name
-  );
+  const {
+    icon,
+    disabledIcon,
+    description,
+    requiredPoints,
+    maxRank
+  } = getTalentData(state, tree, name);
 
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
@@ -37,7 +40,7 @@ export const Talent: React.FC<Props> = ({ tree, name, position }) => {
     if (rank === maxRank) {
       return "maxed";
     }
-    if (pointsSpent >= requiredPoints) {
+    if (pointsSpent >= requiredPoints && state.points > 0) {
       return "enabled";
     }
     return "disabled";
@@ -48,6 +51,7 @@ export const Talent: React.FC<Props> = ({ tree, name, position }) => {
       <SquareButton
         onClick={() => dispatch({ type: "POINT_SPENT", tree, talent: name })}
         icon={icon}
+        disabledIcon={disabledIcon}
         state={talentState}
         {...anchorProps}
       />

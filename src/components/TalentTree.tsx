@@ -34,20 +34,17 @@ export type Position =
   | "g4";
 
 interface Props {
-  backgroundURL: string;
+  background: string;
 }
 
-export const TalentTree: React.FC<Props> = ({ backgroundURL, children }) => {
+export const TalentTree: React.FC<Props> = ({ background, children }) => {
   const { state } = useTalentContext();
   return (
-    <>
-      <h1>{state.points}</h1>
-      <div
-        className="TalentTree"
-        style={{ backgroundImage: `url(${backgroundURL})` }}
-      >
-        {children}
-      </div>
-    </>
+    <div
+      className="TalentTree"
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      {children}
+    </div>
   );
 };

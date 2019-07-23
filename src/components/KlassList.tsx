@@ -50,6 +50,7 @@ export const KlassList: React.FC = () => {
           <SquareButton
             state="enabled"
             icon={klass.iconURL}
+            disabledIcon={klass.iconURL}
             selected={i % 2 === 0}
           />
         </li>

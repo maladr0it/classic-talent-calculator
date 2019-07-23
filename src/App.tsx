@@ -1,7 +1,7 @@
 import React from "react";
 
 import { KlassList } from "./components/KlassList";
-import { Druid } from "./trees/Druid";
+import { Druid } from "./trees/Druid/Druid";
 
 import "./App.css";
 

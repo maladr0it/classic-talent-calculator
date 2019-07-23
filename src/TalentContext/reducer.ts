@@ -11,6 +11,7 @@ export const reducer = (state: State, action: Action) => {
         ...state,
         points: state.points - 1,
         talentRanks: {
+          ...state.talentRanks,
           [tree]: {
             ...state.talentRanks[tree],
             [talent]: state.talentRanks[tree][talent] + 1
