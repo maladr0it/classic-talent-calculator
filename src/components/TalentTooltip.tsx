@@ -5,16 +5,28 @@ import "./TalentTooltip.css";
 
 interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
   name: string;
-  points: number;
-  description: (points: number) => string;
+  rank: number;
+  maxRank: number;
+  description: (rank: number) => string;
 }
 
 export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
-  ({ name, points, description, ...rest }, ref) => {
+  ({ name, rank, maxRank, description, ...rest }, ref) => {
     return (
       <Tooltip ref={ref} contentClassname="TalentTooltip-content" {...rest}>
         <h1 className="TalentTooltip-title">{name}</h1>
-        <p className="TalentTooltip-description">{description(points + 1)}</p>
+        <p>
+          rank {rank} / {maxRank}
+        </p>
+        <p className="TalentTooltip-description">
+          {rank === 0 ? description(rank + 1) : description(rank)}
+        </p>
+        {rank !== 0 && rank < maxRank && (
+          <p className="TalentTooltip-description">
+            Next rank: {description(rank + 1)}
+          </p>
+        )}
+        {rank === 0 && <p>click to learn</p>}
       </Tooltip>
     );
   }

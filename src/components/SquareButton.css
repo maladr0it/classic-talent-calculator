@@ -48,14 +48,14 @@
   background-repeat: no-repeat;
 }
 
-.SquareButton-outline--grey {
+.SquareButton-outline--disabled {
   background-position-x: 0;
 }
 
-.SquareButton-outline--gold {
+.SquareButton-outline--maxed {
   background-position-x: calc(-1 * var(--outline-size));
 }
 
-.SquareButton-outline--green {
+.SquareButton-outline--enabled {
   background-position-x: calc(-2 * var(--outline-size));
 }

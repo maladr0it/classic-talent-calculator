@@ -41,7 +41,7 @@ export const TalentTree: React.FC<Props> = ({ backgroundURL, children }) => {
   const { state } = useTalentContext();
   return (
     <>
-      {state.points}
+      <h1>{state.points}</h1>
       <div
         className="TalentTree"
         style={{ backgroundImage: `url(${backgroundURL})` }}

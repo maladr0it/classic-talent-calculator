@@ -4,9 +4,9 @@ import { State, Action, TalentData } from "./types";
 import { reducer } from "./reducer";
 
 const createInitialState = (data: TalentData) => ({
-  points: 0,
+  points: 51,
   talentData: data,
-  talents: Object.entries(data).reduce<State["talents"]>(
+  talentRanks: Object.entries(data).reduce<State["talentRanks"]>(
     (prev, [treeName, tree]) => {
       prev[treeName] = Object.keys(tree).reduce<Record<string, number>>(
         (prev, talentName) => {
@@ -50,37 +50,3 @@ export const useTalentContext = () => {
   }
   return context;
 };
-
-// export const createTalentContext = (data: TalentData) => {
-//   const initialState = createInitialState(data);
-//   const TalentContext = createContext<{
-//     state: typeof initialState;
-//     dispatch: React.Dispatch<Action>;
-//   } | null>(null);
-
-//   const TalentProvider: React.FC = ({ children }) => {
-//     const [state, dispatch] = useReducer(reducer, initialState);
-
-//     return (
-//       <TalentContext.Provider value={{ state, dispatch }}>
-//         {children}
-//       </TalentContext.Provider>
-//     );
-//   };
-
-//   const useTalentContext = () => {
-//     const context = useContext(TalentContext);
-
-//     if (context === null) {
-//       throw new Error(
-//         "Components using useTalentContext must be children of TalentContextProvider"
-//       );
-//     }
-//     return context;
-//   };
-
-//   return {
-//     TalentProvider,
-//     useTalentContext
-//   };
-// };

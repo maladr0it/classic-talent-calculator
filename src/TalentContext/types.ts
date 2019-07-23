@@ -2,7 +2,8 @@ interface Talent {
   name: string;
   icon: string;
   description: (points: number) => string;
-  maxPoints: number;
+  maxRank: number;
+  requiredPoints: number;
 }
 
 export interface TalentData {
@@ -13,7 +14,7 @@ export interface TalentData {
 
 export interface State {
   points: number;
-  talents: {
+  talentRanks: {
     [tree: string]: {
       [talent: string]: number;
     };

@@ -7,7 +7,7 @@ import talentOutlines from "../assets/talent-outlines.gif";
 
 interface Props {
   icon: string;
-  outline?: "grey" | "gold" | "green";
+  state: "maxed" | "enabled" | "disabled";
   selected?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ icon, selected = false, className = "", outline, ...rest }, ref) => {
+  ({ icon, selected = false, className = "", state, ...rest }, ref) => {
     return (
       <button ref={ref} className={`SquareButton ${className}`} {...rest}>
         <div
@@ -28,9 +28,9 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
           className="SquareButton-aura"
           style={{ backgroundImage: `url(${highlightedBorder})` }}
         />
-        {outline && (
+        {state && (
           <div
-            className={`SquareButton-outline SquareButton-outline--${outline}`}
+            className={`SquareButton-outline SquareButton-outline--${state}`}
             style={{ backgroundImage: `url(${talentOutlines})` }}
           />
         )}

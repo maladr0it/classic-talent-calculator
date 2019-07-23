@@ -22,7 +22,7 @@ export const TREE_DATA = {
         0.4,
         0.5
       ]}%`,
-      maxPoints: 5,
+      maxRank: 5,
       requiredPoints: 0
     }
   }
