@@ -1,7 +1,8 @@
 import React from "react";
 
 import "./TalentTree.css";
-import { useTalentContext } from "../TalentContext";
+import { TreeContext } from "../TreeContext";
+import { useTalentContext, getPointsSpent } from "../TalentContext";
 
 export type Position =
   | "a1"
@@ -34,17 +35,26 @@ export type Position =
   | "g4";
 
 interface Props {
+  name: string;
   background: string;
 }
 
-export const TalentTree: React.FC<Props> = ({ background, children }) => {
+export const TalentTree: React.FC<Props> = ({ name, background, children }) => {
   const { state } = useTalentContext();
+  const pointsSpent = getPointsSpent(state, name);
   return (
-    <div
-      className="TalentTree"
-      style={{ backgroundImage: `url(${background})` }}
-    >
-      {children}
-    </div>
+    <TreeContext.Provider value={name}>
+      <div>
+        <h2>
+          points spent in {name}: {pointsSpent}
+        </h2>
+        <div
+          className="TalentTree"
+          style={{ backgroundImage: `url(${background})` }}
+        >
+          {children}
+        </div>
+      </div>
+    </TreeContext.Provider>
   );
 };

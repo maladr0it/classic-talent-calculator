@@ -13,8 +13,6 @@ import { Position } from "./TalentTree";
 import { isTalentAvailable } from "../TalentContext";
 import { useTreeContext } from "../TreeContext";
 
-type Direction = "right" | "down" | "right-down" | "right-down-down";
-
 const imageMap = {
   right: arrowRight,
   "right--gold": arrowRightGold,
@@ -27,7 +25,7 @@ const imageMap = {
 };
 
 interface Props {
-  direction: Direction;
+  direction: "right" | "down" | "right-down" | "right-down-down";
   from: Position;
   to: Position;
   target: string;

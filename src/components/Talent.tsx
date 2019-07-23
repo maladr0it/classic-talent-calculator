@@ -7,7 +7,7 @@ import {
   useTalentContext,
   getTalentData,
   getTalentRank,
-  getPointsSpent
+  isTalentAvailable
 } from "../TalentContext";
 import { Position } from "./TalentTree";
 import { TalentTooltip } from "./TalentTooltip";
@@ -21,15 +21,13 @@ interface Props {
 export const Talent: React.FC<Props> = ({ name, position }) => {
   const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
-  const pointsSpent = getPointsSpent(state, tree);
+  const available = isTalentAvailable(state, tree, name);
   const rank = getTalentRank(state, tree, name);
-  const {
-    icon,
-    disabledIcon,
-    description,
-    requiredPoints,
-    maxRank
-  } = getTalentData(state, tree, name);
+  const { icon, disabledIcon, description, maxRank } = getTalentData(
+    state,
+    tree,
+    name
+  );
 
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
@@ -40,7 +38,7 @@ export const Talent: React.FC<Props> = ({ name, position }) => {
     if (rank === maxRank) {
       return "maxed";
     }
-    if (pointsSpent >= requiredPoints && state.points > 0) {
+    if (available) {
       return "enabled";
     }
     return "disabled";
@@ -49,7 +47,11 @@ export const Talent: React.FC<Props> = ({ name, position }) => {
   return (
     <div className="Talent-container" style={{ gridArea: position }}>
       <SquareButton
-        onClick={() => dispatch({ type: "POINT_SPENT", tree, talent: name })}
+        onClick={
+          talentState === "enabled"
+            ? () => dispatch({ type: "POINT_SPENT", tree, talent: name })
+            : undefined
+        }
         icon={icon}
         disabledIcon={disabledIcon}
         state={talentState}
