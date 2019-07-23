@@ -1,6 +1,6 @@
 import { useState, useRef, useLayoutEffect } from "react";
 
-import { TooltipPos } from "../components/Tooltip";
+export type TooltipPos = "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
 
 export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
   defaultPos: TooltipPos
@@ -18,12 +18,15 @@ export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
       if (!tooltipRef.current || !anchorRef.current) {
         return "topRight";
       }
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const anchorRect = anchorRef.current.getBoundingClientRect();
       const tooltipRect = tooltipRef.current.getBoundingClientRect();
 
       const fitsTop = anchorRect.top >= tooltipRect.height;
-      const fitsRight = anchorRect.right >= tooltipRect.width;
-      const fitsBottom = anchorRect.bottom >= tooltipRect.height;
+      const fitsRight = viewportWidth - anchorRect.right >= tooltipRect.width;
+      const fitsBottom =
+        viewportHeight - anchorRect.bottom >= tooltipRect.height;
       const fitsLeft = anchorRect.left >= tooltipRect.width;
 
       if (fitsTop && fitsRight) {

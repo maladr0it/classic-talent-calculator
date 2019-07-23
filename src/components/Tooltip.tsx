@@ -1,9 +1,8 @@
 import React from "react";
 
 import "./Tooltip.css";
+import { TooltipPos } from "../hooks/useTooltipPos";
 import tooltipBackground from "../assets/tooltip.png";
-
-export type TooltipPos = "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
 
 interface Props extends React.ComponentPropsWithRef<"div"> {
   position: TooltipPos;

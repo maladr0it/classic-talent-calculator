@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./TalentTree.css";
+import { useTalentContext } from "../TalentContext";
 
 export type Position =
   | "a1"
@@ -37,12 +38,16 @@ interface Props {
 }
 
 export const TalentTree: React.FC<Props> = ({ backgroundURL, children }) => {
+  const { state } = useTalentContext();
   return (
-    <div
-      className="TalentTree"
-      style={{ backgroundImage: `url(${backgroundURL})` }}
-    >
-      {children}
-    </div>
+    <>
+      {state.points}
+      <div
+        className="TalentTree"
+        style={{ backgroundImage: `url(${backgroundURL})` }}
+      >
+        {children}
+      </div>
+    </>
   );
 };
