@@ -1,6 +1,7 @@
 .Tooltip-container {
   --max-width: 20rem;
   position: absolute;
+
   width: var(--max-width);
   pointer-events: none;
 }
@@ -35,13 +36,16 @@
 }
 
 .Tooltip-content {
-  padding: var(--sp-md);
+  position: relative;
+  padding: var(--sp-sm);
+  color: white;
 }
 
 .Tooltip-backgroundContainer {
   position: absolute;
   height: 100%;
   width: 100%;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;

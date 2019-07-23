@@ -5,12 +5,13 @@ import tooltipBackground from "../assets/tooltip.png";
 
 export type TooltipPos = "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
 
-interface Props extends React.ComponentPropsWithoutRef<"div"> {
+interface Props extends React.ComponentPropsWithRef<"div"> {
   position: TooltipPos;
+  contentClassname?: string;
 }
 
 export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
-  ({ position, children }, ref) => {
+  ({ position, contentClassname = "", children }, ref) => {
     return (
       <div className={`Tooltip-container Tooltip-container--${position}`}>
         <div ref={ref} className="Tooltip">
@@ -32,7 +33,9 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
               style={{ backgroundImage: `url(${tooltipBackground})` }}
             />
           </div>
-          <div className="Tooltip-content">{children}</div>
+          <div className={`Tooltip-content ${contentClassname}`}>
+            {children}
+          </div>
         </div>
       </div>
     );

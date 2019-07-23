@@ -2,11 +2,11 @@ import { useState, useRef, useLayoutEffect } from "react";
 
 import { TooltipPos } from "../components/Tooltip";
 
-export const useTooltipPos = <T extends HTMLElement>(
+export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
   defaultPos: TooltipPos
 ) => {
   const anchorRef = useRef<T | null>(null);
-  const tooltipRef = useRef<HTMLDivElement | null>(null);
+  const tooltipRef = useRef<U | null>(null);
   const [tooltipPos, setTooltipPos] = useState<TooltipPos>(defaultPos);
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
@@ -42,11 +42,17 @@ export const useTooltipPos = <T extends HTMLElement>(
     setTooltipPos(getPosition());
   }, [tooltipVisible]);
 
+  const showTooltip = () => setTooltipVisible(true);
+  const hideTooltip = () => setTooltipVisible(false);
+
+  // TODO: consider memoizing this?
   return {
-    anchorRef,
-    tooltipRef,
-    tooltipPos,
-    tooltipVisible,
-    setTooltipVisible
+    anchorProps: {
+      ref: anchorRef,
+      onMouseEnter: showTooltip,
+      onMouseLeave: hideTooltip
+    },
+    tooltipProps: { ref: tooltipRef, position: tooltipPos },
+    tooltipVisible
   };
 };

@@ -6,7 +6,7 @@ import { TalentTree } from "../components/TalentTree";
 import { Talent } from "../components/Talent";
 import { Arrow } from "../components/Arrow";
 
-import MOCK_ICON from "../assets/druid-icon.jpg";
+import MOCK_ICON from "../assets/spell_nature_abolishmagic.jpg";
 
 const TREE_DATA = {
   "Improved Wrath": {
@@ -28,7 +28,7 @@ export const Druid: React.FC = () => {
     <div>
       <h1>Druid</h1>
       <TalentTree backgroundURL={backgroundImage}>
-        <Talent position="a2" selected data={TREE_DATA["Improved Wrath"]} />
+        <Talent position="a1" data={TREE_DATA["Improved Wrath"]} />
         {/* <Arrow direction="right" from="a2" to="a3" />
         <Talent position="a3" selected imageURL={MOCK_ICON} />
         <Arrow direction="down" from="a2" to="d2" />

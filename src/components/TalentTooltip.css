@@ -1,0 +1,16 @@
+.TalentTooltip-content {
+  color: #fff;
+}
+
+/* .TalentTooltip-header {
+  display: flex;
+  font-size: 0.875rem;
+} */
+
+.TalentTooltip-title {
+  font-size: 0.875rem;
+}
+
+.TalentTooltip-rank {
+  color: var(--col-text-inactive);
+}

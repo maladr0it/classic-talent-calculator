@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: "Helvetica";
+  background: peachpuff;
 
-  --col-inactive-text: #787878;
+  --col-text-inactive: #787878;
 
   --icon-size: 2.75rem;
   --arrow-thickness: 1rem;

@@ -5,38 +5,57 @@
   background-color: transparent;
   height: 2.75rem;
   width: 2.75rem;
+  cursor: pointer;
 }
 
-.SquareButton-icon {
+.SquareButton-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 2.25rem;
-  width: 2.25rem;
-  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 2.75rem 2.75rem, 2.25rem 2.25rem;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .SquareButton-aura {
-  visibility: hidden;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 2.375rem;
-  width: 2.375rem;
-  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: 2.375rem 2.375rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  visibility: hidden;
 }
 
 .SquareButton:hover .SquareButton-aura {
   visibility: visible;
 }
 
-.SquareButton-border {
+.SquareButton-outline {
+  --outline-size: 2.625rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 2.625rem;
+  width: 2.625rem;
+  background-position-y: center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.SquareButton-outline--grey {
+  background-position-x: 0;
+}
+
+.SquareButton-outline--gold {
+  background-position-x: calc(-1 * var(--outline-size));
+}
+
+.SquareButton-outline--green {
+  background-position-x: calc(-2 * var(--outline-size));
 }

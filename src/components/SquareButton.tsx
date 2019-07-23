@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./SquareButton.css";
 import border from "../assets/border-default.png";
-import selectedBorder from "../assets/border-gold-selected.png";
 import highlightedBorder from "../assets/border-highlight.png";
+import talentOutlines from "../assets/talent-outlines.gif";
 
 interface Props {
   icon: string;
-  selected: boolean;
+  outline?: "grey" | "gold" | "green";
+  selected?: boolean;
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -16,23 +17,23 @@ interface Props {
 }
 
 export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ icon, selected, className = "", ...rest }, ref) => {
+  ({ icon, selected = false, className = "", outline, ...rest }, ref) => {
     return (
       <button ref={ref} className={`SquareButton ${className}`} {...rest}>
         <div
-          className="SquareButton-icon"
-          style={{ backgroundImage: `url(${icon})` }}
+          className="SquareButton-content"
+          style={{ backgroundImage: `url(${border}), url(${icon})` }}
         />
         <div
           className="SquareButton-aura"
           style={{ backgroundImage: `url(${highlightedBorder})` }}
         />
-        <div
-          className="SquareButton-border"
-          style={{
-            backgroundImage: `url(${selected ? selectedBorder : border})`
-          }}
-        />
+        {outline && (
+          <div
+            className={`SquareButton-outline SquareButton-outline--${outline}`}
+            style={{ backgroundImage: `url(${talentOutlines})` }}
+          />
+        )}
       </button>
     );
   }

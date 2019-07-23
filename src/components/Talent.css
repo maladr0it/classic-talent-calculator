@@ -10,7 +10,7 @@
   background-color: black;
   font-size: 0.75rem;
   border-radius: 4px;
-  color: var(--col-inactive-text);
+  color: var(--col-text-inactive);
   pointer-events: none;
 }
 
