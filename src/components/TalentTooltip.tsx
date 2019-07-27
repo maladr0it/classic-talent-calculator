@@ -18,7 +18,7 @@ interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
 export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
   ({ name, tree, ...rest }, ref) => {
     const { state } = useTalentContext();
-    const { description, requiredPoints, maxRank, prereq } = getTalentData(
+    const { description, reqPoints, maxRank, prereq } = getTalentData(
       state,
       tree,
       name
@@ -36,9 +36,9 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
         <p className="TalentTooltip-rank">
           Rank {rank}/{maxRank}
         </p>
-        {pointsSpent < requiredPoints && (
+        {pointsSpent < reqPoints && (
           <p className="TalentTooltip-error">
-            Requires {requiredPoints} points in {tree} Talents
+            Requires {reqPoints} points in {tree} Talents
           </p>
         )}
         {prereqData && !prereqMet && (

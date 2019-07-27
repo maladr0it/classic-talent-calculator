@@ -3,7 +3,7 @@ interface Talent {
   icon: string;
   description: (points: number) => string;
   maxRank: number;
-  requiredPoints: number;
+  reqPoints: number;
   prereq?: string;
 }
 

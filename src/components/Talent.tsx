@@ -14,11 +14,11 @@ import { TalentTooltip } from "./TalentTooltip";
 import { SquareButton } from "./SquareButton";
 
 interface Props {
-  position: Position;
+  pos: Position;
   name: string;
 }
 
-export const Talent: React.FC<Props> = ({ name, position }) => {
+export const Talent: React.FC<Props> = ({ name, pos }) => {
   const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
 
@@ -42,7 +42,7 @@ export const Talent: React.FC<Props> = ({ name, position }) => {
   })();
 
   return (
-    <div className="Talent-container" style={{ gridArea: position }}>
+    <div className="Talent-container" style={{ gridArea: pos }}>
       <SquareButton
         onClick={
           talentState === "enabled"

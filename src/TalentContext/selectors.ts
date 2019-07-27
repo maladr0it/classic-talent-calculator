@@ -25,7 +25,7 @@ export const isTalentMaxed = (state: State, tree: string, talent: string) => {
 
 // talent must:
 // at least 1 total point available to spend
-// requiredPoints met
+// reqPoints met
 // prereq talent (if any) is maxed
 export const isTalentAvailable = (
   state: State,
@@ -40,7 +40,7 @@ export const isTalentAvailable = (
   const pointsSpent = getPointsSpent(state, tree);
   const talentData = getTalentData(state, tree, talent);
 
-  if (pointsSpent < talentData.requiredPoints) {
+  if (pointsSpent < talentData.reqPoints) {
     return false;
   }
 
