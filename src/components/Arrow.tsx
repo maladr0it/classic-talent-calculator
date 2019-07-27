@@ -8,8 +8,7 @@ import arrowDownGold from "../assets/arrows/down--gold.png";
 import arrowRightDown from "../assets/arrows/right-down.png";
 import arrowRightDownGold from "../assets/arrows/right-down--gold.png";
 
-import { useTalentContext } from "../TalentContext";
-import { Position } from "./TalentTree";
+import { useTalentContext, Position } from "../TalentContext";
 import { isTalentAvailable } from "../TalentContext";
 import { useTreeContext } from "../TreeContext";
 

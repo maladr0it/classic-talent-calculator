@@ -7,6 +7,7 @@ export const data: TalentData = {
   Balance: {
     "Improved Wrath": {
       name: "Improved Wrath",
+      pos: "a1",
       icon: icons["spell_nature_abolishmagic"],
       maxRank: 5,
       reqPoints: 0,
@@ -20,6 +21,7 @@ export const data: TalentData = {
     },
     "Nature's Grasp": {
       name: "Nature's Grasp",
+      pos: "a2",
       icon: icons["spell_nature_natureswrath"],
       maxRank: 1,
       reqPoints: 0,
@@ -27,6 +29,7 @@ export const data: TalentData = {
     },
     "Improved Nature's Grasp": {
       name: "Improved Nature's Grasp",
+      pos: "a3",
       icon: icons["spell_nature_natureswrath"],
       maxRank: 4,
       reqPoints: 0,
@@ -40,6 +43,7 @@ export const data: TalentData = {
     },
     "Improved Entangling Roots": {
       name: "Improved Entangling Roots",
+      pos: "b1",
       icon: icons["spell_nature_stranglevines"],
       maxRank: 3,
       reqPoints: 5,
@@ -51,6 +55,7 @@ export const data: TalentData = {
     },
     "Improved Moonfire": {
       name: "Improved Moonfire",
+      pos: "b2",
       icon: icons["spell_nature_starfall"],
       maxRank: 5,
       reqPoints: 5,
@@ -64,6 +69,7 @@ export const data: TalentData = {
     },
     "Natural Weapons": {
       name: "Natural Weapons",
+      pos: "b3",
       icon: icons["inv_staff_01"],
       maxRank: 5,
       reqPoints: 5,
@@ -77,6 +83,7 @@ export const data: TalentData = {
     },
     "Natural Shapeshifter": {
       name: "Natural Shapeshifter",
+      pos: "b4",
       icon: icons["spell_nature_wispsplode"],
       maxRank: 3,
       reqPoints: 5,
@@ -88,6 +95,7 @@ export const data: TalentData = {
     },
     "Improved Thorns": {
       name: "Improved Thorns",
+      pos: "c1",
       icon: icons["spell_nature_thorns"],
       maxRank: 3,
       reqPoints: 10,
@@ -99,6 +107,7 @@ export const data: TalentData = {
     },
     "Omen of Clarity": {
       name: "Omen of Clarity",
+      pos: "c3",
       icon: icons["spell_nature_crystalball"],
       maxRank: 1,
       reqPoints: 10,
@@ -107,6 +116,7 @@ export const data: TalentData = {
     },
     "Nature's Reach": {
       name: "Nature's Reach",
+      pos: "c4",
       icon: icons["spell_nature_naturetouchgrow"],
       maxRank: 2,
       reqPoints: 10,
@@ -117,6 +127,7 @@ export const data: TalentData = {
     },
     Vengeance: {
       name: "Vengeance",
+      pos: "d2",
       icon: icons["spell_nature_purge"],
       maxRank: 5,
       reqPoints: 15,
@@ -131,6 +142,7 @@ export const data: TalentData = {
     },
     "Improved Starfire": {
       name: "Improved Starfire",
+      pos: "d3",
       icon: icons["spell_arcane_starfire"],
       maxRank: 5,
       reqPoints: 15,
@@ -150,6 +162,7 @@ export const data: TalentData = {
     },
     "Nature's Grace": {
       name: "Nature's Grace",
+      pos: "e2",
       icon: icons["spell_nature_naturesblessing"],
       maxRank: 1,
       reqPoints: 20,
@@ -157,6 +170,7 @@ export const data: TalentData = {
     },
     Moonglow: {
       name: "Moonglow",
+      pos: "e3",
       icon: icons["spell_nature_sentinal"],
       maxRank: 3,
       reqPoints: 20,
@@ -168,6 +182,7 @@ export const data: TalentData = {
     },
     Moonfury: {
       name: "Moonfury",
+      pos: "f2",
       icon: icons["spell_nature_moonglow"],
       maxRank: 5,
       reqPoints: 25,
@@ -182,6 +197,7 @@ export const data: TalentData = {
     },
     "Moonkin Form": {
       name: "Moonkin Form",
+      pos: "g2",
       icon: icons["spell_nature_forceofnature"],
       maxRank: 1,
       reqPoints: 30,
@@ -191,6 +207,7 @@ export const data: TalentData = {
   Feral: {
     Ferocity: {
       name: "Ferocity",
+      pos: "a2",
       icon: icons["ability_hunter_pet_hyena"],
       maxRank: 5,
       reqPoints: 0,
@@ -204,6 +221,7 @@ export const data: TalentData = {
     },
     "Feral Aggression": {
       name: "Feral Aggression",
+      pos: "a3",
       icon: icons["ability_druid_demoralizingroar"],
       maxRank: 5,
       reqPoints: 0,
@@ -223,6 +241,7 @@ export const data: TalentData = {
     },
     "Feral Instinct": {
       name: "Feral Instinct",
+      pos: "b1",
       icon: icons["ability_ambush"],
       maxRank: 5,
       reqPoints: 5,
@@ -236,6 +255,7 @@ export const data: TalentData = {
     },
     "Brutal Impact": {
       name: "Brutal Impact",
+      pos: "b2",
       icon: icons["ability_druid_bash"],
       maxRank: 2,
       reqPoints: 5,
@@ -246,6 +266,7 @@ export const data: TalentData = {
     },
     "Thick Hide": {
       name: "Thick Hide",
+      pos: "b3",
       icon: icons["inv_misc_pelt_bear_03"],
       maxRank: 5,
       reqPoints: 5,
@@ -259,6 +280,7 @@ export const data: TalentData = {
     },
     "Feline Swiftness": {
       name: "Feline Swiftness",
+      pos: "c1",
       icon: icons["spell_nature_spiritwolf"],
       maxRank: 2,
       reqPoints: 10,
@@ -272,6 +294,7 @@ export const data: TalentData = {
     },
     "Feral Charge": {
       name: "Feral Charge",
+      pos: "c2",
       icon: icons["ability_hunter_pet_bear"],
       maxRank: 1,
       reqPoints: 10,
@@ -279,6 +302,7 @@ export const data: TalentData = {
     },
     "Sharpened Claws": {
       name: "Sharpened Claws",
+      pos: "c3",
       icon: icons["inv_misc_monsterclaw_04"],
       maxRank: 2,
       reqPoints: 10,
@@ -290,6 +314,7 @@ export const data: TalentData = {
     },
     "Improved Shred": {
       name: "Improved Shred",
+      pos: "d1",
       icon: icons["spell_shadow_vampiricaura"],
       maxRank: 2,
       reqPoints: 15,
@@ -300,6 +325,7 @@ export const data: TalentData = {
     },
     "Predatory Strikes": {
       name: "Predatory Strikes",
+      pos: "d2",
       icon: icons["ability_hunter_pet_cat"],
       maxRank: 3,
       reqPoints: 15,
@@ -311,6 +337,7 @@ export const data: TalentData = {
     },
     "Blood Frenzy": {
       name: "Blood Frenzy",
+      pos: "d3",
       icon: icons["ability_ghoulfrenzy"],
       maxRank: 2,
       reqPoints: 15,
@@ -322,6 +349,7 @@ export const data: TalentData = {
     },
     "Primal Fury": {
       name: "Primal Fury",
+      pos: "d4",
       icon: icons["ability_racial_cannibalize"],
       maxRank: 2,
       reqPoints: 15,
@@ -333,6 +361,7 @@ export const data: TalentData = {
     },
     "Savage Fury": {
       name: "Savage Fury",
+      pos: "e1",
       icon: icons["ability_druid_ravage"],
       maxRank: 2,
       reqPoints: 20,
@@ -343,6 +372,7 @@ export const data: TalentData = {
     },
     "Faerie Fire (Feral)": {
       name: "Faerie Fire (Feral)",
+      pos: "e3",
       icon: icons["spell_nature_faeriefire"],
       maxRank: 1,
       reqPoints: 20,
@@ -350,6 +380,7 @@ export const data: TalentData = {
     },
     "Heart of the Wild": {
       name: "Heart of the Wild",
+      pos: "f2",
       icon: icons["spell_holy_blessingofagility"],
       maxRank: 5,
       reqPoints: 25,
@@ -376,6 +407,7 @@ export const data: TalentData = {
     },
     "Leader of the Pack": {
       name: "Leader of the Pack",
+      pos: "g2",
       icon: icons["spell_nature_unyeildingstamina"],
       maxRank: 1,
       reqPoints: 30,
@@ -385,6 +417,7 @@ export const data: TalentData = {
   Restoration: {
     "Improved Mark of the Wild": {
       name: "Improved Mark of the Wild",
+      pos: "a2",
       icon: icons["spell_nature_regeneration"],
       maxRank: 5,
       reqPoints: 0,
@@ -398,6 +431,7 @@ export const data: TalentData = {
     },
     Furor: {
       name: "Furor",
+      pos: "a3",
       icon: icons["spell_nature_unyeildingstamina"],
       maxRank: 5,
       reqPoints: 0,
@@ -411,6 +445,7 @@ export const data: TalentData = {
     },
     "Improved Healing Touch": {
       name: "Improved Healing Touch",
+      pos: "b1",
       icon: icons["spell_nature_healingtouch"],
       maxRank: 5,
       reqPoints: 5,
@@ -424,6 +459,7 @@ export const data: TalentData = {
     },
     "Nature's Focus": {
       name: "Nature's Focus",
+      pos: "b2",
       icon: icons["spell_nature_healingwavegreater"],
       maxRank: 5,
       reqPoints: 5,
@@ -437,6 +473,7 @@ export const data: TalentData = {
     },
     "Improved Enrage": {
       name: "Improved Enrage",
+      pos: "b3",
       icon: icons["ability_druid_enrage"],
       maxRank: 2,
       reqPoints: 5,
@@ -447,6 +484,7 @@ export const data: TalentData = {
     },
     Reflection: {
       name: "Reflection",
+      pos: "c2",
       icon: icons["spell_frost_windwalkon"],
       maxRank: 3,
       reqPoints: 10,
@@ -458,6 +496,7 @@ export const data: TalentData = {
     },
     "Insect Swarm": {
       name: "Insect Swarm",
+      pos: "c3",
       icon: icons["spell_nature_insectswarm"],
       maxRank: 1,
       reqPoints: 10,
@@ -465,6 +504,7 @@ export const data: TalentData = {
     },
     Subtlety: {
       name: "Subtlety",
+      pos: "c4",
       icon: icons["ability_eyeoftheowl"],
       maxRank: 5,
       reqPoints: 10,
@@ -478,6 +518,7 @@ export const data: TalentData = {
     },
     "Tranquil Spirit": {
       name: "Tranquil Spirit",
+      pos: "d2",
       icon: icons["spell_holy_elunesgrace"],
       maxRank: 5,
       reqPoints: 15,
@@ -491,6 +532,7 @@ export const data: TalentData = {
     },
     "Improved Rejuvenation": {
       name: "Improved Rejuvenation",
+      pos: "d4",
       icon: icons["spell_nature_rejuvenation"],
       maxRank: 3,
       reqPoints: 15,
@@ -502,6 +544,7 @@ export const data: TalentData = {
     },
     "Nature's Swiftness": {
       name: "Nature's Swiftness",
+      pos: "e1",
       icon: icons["spell_nature_ravenform"],
       maxRank: 1,
       reqPoints: 20,
@@ -510,6 +553,7 @@ export const data: TalentData = {
     },
     "Gift of Nature": {
       name: "Gift of Nature",
+      pos: "e3",
       icon: icons["spell_nature_protectionformnature"],
       maxRank: 5,
       reqPoints: 20,
@@ -523,6 +567,7 @@ export const data: TalentData = {
     },
     "Improved Tranquility": {
       name: "Improved Tranquility",
+      pos: "e4",
       icon: icons["spell_nature_tranquility"],
       maxRank: 2,
       reqPoints: 20,
@@ -533,6 +578,7 @@ export const data: TalentData = {
     },
     "Improved Regrowth": {
       name: "Improved Regrowth",
+      pos: "f3",
       icon: icons["spell_nature_resistnature"],
       maxRank: 5,
       reqPoints: 25,
@@ -546,6 +592,7 @@ export const data: TalentData = {
     },
     Swiftmend: {
       name: "Swiftmend",
+      pos: "g2",
       icon: icons["inv_relics_idolofrejuvenation"],
       maxRank: 1,
       reqPoints: 30,

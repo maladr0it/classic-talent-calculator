@@ -2,37 +2,12 @@ import React from "react";
 
 import "./TalentTree.css";
 import { TreeContext } from "../TreeContext";
-import { useTalentContext, getPointsSpent } from "../TalentContext";
-
-export type Position =
-  | "a1"
-  | "a2"
-  | "a3"
-  | "a4"
-  | "b1"
-  | "b2"
-  | "b3"
-  | "b4"
-  | "c1"
-  | "c2"
-  | "c3"
-  | "c4"
-  | "d1"
-  | "d2"
-  | "d3"
-  | "d4"
-  | "e1"
-  | "e2"
-  | "e3"
-  | "e4"
-  | "f1"
-  | "f2"
-  | "f3"
-  | "f4"
-  | "g1"
-  | "g2"
-  | "g3"
-  | "g4";
+import {
+  useTalentContext,
+  getPointsSpent,
+  getTreeData,
+} from "../TalentContext";
+import { Talent } from "./Talent";
 
 interface Props {
   name: string;
@@ -41,6 +16,7 @@ interface Props {
 
 export const TalentTree: React.FC<Props> = ({ name, background, children }) => {
   const { state } = useTalentContext();
+  const treeData = getTreeData(state, name);
   const pointsSpent = getPointsSpent(state, name);
   return (
     <TreeContext.Provider value={name}>
@@ -52,6 +28,9 @@ export const TalentTree: React.FC<Props> = ({ name, background, children }) => {
           className="TalentTree"
           style={{ backgroundImage: `url(${background})` }}
         >
+          {Object.keys(treeData).map(talentName => (
+            <Talent key={talentName} name={talentName} />
+          ))}
           {children}
         </div>
       </div>

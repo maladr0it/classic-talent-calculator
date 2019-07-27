@@ -9,20 +9,18 @@ import {
   getTalentRank,
   isTalentAvailable,
 } from "../TalentContext";
-import { Position } from "./TalentTree";
 import { TalentTooltip } from "./TalentTooltip";
 import { SquareButton } from "./SquareButton";
 
 interface Props {
-  pos: Position;
   name: string;
 }
 
-export const Talent: React.FC<Props> = ({ name, pos }) => {
+export const Talent: React.FC<Props> = ({ name }) => {
   const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
 
-  const { icon, maxRank } = getTalentData(state, tree, name);
+  const { pos, icon, maxRank } = getTalentData(state, tree, name);
   const rank = getTalentRank(state, tree, name);
   const available = isTalentAvailable(state, tree, name);
 

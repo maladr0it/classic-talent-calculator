@@ -4,6 +4,10 @@ export const getTalentRank = (state: State, tree: string, talent: string) => {
   return state.talentRanks[tree][talent];
 };
 
+export const getTreeData = (state: State, tree: string) => {
+  return state.talentData[tree];
+};
+
 export const getTalentData = (state: State, tree: string, talent: string) => {
   return state.talentData[tree][talent];
 };
