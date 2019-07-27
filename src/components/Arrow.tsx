@@ -8,9 +8,7 @@ import arrowDownGold from "../assets/arrows/down--gold.png";
 import arrowRightDown from "../assets/arrows/right-down.png";
 import arrowRightDownGold from "../assets/arrows/right-down--gold.png";
 
-import { useTalentContext, Position } from "../TalentContext";
-import { isTalentAvailable } from "../TalentContext";
-import { useTreeContext } from "../TreeContext";
+import { Position, ArrowDir } from "../TalentContext";
 
 const imageMap = {
   right: arrowRight,
@@ -20,34 +18,28 @@ const imageMap = {
   "right-down": arrowRightDown,
   "right-down--gold": arrowRightDownGold,
   "right-down-down": arrowDown,
-  "right-down-down--gold": arrowDownGold
+  "right-down-down--gold": arrowDownGold,
 };
 
 interface Props {
-  direction: "right" | "down" | "right-down" | "right-down-down";
+  dir: ArrowDir;
   from: Position;
   to: Position;
-  target: string;
+  active: boolean;
 }
 
-export const Arrow: React.FC<Props> = ({ direction, from, to, target }) => {
-  const tree = useTreeContext();
-  const { state } = useTalentContext();
-  const active = isTalentAvailable(state, tree, target);
-
-  const arrowType = `${direction}${
-    active ? "--gold" : ""
-  }` as keyof typeof imageMap;
+export const Arrow: React.FC<Props> = ({ dir, from, to, active }) => {
+  const arrowType = `${dir}${active ? "--gold" : ""}` as keyof typeof imageMap;
 
   return (
     <div
-      className={`Arrow-${direction}-container`}
+      className={`Arrow-${dir}-container`}
       style={{ gridArea: `${from} / ${from} / ${to} / ${to}` }}
     >
       <div
-        className={`Arrow-${direction}`}
+        className={`Arrow-${dir}`}
         style={{
-          backgroundImage: `url(${imageMap[arrowType]})`
+          backgroundImage: `url(${imageMap[arrowType]})`,
         }}
       />
     </div>

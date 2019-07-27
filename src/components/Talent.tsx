@@ -11,6 +11,7 @@ import {
 } from "../TalentContext";
 import { TalentTooltip } from "./TalentTooltip";
 import { SquareButton } from "./SquareButton";
+import { Arrow } from "./Arrow";
 
 interface Props {
   name: string;
@@ -20,7 +21,7 @@ export const Talent: React.FC<Props> = ({ name }) => {
   const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
 
-  const { pos, icon, maxRank } = getTalentData(state, tree, name);
+  const { pos, icon, maxRank, arrows } = getTalentData(state, tree, name);
   const rank = getTalentRank(state, tree, name);
   const available = isTalentAvailable(state, tree, name);
 
@@ -40,23 +41,29 @@ export const Talent: React.FC<Props> = ({ name }) => {
   })();
 
   return (
-    <div className="Talent-container" style={{ gridArea: pos }}>
-      <SquareButton
-        onClick={
-          talentState === "enabled"
-            ? () => dispatch({ type: "POINT_SPENT", tree, talent: name })
-            : undefined
-        }
-        icon={icon}
-        state={talentState}
-        {...anchorProps}
-      />
-      {talentState !== "disabled" && (
-        <div className="Talent-pointCount">{rank}</div>
-      )}
-      {tooltipVisible && (
-        <TalentTooltip name={name} tree={tree} {...tooltipProps} />
-      )}
-    </div>
+    <>
+      {arrows &&
+        arrows.map((arrow, i) => (
+          <Arrow key={i} active={available} {...arrow} />
+        ))}
+      <div className="Talent-container" style={{ gridArea: pos }}>
+        <SquareButton
+          onClick={
+            talentState === "enabled"
+              ? () => dispatch({ type: "POINT_SPENT", tree, talent: name })
+              : undefined
+          }
+          icon={icon}
+          state={talentState}
+          {...anchorProps}
+        />
+        {talentState !== "disabled" && (
+          <div className="Talent-pointCount">{rank}</div>
+        )}
+        {tooltipVisible && (
+          <TalentTooltip name={name} tree={tree} {...tooltipProps} />
+        )}
+      </div>
+    </>
   );
 };

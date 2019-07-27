@@ -34,6 +34,7 @@ export const data: TalentData = {
       maxRank: 4,
       reqPoints: 0,
       prereq: "Nature's Grasp",
+      arrows: [{ dir: "right", from: "a2", to: "a3" }],
       description: talentText`Increases the chance of your Nature's Grasp to entangle an enemy by ${[
         15,
         30,
@@ -112,6 +113,7 @@ export const data: TalentData = {
       maxRank: 1,
       reqPoints: 10,
       prereq: "Natural Weapons",
+      arrows: [{ dir: "down", from: "b3", to: "c3" }],
       description: talentText`Imbues the druid with natural energy. Each of the Druid's melee attacks has a chance of causing the caster to enter a Clearcasting state. The Clearcasting state reduces the Mana, Rage, or Energy cost of your next damage or healing spell or offensive ability by 100%. Lasts 10 min.`,
     },
     "Nature's Reach": {
@@ -132,6 +134,7 @@ export const data: TalentData = {
       maxRank: 5,
       reqPoints: 15,
       prereq: "Improved Moonfire",
+      arrows: [{ dir: "down", from: "b2", to: "d2" }],
       description: talentText`Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by ${[
         20,
         40,
@@ -186,7 +189,8 @@ export const data: TalentData = {
       icon: icons["spell_nature_moonglow"],
       maxRank: 5,
       reqPoints: 25,
-      prereq: "Moonglow",
+      prereq: "Nature's Grace",
+      arrows: [{ dir: "down", from: "e2", to: "f2" }],
       description: talentText`Increases the damage done by your Starfire, Moonfire and Wrath spells by ${[
         2,
         4,
@@ -342,6 +346,7 @@ export const data: TalentData = {
       maxRank: 2,
       reqPoints: 15,
       prereq: "Sharpened Claws",
+      arrows: [{ dir: "down", from: "c3", to: "d3" }],
       description: talentText`Your critial strikes from Cat Form abilities that add combo points have a ${[
         50,
         100,
@@ -354,6 +359,10 @@ export const data: TalentData = {
       maxRank: 2,
       reqPoints: 15,
       prereq: "Sharpened Claws",
+      arrows: [
+        { dir: "right-down", from: "c3", to: "c4" },
+        { dir: "right-down-down", from: "c4", to: "d4" },
+      ],
       description: talentText`Gives you ${[
         50,
         100,
@@ -385,6 +394,7 @@ export const data: TalentData = {
       maxRank: 5,
       reqPoints: 25,
       prereq: "Predatory Strikes",
+      arrows: [{ dir: "down", from: "d2", to: "f2" }],
       description: talentText`Increases your Intellect by ${[
         4,
         8,
@@ -549,6 +559,7 @@ export const data: TalentData = {
       maxRank: 1,
       reqPoints: 20,
       prereq: "Improved Healing Touch",
+      arrows: [{ dir: "down", from: "b1", to: "e1" }],
       description: talentText`When activated, your next Nature spell becomes an instant cast spell.`,
     },
     "Gift of Nature": {
@@ -557,6 +568,8 @@ export const data: TalentData = {
       icon: icons["spell_nature_protectionformnature"],
       maxRank: 5,
       reqPoints: 20,
+      prereq: "Insect Swarm",
+      arrows: [{ dir: "down", from: "c3", to: "e3" }],
       description: talentText`Increases the effect of all healing spells by ${[
         2,
         4,
@@ -596,6 +609,8 @@ export const data: TalentData = {
       icon: icons["inv_relics_idolofrejuvenation"],
       maxRank: 1,
       reqPoints: 30,
+      prereq: 'Tranquil Spirit',
+      arrows:[{dir: 'down', from: 'd2', to: 'g2'}],
       description: talentText`Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth.`,
     },
   },
