@@ -1,16 +1,21 @@
 .TalentTooltip-content {
+  font-size: 0.75rem;
+  font-family: Verdana, sans-serif;
+  line-height: 1.3;
   color: #fff;
 }
 
-/* .TalentTooltip-header {
-  display: flex;
-  font-size: 0.875rem;
-} */
+.TalentTooltip-description {
+  color: #ffd100;
+}
 
 .TalentTooltip-title {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .TalentTooltip-rank {
-  color: var(--col-text-inactive);
+}
+
+.TalentTooltip-clickToLearn {
+  color: #1eff00;
 }

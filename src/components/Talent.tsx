@@ -7,7 +7,7 @@ import {
   useTalentContext,
   getTalentData,
   getTalentRank,
-  isTalentAvailable
+  isTalentAvailable,
 } from "../TalentContext";
 import { Position } from "./TalentTree";
 import { TalentTooltip } from "./TalentTooltip";
@@ -21,13 +21,10 @@ interface Props {
 export const Talent: React.FC<Props> = ({ name, position }) => {
   const tree = useTreeContext();
   const { state, dispatch } = useTalentContext();
-  const available = isTalentAvailable(state, tree, name);
+
+  const { icon, maxRank } = getTalentData(state, tree, name);
   const rank = getTalentRank(state, tree, name);
-  const { icon, disabledIcon, description, maxRank } = getTalentData(
-    state,
-    tree,
-    name
-  );
+  const available = isTalentAvailable(state, tree, name);
 
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
@@ -53,19 +50,14 @@ export const Talent: React.FC<Props> = ({ name, position }) => {
             : undefined
         }
         icon={icon}
-        disabledIcon={disabledIcon}
         state={talentState}
         {...anchorProps}
       />
-      <div className="Talent-pointCount">{rank}</div>
+      {talentState !== "disabled" && (
+        <div className="Talent-pointCount">{rank}</div>
+      )}
       {tooltipVisible && (
-        <TalentTooltip
-          name={name}
-          rank={rank}
-          maxRank={maxRank}
-          description={description}
-          {...tooltipProps}
-        />
+        <TalentTooltip name={name} tree={tree} {...tooltipProps} />
       )}
     </div>
   );

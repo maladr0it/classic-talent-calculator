@@ -19,6 +19,10 @@
   background-repeat: no-repeat;
 }
 
+.SquareButton-content--disabled {
+  filter: grayscale();
+}
+
 .SquareButton-aura {
   position: absolute;
   top: 0;

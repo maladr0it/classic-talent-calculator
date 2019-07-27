@@ -6,11 +6,11 @@ import tooltipBackground from "../assets/tooltip.png";
 
 interface Props extends React.ComponentPropsWithRef<"div"> {
   position: TooltipPos;
-  contentClassname?: string;
+  contentClassName?: string;
 }
 
 export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
-  ({ position, contentClassname = "", children }, ref) => {
+  ({ position, contentClassName = "", children }, ref) => {
     return (
       <div className={`Tooltip-container Tooltip-container--${position}`}>
         <div ref={ref} className="Tooltip">
@@ -32,7 +32,7 @@ export const Tooltip = React.forwardRef<HTMLDivElement, Props>(
               style={{ backgroundImage: `url(${tooltipBackground})` }}
             />
           </div>
-          <div className={`Tooltip-content ${contentClassname}`}>
+          <div className={`Tooltip-content ${contentClassName}`}>
             {children}
           </div>
         </div>

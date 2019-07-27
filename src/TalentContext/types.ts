@@ -1,7 +1,6 @@
 interface Talent {
   name: string;
   icon: string;
-  disabledIcon: string;
   description: (points: number) => string;
   maxRank: number;
   requiredPoints: number;
