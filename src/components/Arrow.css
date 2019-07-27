@@ -1,5 +1,5 @@
 .Arrow-right-container {
-  z-index: 100;
+  z-index: var(--z-index-arrow);
   pointer-events: none;
   padding-left: calc(var(--icon-size) - var(--sp-xxxs));
   padding-right: calc(var(--icon-size) - var(--sp-sm));
@@ -13,7 +13,7 @@
 }
 
 .Arrow-down-container {
-  z-index: 100;
+  z-index: var(--z-index-arrow);
   pointer-events: none;
   padding-top: calc(var(--icon-size) - var(--sp-xxxs));
   padding-bottom: calc(var(--icon-size) - var(--sp-sm));
@@ -27,7 +27,7 @@
 }
 
 .Arrow-right-down-container {
-  z-index: 100;
+  z-index: var(--z-index-arrow);
   pointer-events: none;
   padding-left: calc(var(--icon-size) - var(--sp-xxxs));
   padding-right: calc((var(--icon-size) - var(--arrow-thickness)) / 2);
@@ -41,7 +41,7 @@
 }
 
 .Arrow-right-down-down-container {
-  z-index: 100;
+  z-index: var(--z-index-arrow);
   pointer-events: none;
   padding-top: calc((var(--icon-size) / 2) + var(--sp-sm));
   padding-bottom: calc(var(--icon-size) - var(--sp-sm));

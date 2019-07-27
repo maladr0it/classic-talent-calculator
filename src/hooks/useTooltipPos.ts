@@ -1,13 +1,18 @@
 import { useState, useRef, useLayoutEffect } from "react";
 
+// TODO: should be hidden by default
+const DEFAULT_POS = "topRight";
+
 export type TooltipPos = "topRight" | "topLeft" | "bottomRight" | "bottomLeft";
 
 export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
-  defaultPos: TooltipPos
+  // Optional dependencies for the positioning effect.
+  // Useful if the content of the tooltip can change while it's visible
+  ...deps: any[]
 ) => {
   const anchorRef = useRef<T | null>(null);
   const tooltipRef = useRef<U | null>(null);
-  const [tooltipPos, setTooltipPos] = useState<TooltipPos>(defaultPos);
+  const [tooltipPos, setTooltipPos] = useState<TooltipPos>(DEFAULT_POS);
   const [tooltipVisible, setTooltipVisible] = useState(false);
 
   useLayoutEffect(() => {
@@ -16,7 +21,7 @@ export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
     }
     const getPosition = (): TooltipPos => {
       if (!tooltipRef.current || !anchorRef.current) {
-        return "topRight";
+        return DEFAULT_POS;
       }
       const viewportHeight = window.innerHeight;
       const viewportWidth = window.innerWidth;
@@ -38,12 +43,12 @@ export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
       } else if (fitsBottom && fitsLeft) {
         return "bottomLeft";
       } else {
-        return "topRight";
+        return DEFAULT_POS;
       }
     };
 
     setTooltipPos(getPosition());
-  }, [tooltipVisible]);
+  }, [tooltipVisible, ...deps]);
 
   const showTooltip = () => setTooltipVisible(true);
   const hideTooltip = () => setTooltipVisible(false);
@@ -53,9 +58,9 @@ export const useTooltipPos = <T extends HTMLElement, U extends HTMLElement>(
     anchorProps: {
       ref: anchorRef,
       onMouseEnter: showTooltip,
-      onMouseLeave: hideTooltip
+      onMouseLeave: hideTooltip,
     },
     tooltipProps: { ref: tooltipRef, position: tooltipPos },
-    tooltipVisible
+    tooltipVisible,
   };
 };

@@ -37,22 +37,25 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
           Rank {rank}/{maxRank}
         </p>
         {pointsSpent < requiredPoints && (
-          <p>
-            Requires {requiredPoints} in {tree} Talents
+          <p className="TalentTooltip-error">
+            Requires {requiredPoints} points in {tree} Talents
           </p>
         )}
         {prereqData && !prereqMet && (
-          <p>
-            Requires {prereqData.maxRank} points in {prereqData.name}
+          <p className="TalentTooltip-error">
+            Requires {prereqData.maxRank} point
+            {prereqData.maxRank > 1 ? "s" : ""} in {prereqData.name}
           </p>
         )}
         <p className="TalentTooltip-description">
           {rank === 0 ? description(rank + 1) : description(rank)}
         </p>
         {rank !== 0 && rank < maxRank && (
-          <p className="TalentTooltip-description">
-            Next rank: {description(rank + 1)}
-          </p>
+          <>
+            <br />
+            <p>Next rank:</p>
+            <p className="TalentTooltip-description">{description(rank + 1)}</p>
+          </>
         )}
         {available && rank === 0 && (
           <p className="TalentTooltip-clickToLearn">Click to learn</p>

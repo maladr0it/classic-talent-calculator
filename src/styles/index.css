@@ -12,6 +12,9 @@ body {
   --icon-size: 2.75rem;
   --arrow-thickness: 1rem;
 
+  --z-index-arrow: 100;
+  --z-index-tooltip: 200;
+
   --sp-xxxs: 0.0625rem;
   --sp-xxs: 0.125rem;
   --sp-xs: 0.25rem;

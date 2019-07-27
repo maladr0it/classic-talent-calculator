@@ -29,7 +29,7 @@ export const Talent: React.FC<Props> = ({ name, position }) => {
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
     HTMLDivElement
-  >("topRight");
+  >(rank);
 
   const talentState = (() => {
     if (rank === maxRank) {

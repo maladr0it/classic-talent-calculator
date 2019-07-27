@@ -26,9 +26,16 @@ export const Druid: React.FC = () => {
             target="Improved Nature's Grasp"
           />
           <Talent position="a3" name="Improved Nature's Grasp" />
+          <Talent position="b1" name="Improved Entangling Roots" />
+          <Talent position="b2" name="Improved Moonfire" />
+          <Talent position="b3" name="Natural Weapons" />
+          <Talent position="b4" name="Natural Shapeshifter" />
+          <Talent position="c1" name="Improved Thorns" />
+          <Arrow direction="down" from="b3" to="c3" target="Omen of Clarity" />
+          <Talent position="c3" name="Omen of Clarity" />
         </TalentTree>
         <TalentTree name="Feral" background={feralBackground}>
-          <Talent position="a2" name="Ferocity" />
+          <Talent position="a4" name="Ferocity" />
         </TalentTree>
       </KlassTrees>
     </TalentProvider>

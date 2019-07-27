@@ -3,6 +3,7 @@
   position: absolute;
 
   width: var(--max-width);
+  z-index: var(--z-index-tooltip);
   pointer-events: none;
 }
 
