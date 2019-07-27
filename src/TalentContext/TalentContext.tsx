@@ -8,7 +8,7 @@ const createInitialState = (data: TalentData) => ({
   talentData: data,
   talentRanks: Object.entries(data).reduce<State["talentRanks"]>(
     (prev, [treeName, tree]) => {
-      prev[treeName] = Object.keys(tree).reduce<Record<string, number>>(
+      prev[treeName] = Object.keys(tree.talents).reduce<Record<string, number>>(
         (prev, talentName) => {
           prev[talentName] = 0;
           return prev;
@@ -18,7 +18,7 @@ const createInitialState = (data: TalentData) => ({
       return prev;
     },
     {}
-  )
+  ),
 });
 
 const TalentContext = createContext<{

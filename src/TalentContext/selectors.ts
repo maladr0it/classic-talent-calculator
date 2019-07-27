@@ -9,7 +9,7 @@ export const getTreeData = (state: State, tree: string) => {
 };
 
 export const getTalentData = (state: State, tree: string, talent: string) => {
-  return state.talentData[tree][talent];
+  return state.talentData[tree].talents[talent];
 };
 
 // TODO: memoize this

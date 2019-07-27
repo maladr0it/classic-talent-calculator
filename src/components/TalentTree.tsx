@@ -11,12 +11,11 @@ import { Talent } from "./Talent";
 
 interface Props {
   name: string;
-  background: string;
 }
 
-export const TalentTree: React.FC<Props> = ({ name, background, children }) => {
+export const TalentTree: React.FC<Props> = ({ name, children }) => {
   const { state } = useTalentContext();
-  const treeData = getTreeData(state, name);
+  const { talents, background } = getTreeData(state, name);
   const pointsSpent = getPointsSpent(state, name);
   return (
     <TreeContext.Provider value={name}>
@@ -28,7 +27,7 @@ export const TalentTree: React.FC<Props> = ({ name, background, children }) => {
           className="TalentTree"
           style={{ backgroundImage: `url(${background})` }}
         >
-          {Object.keys(treeData).map(talentName => (
+          {Object.keys(talents).map(talentName => (
             <Talent key={talentName} name={talentName} />
           ))}
           {children}

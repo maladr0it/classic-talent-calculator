@@ -28,11 +28,7 @@ export type Position =
   | "g3"
   | "g4";
 
-export type ArrowDir =
-  | "right"
-  | "down"
-  | "right-down"
-  | "right-down-down";
+export type ArrowDir = "right" | "down" | "right-down" | "right-down-down";
 
 interface Talent {
   name: string;
@@ -47,7 +43,11 @@ interface Talent {
 
 export interface TalentData {
   [tree: string]: {
-    [talent: string]: Talent;
+    name: string;
+    background: string;
+    talents: {
+      [talent: string]: Talent;
+    };
   };
 }
 
