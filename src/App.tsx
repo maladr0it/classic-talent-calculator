@@ -11,7 +11,7 @@ export const App: React.FC = () => {
     <div className="App">
       <KlassList />
       <Druid />
-      {/* <Hunter /> */}
+      <Hunter />
     </div>
   );
 };

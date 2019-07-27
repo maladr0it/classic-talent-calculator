@@ -25,8 +25,6 @@ export const isTalentMaxed = (state: State, tree: string, talent: string) => {
   return maxRank === rank;
 };
 
-// get all
-
 // talent must:
 // at least 1 total point available to spend
 // reqPoints met
