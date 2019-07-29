@@ -33,11 +33,11 @@ export const Arrow: React.FC<Props> = ({ dir, from, to, active }) => {
 
   return (
     <div
-      className={`Arrow-${dir}-container`}
+      className={`Arrow-container Arrow-container--${dir}`}
       style={{ gridArea: `${from} / ${from} / ${to} / ${to}` }}
     >
       <div
-        className={`Arrow-${dir}`}
+        className={`Arrow Arrow--${dir}`}
         style={{
           backgroundImage: `url(${imageMap[arrowType]})`,
         }}
