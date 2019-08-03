@@ -6,7 +6,7 @@
 }
 
 .TalentTooltip-description {
-  color: #ffd100;
+  color: var(--col-yellow);
   white-space: pre-wrap;
 }
 
@@ -15,10 +15,9 @@
 }
 
 .TalentTooltip-error {
-  color: #ff4040;
+  color: var(--col-red);
 }
 
 .TalentTooltip-clickToLearn {
-  color: #1eff00;
+  color: var(--col-green);
 }
-

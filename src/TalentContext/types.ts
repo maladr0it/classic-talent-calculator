@@ -45,6 +45,7 @@ export interface TalentData {
   [tree: string]: {
     name: string;
     background: string;
+    icon: string;
     talents: {
       [talent: string]: Talent;
     };

@@ -3,11 +3,12 @@
 }
 
 body {
-  margin: 0;
-  font-family: "Helvetica";
-  background: peachpuff;
-
+  --col-background: #141414;
+  --col-pane: #222222;
   --col-text-inactive: #787878;
+  --col-yellow: #ffd100;
+  --col-red: #ff4040;
+  --col-green: #1eff00;
 
   --icon-size: 2.75rem;
   --arrow-thickness: 1rem;
@@ -22,4 +23,9 @@ body {
   --sp-md: 1rem;
   --sp-lg: 2rem;
   --sp-xl: 4rem;
+
+  margin: 0;
+  font-family: "Helvetica";
+
+  background: var(--col-background);
 }

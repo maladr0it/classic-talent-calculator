@@ -2,7 +2,7 @@ import { TalentData } from "../../TalentContext";
 import { talentText, requireAll } from "../../utils";
 
 const backgrounds = requireAll(
-  require.context("../../assets/tree-backgrounds/druid")
+  require.context("../../assets/tree-backgrounds/druid"),
 );
 const icons = requireAll(require.context("../../assets/icons/druid"));
 
@@ -10,6 +10,7 @@ export const data: TalentData = {
   Balance: {
     name: "Balance",
     background: backgrounds["balance"],
+    icon: icons["spell_nature_starfall"],
     talents: {
       "Improved Wrath": {
         name: "Improved Wrath",
@@ -215,9 +216,10 @@ export const data: TalentData = {
       },
     },
   },
-  Feral: {
-    name: "Feral",
+  "Feral Combat": {
+    name: "Feral Combat",
     background: backgrounds["feral"],
+    icon: icons["ability_racial_bearform"],
     talents: {
       Ferocity: {
         name: "Ferocity",
@@ -438,6 +440,7 @@ export const data: TalentData = {
   Restoration: {
     name: "Restoration",
     background: backgrounds["restoration"],
+    icon: icons[""],
     talents: {
       "Improved Mark of the Wild": {
         name: "Improved Mark of the Wild",

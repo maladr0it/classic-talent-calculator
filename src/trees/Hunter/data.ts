@@ -2,7 +2,7 @@ import { TalentData } from "../../TalentContext";
 import { talentText, requireAll } from "../../utils";
 
 const backgrounds = requireAll(
-  require.context("../../assets/tree-backgrounds/hunter")
+  require.context("../../assets/tree-backgrounds/hunter"),
 );
 const icons = requireAll(require.context("../../assets/icons/hunter"));
 
@@ -10,6 +10,7 @@ export const data: TalentData = {
   "Beast Mastery": {
     name: "Beast Mastery",
     background: backgrounds["beast-mastery"],
+    icon: "",
     talents: {
       "Improved Aspect of the Hawk": {
         name: "Improved Aspect of the Hawk",

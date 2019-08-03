@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
 }
 
-.SquareButton-content--disabled {
+.SquareButton-content--locked {
   filter: grayscale();
 }
 
@@ -60,6 +60,10 @@
   background-position-x: calc(-1 * var(--outline-size));
 }
 
-.SquareButton-outline--enabled {
+.SquareButton-outline--unlocked {
   background-position-x: calc(-2 * var(--outline-size));
+}
+
+.SquareButton-outline--neutral {
+  background-position-x: 0;
 }

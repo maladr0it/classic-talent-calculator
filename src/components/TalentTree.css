@@ -1,6 +1,30 @@
 .TalentTree {
+  font-family: Verdana, sans-serif;
+  background: var(--col-background);
+  border: 1px solid var(--col-background);
+  border-radius: 2px;
+  margin: var(--sp-sm);
+}
+
+.TalentTree-header {
+  margin: var(--sp-xs);
+  display: flex;
+  align-items: center;
+}
+
+.TalentTree-name {
+  color: white;
+  margin-bottom: var(--sp-xs);
+}
+
+.TalentTree-pointsSpent {
+  font-size: 0.75rem;
+  color: var(--col-yellow);
+}
+
+.TalentTree-grid {
   display: inline-grid;
-  padding: var(--sp-sm);
+  padding: var(--sp-md);
   grid-template-columns: repeat(4, var(--icon-size));
   grid-template-rows: repeat(7, var(--icon-size));
   grid-gap: var(--sp-md);
