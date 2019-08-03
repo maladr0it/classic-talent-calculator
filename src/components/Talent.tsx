@@ -3,12 +3,7 @@ import React from "react";
 import "./Talent.css";
 import { useTooltipPos } from "../hooks/useTooltipPos";
 import { useTreeContext } from "../TreeContext";
-import {
-  useTalentContext,
-  getTalentData,
-  getTalentRank,
-  isTalentAvailable,
-} from "../TalentContext";
+import { useTalentContext } from "../TalentContext";
 import { TalentTooltip } from "./TalentTooltip";
 import { SquareButton } from "./SquareButton";
 import { Arrow } from "./Arrow";
@@ -19,11 +14,18 @@ interface Props {
 
 export const Talent: React.FC<Props> = ({ name }) => {
   const tree = useTreeContext();
-  const { state, dispatch } = useTalentContext();
+  const {
+    state,
+    dispatch,
+    data,
+    unlockedTalents,
+    maxedTalents,
+  } = useTalentContext();
 
-  const { pos, icon, maxRank, arrows } = getTalentData(state, tree, name);
-  const rank = getTalentRank(state, tree, name);
-  const available = isTalentAvailable(state, tree, name);
+  const { pos, icon, arrows } = data[tree].talents[name];
+  const rank = state[tree][name];
+  const maxed = maxedTalents[tree][name];
+  const unlocked = unlockedTalents[tree][name];
 
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
@@ -31,25 +33,25 @@ export const Talent: React.FC<Props> = ({ name }) => {
   >(rank);
 
   const talentState = (() => {
-    if (rank === maxRank) {
+    if (maxed) {
       return "maxed";
     }
-    if (available) {
-      return "enabled";
+    if (unlocked) {
+      return "unlocked";
     }
-    return "disabled";
+    return "locked";
   })();
 
   return (
     <>
       {arrows &&
         arrows.map((arrow, i) => (
-          <Arrow key={i} active={available} {...arrow} />
+          <Arrow key={i} active={unlocked} {...arrow} />
         ))}
       <div className="Talent-container" style={{ gridArea: pos }}>
         <SquareButton
           onClick={
-            talentState === "enabled"
+            talentState === "unlocked"
               ? () => dispatch({ type: "POINT_SPENT", tree, talent: name })
               : undefined
           }
@@ -57,7 +59,7 @@ export const Talent: React.FC<Props> = ({ name }) => {
           state={talentState}
           {...anchorProps}
         />
-        {talentState !== "disabled" && (
+        {talentState !== "locked" && (
           <div className="Talent-pointCount">{rank}</div>
         )}
         {tooltipVisible && (

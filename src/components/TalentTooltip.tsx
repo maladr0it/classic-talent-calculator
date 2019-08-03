@@ -4,11 +4,11 @@ import { Tooltip } from "./Tooltip";
 import "./TalentTooltip.css";
 import {
   useTalentContext,
-  getTalentData,
-  getTalentRank,
-  getPointsSpent,
+  // getTalentData,
+  // getTalentRank,
+  // getPointsSpent,
 } from "../TalentContext";
-import { isTalentMaxed, isTalentAvailable } from "../TalentContext/selectors";
+// import { isTalentMaxed, isTalentAvailable } from "../TalentContext/selectors";
 
 interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
   name: string;
@@ -17,28 +17,35 @@ interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
 
 export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
   ({ name, tree, ...rest }, ref) => {
-    const { state } = useTalentContext();
-    const { description, reqPoints, maxRank, prereq } = getTalentData(
+    const {
       state,
-      tree,
-      name
-    );
-    const prereqData = prereq ? getTalentData(state, tree, prereq) : null;
-    const prereqMet = prereq ? isTalentMaxed(state, tree, prereq) : null;
-    const pointsSpent = getPointsSpent(state, tree);
-    const rank = getTalentRank(state, tree, name);
-    // TODO: many redundant calls here, can like derive all necessary information with 1 selector
-    const available = isTalentAvailable(state, tree, name);
+      data,
+      pointsSpent,
+      pointsMetTalents,
+      maxedTalents,
+      prereqMetTalents,
+      unlockedTalents,
+    } = useTalentContext();
+
+    const talentData = data[tree].talents[name];
+    const prereqData = talentData.prereq
+      ? data[tree].talents[talentData.prereq]
+      : null;
+
+    const rank = state[tree][name];
+    const pointsMet = pointsMetTalents[tree][name];
+    const prereqMet = prereqMetTalents[tree][name];
+    const unlocked = unlockedTalents[tree][name];
 
     return (
       <Tooltip ref={ref} contentClassName="TalentTooltip-content" {...rest}>
         <h1 className="TalentTooltip-title">{name}</h1>
         <p className="TalentTooltip-rank">
-          Rank {rank}/{maxRank}
+          Rank {rank}/{talentData.maxRank}
         </p>
-        {pointsSpent < reqPoints && (
+        {!pointsMet && (
           <p className="TalentTooltip-error">
-            Requires {reqPoints} points in {tree} Talents
+            Requires {talentData.reqPoints} points in {tree} Talents
           </p>
         )}
         {prereqData && !prereqMet && (
@@ -48,16 +55,20 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
           </p>
         )}
         <p className="TalentTooltip-description">
-          {rank === 0 ? description(rank + 1) : description(rank)}
+          {rank === 0
+            ? talentData.description(rank + 1)
+            : talentData.description(rank)}
         </p>
-        {rank !== 0 && rank < maxRank && (
+        {rank !== 0 && rank < talentData.maxRank && (
           <>
             <br />
             <p>Next rank:</p>
-            <p className="TalentTooltip-description">{description(rank + 1)}</p>
+            <p className="TalentTooltip-description">
+              {talentData.description(rank + 1)}
+            </p>
           </>
         )}
-        {available && rank === 0 && (
+        {unlocked && rank === 0 && (
           <p className="TalentTooltip-clickToLearn">Click to learn</p>
         )}
       </Tooltip>

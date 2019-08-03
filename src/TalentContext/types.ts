@@ -52,13 +52,9 @@ export interface TalentData {
 }
 
 export interface State {
-  points: number;
-  talentRanks: {
-    [tree: string]: {
-      [talent: string]: number;
-    };
+  [tree: string]: {
+    [talent: string]: number;
   };
-  talentData: TalentData;
 }
 
 export type Action = {

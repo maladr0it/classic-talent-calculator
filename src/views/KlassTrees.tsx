@@ -9,8 +9,8 @@ interface Props {
 }
 
 export const KlassTrees: React.FC<Props> = ({ klass }) => {
-  const { state } = useTalentContext();
-  const treeNames = Object.keys(state.talentData);
+  const { data } = useTalentContext();
+  const treeNames = Object.keys(data);
 
   return (
     <div className="KlassTrees">

@@ -1,54 +1,104 @@
-import { State } from "./types";
+import { State, TalentData } from "./types";
 
-export const getTalentRank = (state: State, tree: string, talent: string) => {
-  return state.talentRanks[tree][talent];
+// points spent in each tree
+export const getPointsSpent = (state: State) => {
+  return Object.entries(state).reduce<Record<string, number>>(
+    (prev, [tree, ranks]) => {
+      prev[tree] = Object.values(ranks).reduce((prev, rank) => {
+        return (prev += rank);
+      }, 0);
+      return prev;
+    },
+    {}
+  );
 };
 
-export const getTreeData = (state: State, tree: string) => {
-  return state.talentData[tree];
+export const getPoints = (pointsSpent: ReturnType<typeof getPointsSpent>) => {
+  const totalSpent = Object.values(pointsSpent).reduce<number>(
+    (prev, count) => {
+      return prev + count;
+    },
+    0
+  );
+  return 51 - totalSpent;
 };
 
-export const getTalentData = (state: State, tree: string, talent: string) => {
-  return state.talentData[tree].talents[talent];
+export const getMaxedTalents = (state: State, data: TalentData) => {
+  return Object.entries(state).reduce<Record<string, Record<string, boolean>>>(
+    (prev, [tree, ranks]) => {
+      prev[tree] = Object.entries(ranks).reduce<Record<string, boolean>>(
+        (prev, [talent, rank]) => {
+          prev[talent] = rank === data[tree].talents[talent].maxRank;
+          return prev;
+        },
+        {}
+      );
+      return prev;
+    },
+    {}
+  );
 };
 
-// TODO: memoize this
-export const getPointsSpent = (state: State, tree: string) => {
-  return Object.values(state.talentRanks[tree]).reduce((prev, rank) => {
-    return prev + rank;
-  }, 0);
-};
-
-export const isTalentMaxed = (state: State, tree: string, talent: string) => {
-  const { maxRank } = getTalentData(state, tree, talent);
-  const rank = getTalentRank(state, tree, talent);
-  return maxRank === rank;
-};
-
-// talent must:
-// at least 1 total point available to spend
-// reqPoints met
-// prereq talent (if any) is maxed
-export const isTalentAvailable = (
-  state: State,
-  tree: string,
-  talent: string
+export const getPointsMetTalents = (
+  pointsSpent: ReturnType<typeof getPointsSpent>,
+  data: TalentData
 ) => {
-  const { points } = state;
-  if (points < 1) {
-    return false;
-  }
+  return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
+    (prev, [tree, treeData]) => {
+      prev[tree] = Object.entries(treeData.talents).reduce<
+        Record<string, boolean>
+      >((prev, [talent, talentData]) => {
+        prev[talent] = pointsSpent[tree] >= talentData.reqPoints;
+        return prev;
+      }, {});
+      return prev;
+    },
+    {}
+  );
+};
 
-  const pointsSpent = getPointsSpent(state, tree);
-  const talentData = getTalentData(state, tree, talent);
+export const getPrereqMetTalents = (
+  maxedTalents: ReturnType<typeof getMaxedTalents>,
+  data: TalentData
+) => {
+  return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
+    (prev, [tree, treeData]) => {
+      prev[tree] = Object.entries(treeData.talents).reduce<
+        Record<string, boolean>
+      >((prev, [talent, talentData]) => {
+        if (talentData.prereq) {
+          prev[talent] = maxedTalents[tree][talentData.prereq];
+        } else {
+          prev[talent] = false;
+        }
+        return prev;
+      }, {});
+      return prev;
+    },
+    {}
+  );
+};
 
-  if (pointsSpent < talentData.reqPoints) {
-    return false;
-  }
-
-  if (talentData.prereq && !isTalentMaxed(state, tree, talentData.prereq)) {
-    return false;
-  }
-
-  return true;
+export const getUnlockedTalents = (
+  pointsMetTalents: ReturnType<typeof getPointsMetTalents>,
+  prereqMetTalents: ReturnType<typeof getPrereqMetTalents>,
+  data: TalentData
+) => {
+  return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
+    (prev, [tree, treeData]) => {
+      prev[tree] = Object.entries(treeData.talents).reduce<
+        Record<string, boolean>
+      >((prev, [talent, talentData]) => {
+        if (talentData.prereq) {
+          prev[talent] =
+            pointsMetTalents[tree][talent] && prereqMetTalents[tree][talent];
+        } else {
+          prev[talent] = pointsMetTalents[tree][talent];
+        }
+        return prev;
+      }, {});
+      return prev;
+    },
+    {}
+  );
 };

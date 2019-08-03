@@ -7,7 +7,7 @@ import talentOutlines from "../assets/talent-outlines.gif";
 
 interface Props {
   icon: string;
-  state: "maxed" | "enabled" | "disabled";
+  state: "maxed" | "unlocked" | "locked";
   selected?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -22,7 +22,7 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
       <button ref={ref} className={`SquareButton ${className}`} {...rest}>
         <div
           className={`SquareButton-content ${
-            state === "disabled" ? "SquareButton-content--disabled" : ""
+            state === "locked" ? "SquareButton-content--disabled" : ""
           }`}
           style={{
             backgroundImage: `url(${border}), url(${icon})`,
