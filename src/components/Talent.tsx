@@ -16,10 +16,12 @@ export const Talent: React.FC<Props> = ({ name }) => {
   const tree = useTreeContext();
   const {
     state,
-    dispatch,
     data,
+    points,
     unlockedTalents,
     maxedTalents,
+    spendPoint,
+    unspendPoint,
   } = useTalentContext();
 
   const { pos, icon, arrows } = data[tree].talents[name];
@@ -33,6 +35,9 @@ export const Talent: React.FC<Props> = ({ name }) => {
   >(rank);
 
   const talentState = (() => {
+    if (points < 1 && rank === 0) {
+      return "locked";
+    }
     if (maxed) {
       return "maxed";
     }
@@ -51,10 +56,11 @@ export const Talent: React.FC<Props> = ({ name }) => {
       <div className="Talent-container" style={{ gridArea: pos }}>
         <SquareButton
           onClick={
-            talentState === "unlocked"
-              ? () => dispatch({ type: "POINT_SPENT", tree, talent: name })
+            talentState === "unlocked" && points > 0
+              ? () => spendPoint(tree, name)
               : undefined
           }
+          onRightClick={() => unspendPoint(tree, name)}
           icon={icon}
           state={talentState}
           {...anchorProps}

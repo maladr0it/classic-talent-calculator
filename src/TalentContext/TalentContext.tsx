@@ -3,11 +3,12 @@ import React, { createContext, useReducer, useContext } from "react";
 import { State, Action, TalentData } from "./types";
 import {
   getPointsSpent,
+  getPoints,
   getMaxedTalents,
   getPointsMetTalents,
   getPrereqMetTalents,
   getUnlockedTalents,
-  getPoints,
+  getTalentDependents,
 } from "./selectors";
 import { reducer } from "./reducer";
 
@@ -18,14 +19,13 @@ const createInitialState = (data: TalentData) =>
         prev[talentName] = 0;
         return prev;
       },
-      {}
+      {},
     );
     return prev;
   }, {});
 
 const TalentContext = createContext<{
   state: State;
-  dispatch: React.Dispatch<Action>;
   data: TalentData;
   points: ReturnType<typeof getPoints>;
   pointsSpent: ReturnType<typeof getPointsSpent>;
@@ -33,6 +33,8 @@ const TalentContext = createContext<{
   maxedTalents: ReturnType<typeof getMaxedTalents>;
   prereqMetTalents: ReturnType<typeof getPrereqMetTalents>;
   unlockedTalents: ReturnType<typeof getUnlockedTalents>;
+  spendPoint: (tree: string, talent: string) => void;
+  unspendPoint: (tree: string, talent: string) => void;
 } | null>(null);
 
 export const createTalentProvider = (data: TalentData): React.FC => {
@@ -49,12 +51,33 @@ export const createTalentProvider = (data: TalentData): React.FC => {
     const unlockedTalents = getUnlockedTalents(
       pointsMetTalents,
       prereqMetTalents,
-      data
+      data,
     );
+
+    const spendPoint = (tree: string, talent: string) => {
+      dispatch({ type: "POINT_SPENT", tree, talent });
+    };
+
+    const unspendPoint = (tree: string, talent: string) => {
+      const rank = state[tree][talent];
+      const dependents = getTalentDependents(
+        state,
+        tree,
+        talent,
+        maxedTalents,
+        data,
+      );
+      if (dependents.length === 0 && rank > 0) {
+        dispatch({
+          type: "POINT_UNSPENT",
+          tree,
+          talent,
+        });
+      }
+    };
 
     const value = {
       state,
-      dispatch,
       data,
       points,
       pointsSpent,
@@ -62,6 +85,8 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       maxedTalents,
       prereqMetTalents,
       unlockedTalents,
+      spendPoint,
+      unspendPoint,
     };
 
     return (
@@ -75,7 +100,7 @@ export const useTalentContext = () => {
 
   if (context === null) {
     throw new Error(
-      "Components using useTalentContext must be children of TalentContextProvider"
+      "Components using useTalentContext must be children of TalentContextProvider",
     );
   }
   return context;

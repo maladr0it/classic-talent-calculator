@@ -57,8 +57,14 @@ export interface State {
   };
 }
 
-export type Action = {
-  type: "POINT_SPENT";
-  tree: string;
-  talent: string;
-};
+export type Action =
+  | {
+      type: "POINT_SPENT";
+      tree: string;
+      talent: string;
+    }
+  | {
+      type: "POINT_UNSPENT";
+      tree: string;
+      talent: string;
+    };

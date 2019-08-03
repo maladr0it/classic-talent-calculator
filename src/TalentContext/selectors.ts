@@ -1,4 +1,5 @@
 import { State, TalentData } from "./types";
+import { string } from "prop-types";
 
 // points spent in each tree
 export const getPointsSpent = (state: State) => {
@@ -9,7 +10,7 @@ export const getPointsSpent = (state: State) => {
       }, 0);
       return prev;
     },
-    {}
+    {},
   );
 };
 
@@ -18,9 +19,9 @@ export const getPoints = (pointsSpent: ReturnType<typeof getPointsSpent>) => {
     (prev, count) => {
       return prev + count;
     },
-    0
+    0,
   );
-  return 51 - totalSpent;
+  return 10 - totalSpent;
 };
 
 export const getMaxedTalents = (state: State, data: TalentData) => {
@@ -31,17 +32,17 @@ export const getMaxedTalents = (state: State, data: TalentData) => {
           prev[talent] = rank === data[tree].talents[talent].maxRank;
           return prev;
         },
-        {}
+        {},
       );
       return prev;
     },
-    {}
+    {},
   );
 };
 
 export const getPointsMetTalents = (
   pointsSpent: ReturnType<typeof getPointsSpent>,
-  data: TalentData
+  data: TalentData,
 ) => {
   return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
     (prev, [tree, treeData]) => {
@@ -53,13 +54,13 @@ export const getPointsMetTalents = (
       }, {});
       return prev;
     },
-    {}
+    {},
   );
 };
 
 export const getPrereqMetTalents = (
   maxedTalents: ReturnType<typeof getMaxedTalents>,
-  data: TalentData
+  data: TalentData,
 ) => {
   return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
     (prev, [tree, treeData]) => {
@@ -75,14 +76,14 @@ export const getPrereqMetTalents = (
       }, {});
       return prev;
     },
-    {}
+    {},
   );
 };
 
 export const getUnlockedTalents = (
   pointsMetTalents: ReturnType<typeof getPointsMetTalents>,
   prereqMetTalents: ReturnType<typeof getPrereqMetTalents>,
-  data: TalentData
+  data: TalentData,
 ) => {
   return Object.entries(data).reduce<Record<string, Record<string, boolean>>>(
     (prev, [tree, treeData]) => {
@@ -99,6 +100,67 @@ export const getUnlockedTalents = (
       }, {});
       return prev;
     },
-    {}
+    {},
+  );
+};
+
+// get talents in the tree with at least 1 point spent in them
+const getSpentTalents = (state: State, tree: string) => {
+  return Object.entries(state[tree]).reduce<Record<string, boolean>>(
+    (prev, [talent, rank]) => {
+      prev[talent] = rank > 0;
+      return prev;
+    },
+    {},
+  );
+};
+
+// get points spent in tree that require the same or less points than that in question
+const getBasePoints = (
+  state: State,
+  tree: string,
+  talent: string,
+  data: TalentData,
+) => {
+  const reqPoints = data[tree].talents[talent].reqPoints;
+
+  return Object.entries(data[tree].talents).reduce(
+    (prev, [talentName, talentData]) => {
+      // if talent is of the same tier or lower
+      if (talentData.reqPoints <= reqPoints) {
+        return prev + state[tree][talentName];
+      }
+      return prev;
+    },
+    0,
+  );
+};
+
+// find out what talents are preventing this one having a point removed from it
+export const getTalentDependents = (
+  state: State,
+  tree: string,
+  talentToUnlearn: string,
+  maxedTalents: ReturnType<typeof getMaxedTalents>,
+  data: TalentData,
+) => {
+  const basePoints = getBasePoints(state, tree, talentToUnlearn, data);
+  const spentTalents = getSpentTalents(state, tree);
+
+  return Object.entries(data[tree].talents).reduce<string[]>(
+    (prev, [talent, talentData]) => {
+      if (spentTalents[talent] && talentData.reqPoints === basePoints) {
+        // if talent has req equal to points spent, therefore with 1 less point it would be illegal
+        prev.push(talent);
+      } else if (
+        // if talent has a prereq that is this talent, therefore unmaxing it would be illegal
+        maxedTalents[tree][talentToUnlearn] &&
+        talentData.prereq === talentToUnlearn
+      ) {
+        prev.push(talent);
+      }
+      return prev;
+    },
+    [],
   );
 };

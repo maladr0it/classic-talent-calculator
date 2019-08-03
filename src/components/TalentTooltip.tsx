@@ -2,13 +2,7 @@ import React from "react";
 import { Tooltip } from "./Tooltip";
 
 import "./TalentTooltip.css";
-import {
-  useTalentContext,
-  // getTalentData,
-  // getTalentRank,
-  // getPointsSpent,
-} from "../TalentContext";
-// import { isTalentMaxed, isTalentAvailable } from "../TalentContext/selectors";
+import { useTalentContext } from "../TalentContext";
 
 interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
   name: string;
@@ -20,9 +14,8 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
     const {
       state,
       data,
-      pointsSpent,
+      points,
       pointsMetTalents,
-      maxedTalents,
       prereqMetTalents,
       unlockedTalents,
     } = useTalentContext();
@@ -68,7 +61,7 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
             </p>
           </>
         )}
-        {unlocked && rank === 0 && (
+        {unlocked && rank === 0 && points > 0 && (
           <p className="TalentTooltip-clickToLearn">Click to learn</p>
         )}
       </Tooltip>

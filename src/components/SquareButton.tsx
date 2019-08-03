@@ -12,14 +12,33 @@ interface Props {
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
+  onRightClick?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
 
 export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
-  ({ icon, selected = false, className = "", state, ...rest }, ref) => {
+  (
+    {
+      icon,
+      onRightClick = () => {},
+      selected = false,
+      className = "",
+      state,
+      ...rest
+    },
+    ref,
+  ) => {
     return (
-      <button ref={ref} className={`SquareButton ${className}`} {...rest}>
+      <button
+        ref={ref}
+        className={`SquareButton ${className}`}
+        onContextMenu={e => {
+          e.preventDefault();
+          onRightClick();
+        }}
+        {...rest}
+      >
         <div
           className={`SquareButton-content ${
             state === "locked" ? "SquareButton-content--disabled" : ""
@@ -40,5 +59,5 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
         )}
       </button>
     );
-  }
+  },
 );
