@@ -55,11 +55,7 @@ export const Talent: React.FC<Props> = ({ name }) => {
         ))}
       <div className="Talent-container" style={{ gridArea: pos }}>
         <SquareButton
-          onClick={
-            talentState === "unlocked" && points > 0
-              ? () => spendPoint(tree, name)
-              : undefined
-          }
+          onClick={() => spendPoint(tree, name)}
           onRightClick={() => unspendPoint(tree, name)}
           icon={icon}
           state={talentState}

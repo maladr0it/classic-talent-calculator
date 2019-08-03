@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
 
-import { State, Action, TalentData } from "./types";
+import { State, TalentData } from "./types";
 import {
   getPointsSpent,
   getPoints,
@@ -55,7 +55,12 @@ export const createTalentProvider = (data: TalentData): React.FC => {
     );
 
     const spendPoint = (tree: string, talent: string) => {
-      dispatch({ type: "POINT_SPENT", tree, talent });
+      const unlocked = unlockedTalents[tree][talent];
+      const maxed = maxedTalents[tree][talent];
+
+      if (unlocked && !maxed && points > 0) {
+        dispatch({ type: "POINT_SPENT", tree, talent });
+      }
     };
 
     const unspendPoint = (tree: string, talent: string) => {

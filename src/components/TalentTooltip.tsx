@@ -61,10 +61,13 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
             </p>
           </>
         )}
+        {rank > 0 && (
+          <p className="TalentTooltip-error">Right-click to unlearn</p>
+        )}
         {unlocked && rank === 0 && points > 0 && (
           <p className="TalentTooltip-clickToLearn">Click to learn</p>
         )}
       </Tooltip>
     );
-  }
+  },
 );

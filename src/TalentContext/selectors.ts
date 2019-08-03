@@ -1,5 +1,7 @@
 import { State, TalentData } from "./types";
-import { string } from "prop-types";
+import { config } from "../config";
+
+// TODO: optimise this for clarity and speed
 
 // points spent in each tree
 export const getPointsSpent = (state: State) => {
@@ -21,7 +23,7 @@ export const getPoints = (pointsSpent: ReturnType<typeof getPointsSpent>) => {
     },
     0,
   );
-  return 10 - totalSpent;
+  return config.TOTAL_POINTS - totalSpent;
 };
 
 export const getMaxedTalents = (state: State, data: TalentData) => {
@@ -154,6 +156,7 @@ export const getTalentDependents = (
         prev.push(talent);
       } else if (
         // if talent has a prereq that is this talent, therefore unmaxing it would be illegal
+        spentTalents[talent] &&
         maxedTalents[tree][talentToUnlearn] &&
         talentData.prereq === talentToUnlearn
       ) {
