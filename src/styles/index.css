@@ -15,6 +15,7 @@ body {
 
   --z-index-arrow: 100;
   --z-index-tooltip: 200;
+  --z-index-sticky: 300;
 
   --sp-xxxs: 0.0625rem;
   --sp-xxs: 0.125rem;

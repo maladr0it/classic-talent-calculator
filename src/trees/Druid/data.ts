@@ -440,7 +440,7 @@ export const data: TalentData = {
   Restoration: {
     name: "Restoration",
     background: backgrounds["restoration"],
-    icon: icons[""],
+    icon: icons["spell_nature_healingtouch"],
     talents: {
       "Improved Mark of the Wild": {
         name: "Improved Mark of the Wild",

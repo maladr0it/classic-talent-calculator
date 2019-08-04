@@ -5,6 +5,7 @@ import { TreeContext } from "../TreeContext";
 import { useTalentContext } from "../TalentContext";
 import { Talent } from "./Talent";
 import { SquareButton } from "./SquareButton";
+import { ClearButton } from "./ClearButton";
 
 interface Props {
   name: string;
@@ -18,13 +19,16 @@ export const TalentTree: React.FC<Props> = ({ name, children }) => {
     <TreeContext.Provider value={name}>
       <div className="TalentTree">
         <header className="TalentTree-header">
-          <SquareButton icon={treeData.icon} />
-          <div>
-            <h2 className="TalentTree-name">{name}</h2>
+          <SquareButton className="TalentTree-icon" icon={treeData.icon} />
+          <div style={{ flex: 1 }}>
+            <h2 className="TalentTree-name" style={{ flex: 1 }}>
+              {name}
+            </h2>
             <p className="TalentTree-pointsSpent">
               Points spent: {pointsSpent[name]}
             </p>
           </div>
+          <ClearButton />
         </header>
         <div
           className="TalentTree-grid"

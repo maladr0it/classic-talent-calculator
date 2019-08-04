@@ -1,4 +1,5 @@
 import React from "react";
+import { Route } from "react-router-dom";
 
 import { KlassList } from "./components/KlassList";
 import { Druid } from "./trees/Druid/Druid";
@@ -10,7 +11,7 @@ export const App: React.FC = () => {
   return (
     <div className="App">
       <KlassList />
-      <Druid />
+      <Route path="/druid" component={Druid} />
     </div>
   );
 };

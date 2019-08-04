@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.TalentTree-icon {
+  margin-right: var(--sp-sm);
+}
+
 .TalentTree-name {
   color: white;
   margin-bottom: var(--sp-xs);

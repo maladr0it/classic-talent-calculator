@@ -5,7 +5,6 @@
 }
 
 .KlassTrees {
-  padding: var(--sp-sm);
   margin: var(--sp-md);
   background-color: var(--col-pane);
   border-radius: 2px;
@@ -13,17 +12,28 @@
 
 .KlassTrees-header {
   display: flex;
-  padding: var(--sp-sm) 0;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--sp-md) var(--sp-sm) 0 var(--sp-sm);
   color: #fff;
 }
 
-.KlassTrees-header > *:not(:last-child) {
+.KlassTrees-titleArea {
+  display: flex;
+  align-items: center;
+}
+
+.KlassTrees-titleArea > *:not(:last-child) {
   margin-right: 1rem;
+}
+
+.KlassTrees-summary {
+  font-size: 0.825rem;
+  color: var(--col-yellow);
 }
 
 .KlassTrees-list {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: calc(-1 * var(--sp-sm));
 }

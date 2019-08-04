@@ -1,0 +1,31 @@
+.ClearButton {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.ClearButton > *:not(:last-child) {
+  margin-right: var(--sp-xs);
+}
+
+.ClearButton-label {
+  font-size: 0.75rem;
+  color: var(--col-yellow);
+}
+
+.ClearButton-icon {
+  height: var(--sp-md);
+  width: var(--sp-md);
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 0.3;
+}
+
+.ClearButton:hover .ClearButton-icon {
+  opacity: 1;
+}

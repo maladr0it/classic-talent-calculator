@@ -1,53 +1,70 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import { SquareButton } from "./SquareButton";
 import "./KlassList.css";
+import { requireAll } from "../utils";
+import { SquareButton } from "./SquareButton";
+
+const icons = requireAll(require.context("../assets/icons", false));
 
 const KLASSES = [
   {
-    name: "druid",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Druid",
+    icon: icons["druid-icon"],
+    path: "/druid",
   },
   {
-    name: "hunter",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Hunter",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/hunter",
   },
   {
-    name: "mage",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Mage",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/mage",
   },
   {
-    name: "paladin",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Paladin",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/paladin",
   },
   {
-    name: "priest",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Priest",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/priest",
   },
   {
-    name: "rogue",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Rogue",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/rogue",
   },
   {
-    name: "shaman",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Shaman",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/shaman",
   },
   {
-    name: "warlock",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Warlock",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/warlock",
   },
   {
-    name: "warrior",
-    iconURL: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    name: "Warrior",
+    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    path: "/warrior",
   },
 ];
 
-export const KlassList: React.FC = () => {
+interface Props {}
+
+export const KlassList: React.FC<Props> = () => {
   return (
     <ul className="KlassList">
-      {KLASSES.map((klass, i) => (
+      {KLASSES.map(klass => (
         <li className="KlassList-item" key={klass.name}>
-          <SquareButton icon={klass.iconURL} />
+          <Link to={klass.path} replace>
+            <SquareButton icon={klass.icon} />
+          </Link>
         </li>
       ))}
     </ul>
