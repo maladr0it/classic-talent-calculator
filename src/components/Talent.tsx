@@ -47,6 +47,16 @@ export const Talent: React.FC<Props> = ({ name }) => {
     return "locked";
   })();
 
+  const outlineColor = (() => {
+    if (talentState === "unlocked") {
+      return "green";
+    }
+    if (talentState === "maxed") {
+      return "gold";
+    }
+    return "grey";
+  })();
+
   return (
     <>
       {arrows &&
@@ -58,7 +68,8 @@ export const Talent: React.FC<Props> = ({ name }) => {
           onClick={() => spendPoint(tree, name)}
           onRightClick={() => unspendPoint(tree, name)}
           icon={icon}
-          state={talentState}
+          disabled={talentState === "locked"}
+          outline={outlineColor}
           {...anchorProps}
         />
         {talentState !== "locked" && (

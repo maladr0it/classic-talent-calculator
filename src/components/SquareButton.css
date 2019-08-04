@@ -19,7 +19,7 @@
   background-repeat: no-repeat;
 }
 
-.SquareButton-content--locked {
+.SquareButton-content--disabled {
   filter: grayscale();
 }
 
@@ -52,18 +52,14 @@
   background-repeat: no-repeat;
 }
 
-.SquareButton-outline--disabled {
+.SquareButton-outline--grey {
   background-position-x: 0;
 }
 
-.SquareButton-outline--maxed {
+.SquareButton-outline--gold {
   background-position-x: calc(-1 * var(--outline-size));
 }
 
-.SquareButton-outline--unlocked {
+.SquareButton-outline--green {
   background-position-x: calc(-2 * var(--outline-size));
-}
-
-.SquareButton-outline--neutral {
-  background-position-x: 0;
 }

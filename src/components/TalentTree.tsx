@@ -18,7 +18,7 @@ export const TalentTree: React.FC<Props> = ({ name, children }) => {
     <TreeContext.Provider value={name}>
       <div className="TalentTree">
         <header className="TalentTree-header">
-          <SquareButton state="neutral" icon={treeData.icon} />
+          <SquareButton icon={treeData.icon} />
           <div>
             <h2 className="TalentTree-name">{name}</h2>
             <p className="TalentTree-pointsSpent">

@@ -7,8 +7,8 @@ import talentOutlines from "../assets/talent-outlines.gif";
 
 interface Props {
   icon: string;
-  state: "maxed" | "unlocked" | "locked" | "neutral";
-  selected?: boolean;
+  disabled?: boolean;
+  outline?: "grey" | "green" | "gold";
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
@@ -22,9 +22,9 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
     {
       icon,
       onRightClick = () => {},
-      selected = false,
       className = "",
-      state,
+      disabled,
+      outline,
       ...rest
     },
     ref,
@@ -33,6 +33,7 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
       <button
         ref={ref}
         className={`SquareButton ${className}`}
+        disabled={disabled}
         onContextMenu={e => {
           e.preventDefault();
           onRightClick();
@@ -41,7 +42,7 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
       >
         <div
           className={`SquareButton-content ${
-            state === "locked" ? "SquareButton-content--locked" : ""
+            disabled ? "SquareButton-content--disabled" : ""
           }`}
           style={{
             backgroundImage: `url(${border}), url(${icon})`,
@@ -51,9 +52,9 @@ export const SquareButton = React.forwardRef<HTMLButtonElement, Props>(
           className="SquareButton-aura"
           style={{ backgroundImage: `url(${highlightedBorder})` }}
         />
-        {state && (
+        {outline && (
           <div
-            className={`SquareButton-outline SquareButton-outline--${state}`}
+            className={`SquareButton-outline SquareButton-outline--${outline}`}
             style={{ backgroundImage: `url(${talentOutlines})` }}
           />
         )}
