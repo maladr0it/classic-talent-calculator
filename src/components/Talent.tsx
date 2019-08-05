@@ -7,6 +7,13 @@ import { useTalentContext } from "../TalentContext";
 import { TalentTooltip } from "./TalentTooltip";
 import { SquareButton } from "./SquareButton";
 import { Arrow } from "./Arrow";
+import {
+  getTalentRank,
+  isTalentMaxed,
+  isTalentUnlocked,
+  getPointsLeft,
+  getTalentData,
+} from "../TalentContext/selectors";
 
 interface Props {
   name: string;
@@ -14,20 +21,13 @@ interface Props {
 
 export const Talent: React.FC<Props> = ({ name }) => {
   const tree = useTreeContext();
-  const {
-    state,
-    data,
-    points,
-    unlockedTalents,
-    maxedTalents,
-    spendPoint,
-    unspendPoint,
-  } = useTalentContext();
+  const { state, data, spendPoint, unspendPoint } = useTalentContext();
 
-  const { pos, icon, arrows } = data[tree].talents[name];
-  const rank = state[tree][name];
-  const maxed = maxedTalents[tree][name];
-  const unlocked = unlockedTalents[tree][name];
+  const { pos, icon, arrows } = getTalentData(data, tree, name);
+  const pointsLeft = getPointsLeft(state);
+  const rank = getTalentRank(state, tree, name);
+  const maxed = isTalentMaxed(state, data, tree, name);
+  const unlocked = isTalentUnlocked(state, data, tree, name);
 
   const { anchorProps, tooltipProps, tooltipVisible } = useTooltipPos<
     HTMLButtonElement,
@@ -35,7 +35,7 @@ export const Talent: React.FC<Props> = ({ name }) => {
   >(rank);
 
   const talentState = (() => {
-    if (points < 1 && rank === 0) {
+    if (pointsLeft < 1 && rank === 0) {
       return "locked";
     }
     if (maxed) {

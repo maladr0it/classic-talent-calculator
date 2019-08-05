@@ -3,6 +3,14 @@ import { Tooltip } from "./Tooltip";
 
 import "./TalentTooltip.css";
 import { useTalentContext } from "../TalentContext";
+import {
+  getTalentRank,
+  areReqPointsMet,
+  isPrereqMet,
+  isTalentUnlocked,
+  getTalentData,
+  getPointsLeft,
+} from "../TalentContext/selectors";
 
 interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
   name: string;
@@ -11,24 +19,18 @@ interface Props extends React.ComponentPropsWithoutRef<typeof Tooltip> {
 
 export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
   ({ name, tree, ...rest }, ref) => {
-    const {
-      state,
-      data,
-      points,
-      pointsMetTalents,
-      prereqMetTalents,
-      unlockedTalents,
-    } = useTalentContext();
+    const { state, data } = useTalentContext();
 
-    const talentData = data[tree].talents[name];
+    // TODO: all these getters are potentially costly & redundant
+    const pointsLeft = getPointsLeft(state);
+    const talentData = getTalentData(data, tree, name);
     const prereqData = talentData.prereq
-      ? data[tree].talents[talentData.prereq]
+      ? getTalentData(data, tree, talentData.prereq)
       : null;
-
-    const rank = state[tree][name];
-    const pointsMet = pointsMetTalents[tree][name];
-    const prereqMet = prereqMetTalents[tree][name];
-    const unlocked = unlockedTalents[tree][name];
+    const rank = getTalentRank(state, tree, name);
+    const reqPointsMet = areReqPointsMet(state, data, tree, name);
+    const prereqMet = isPrereqMet(state, data, tree, name);
+    const unlocked = isTalentUnlocked(state, data, tree, name);
 
     return (
       <Tooltip ref={ref} contentClassName="TalentTooltip-content" {...rest}>
@@ -36,7 +38,7 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
         <p className="TalentTooltip-rank">
           Rank {rank}/{talentData.maxRank}
         </p>
-        {!pointsMet && (
+        {prereqData && !reqPointsMet && (
           <p className="TalentTooltip-error">
             Requires {talentData.reqPoints} points in {tree} Talents
           </p>
@@ -64,7 +66,7 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
         {rank > 0 && (
           <p className="TalentTooltip-error">Right-click to unlearn</p>
         )}
-        {unlocked && rank === 0 && points > 0 && (
+        {unlocked && rank === 0 && pointsLeft > 0 && (
           <p className="TalentTooltip-clickToLearn">Click to learn</p>
         )}
       </Tooltip>

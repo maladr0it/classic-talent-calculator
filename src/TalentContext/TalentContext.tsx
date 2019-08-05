@@ -2,14 +2,11 @@ import React, { createContext, useReducer, useContext, useEffect } from "react";
 
 import { State, TalentData } from "./types";
 import {
-  getPointsSpent,
-  getPoints,
-  getMaxedTalents,
-  getPointsMetTalents,
-  getPrereqMetTalents,
-  getUnlockedTalents,
+  isTalentUnlocked,
+  isTalentMaxed,
+  getPointsLeft,
+  getTalentRank,
   getTalentDependents,
-  getSerializedState,
 } from "./selectors";
 import { makeReducer } from "./reducer";
 
@@ -28,12 +25,6 @@ const createInitialState = (data: TalentData) =>
 const TalentContext = createContext<{
   state: State;
   data: TalentData;
-  points: ReturnType<typeof getPoints>;
-  pointsSpent: ReturnType<typeof getPointsSpent>;
-  pointsMetTalents: ReturnType<typeof getPointsMetTalents>;
-  maxedTalents: ReturnType<typeof getMaxedTalents>;
-  prereqMetTalents: ReturnType<typeof getPrereqMetTalents>;
-  unlockedTalents: ReturnType<typeof getUnlockedTalents>;
   spendPoint: (tree: string, talent: string) => void;
   unspendPoint: (tree: string, talent: string) => void;
   resetTree: (tree: string) => void;
@@ -49,35 +40,20 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       initialState,
     );
 
-    const pointsSpent = getPointsSpent(state);
-    const points = getPoints(pointsSpent);
-    const pointsMetTalents = getPointsMetTalents(pointsSpent, data);
-    const maxedTalents = getMaxedTalents(state, data);
-    const prereqMetTalents = getPrereqMetTalents(maxedTalents, data);
-    const unlockedTalents = getUnlockedTalents(
-      pointsMetTalents,
-      prereqMetTalents,
-      data,
-    );
-
     const spendPoint = (tree: string, talent: string) => {
-      const unlocked = unlockedTalents[tree][talent];
-      const maxed = maxedTalents[tree][talent];
+      const pointsLeft = getPointsLeft(state);
+      const unlocked = isTalentUnlocked(state, data, tree, talent);
+      const maxed = isTalentMaxed(state, data, tree, talent);
 
-      if (unlocked && !maxed && points > 0) {
+      if (unlocked && !maxed && pointsLeft > 0) {
         dispatch({ type: "POINT_SPENT", tree, talent });
       }
     };
 
     const unspendPoint = (tree: string, talent: string) => {
-      const rank = state[tree][talent];
-      const dependents = getTalentDependents(
-        state,
-        tree,
-        talent,
-        maxedTalents,
-        data,
-      );
+      const rank = getTalentRank(state, tree, talent);
+      const dependents = getTalentDependents(state, data, tree, talent);
+
       if (dependents.length === 0 && rank > 0) {
         dispatch({
           type: "POINT_UNSPENT",
@@ -98,12 +74,6 @@ export const createTalentProvider = (data: TalentData): React.FC => {
     const value = {
       state,
       data,
-      points,
-      pointsSpent,
-      pointsMetTalents,
-      maxedTalents,
-      prereqMetTalents,
-      unlockedTalents,
       spendPoint,
       unspendPoint,
       resetTree,
@@ -111,7 +81,7 @@ export const createTalentProvider = (data: TalentData): React.FC => {
     };
 
     useEffect(() => {
-      console.log(getSerializedState(state));
+      // console.log(getSerializedState(state));
     }, [state]);
 
     return (

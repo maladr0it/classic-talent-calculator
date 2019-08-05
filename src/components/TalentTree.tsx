@@ -6,14 +6,18 @@ import { useTalentContext } from "../TalentContext";
 import { Talent } from "./Talent";
 import { SquareButton } from "./SquareButton";
 import { ClearButton } from "./ClearButton";
+import { getTreePointsSpent, getTreeData } from "../TalentContext/selectors";
 
 interface Props {
   name: string;
 }
 
 export const TalentTree: React.FC<Props> = ({ name, children }) => {
-  const { data, pointsSpent, resetTree } = useTalentContext();
-  const treeData = data[name];
+  const { state, data, resetTree } = useTalentContext();
+
+  // const treeData = getTreeData(data, name);
+  const pointsSpent = getTreePointsSpent(state, name);
+  const treeData = getTreeData(data, name);
 
   return (
     <TreeContext.Provider value={name}>
@@ -25,7 +29,7 @@ export const TalentTree: React.FC<Props> = ({ name, children }) => {
               {name}
             </h2>
             <p className="TalentTree-pointsSpent">
-              Points spent: {pointsSpent[name]}
+              Points spent: {pointsSpent}
             </p>
           </div>
           <ClearButton onClick={() => resetTree(name)} />
