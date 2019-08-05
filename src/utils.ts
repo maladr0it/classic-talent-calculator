@@ -9,7 +9,9 @@ export const talentText = (
   return result.join("");
 };
 
-export const requireAll = (requireContext: __WebpackModuleApi.RequireContext) => {
+export const requireAll = (
+  requireContext: __WebpackModuleApi.RequireContext,
+) => {
   return requireContext.keys().reduce<Record<string, string>>((prev, key) => {
     // todo: this regex is quite brittle
     const name = key.replace(/\.\//, "").replace(/\.[^.]+$/, "");

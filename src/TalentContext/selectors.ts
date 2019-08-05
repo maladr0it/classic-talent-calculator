@@ -1,5 +1,6 @@
 import { State, TalentData } from "./types";
 import { config } from "../config";
+import { string } from "prop-types";
 
 export const getTalentRank = (state: State, tree: string, talent: string) => {
   return state[tree][talent];
@@ -87,7 +88,7 @@ export const isTalentUnlocked = (
   return prereqMet && reqPointsMet;
 };
 
-export const getBasePoints = (
+const getBasePoints = (
   state: State,
   data: TalentData,
   tree: string,
@@ -114,16 +115,16 @@ export const getTalentDependents = (
   talent: string,
 ) => {
   const basePoints = getBasePoints(state, data, tree, talent);
-  const maxed = isTalentMaxed(state, data, tree, talent);
 
   return Object.entries(getTreeTalents(data, tree)).reduce<string[]>(
     (prev, [talentName, talentData]) => {
       const rank = getTalentRank(state, tree, talentName);
+      const { prereq } = talentData;
 
       if (talentData.reqPoints === basePoints && rank > 0) {
         // if the talent has req equal to base points spent, therefore 1 less point and it would be illegal
         prev.push(talentName);
-      } else if (talentData.prereq === talent && maxed) {
+      } else if (prereq === talent && rank > 0) {
         // if talent has a prereq that is this talent, therefore unmaxing it would be illegal
         prev.push(talentName);
       }
@@ -131,4 +132,29 @@ export const getTalentDependents = (
     },
     [],
   );
+};
+
+// eg: 511031
+const getTreeStateFromHash = (talentNames: string[], hash: string = "") => {
+  const points = hash.split("").reverse();
+
+  return talentNames.reduce<Record<string, number>>((prev, talentName) => {
+    const pointStr = points.pop();
+    const point = pointStr ? parseInt(pointStr, 10) : 0;
+    prev[talentName] = point;
+    return prev;
+  }, {});
+};
+
+// eg: 1131/0/1341
+export const getStateFromHash = (data: TalentData, hash: string) => {
+  const treeNames = Object.keys(data);
+  const treeHashes = hash.split("-").reverse();
+
+  return treeNames.reduce<State>((prev, treeName) => {
+    const treeHash = treeHashes.pop();
+    const talentNames = Object.keys(getTreeTalents(data, treeName));
+    prev[treeName] = getTreeStateFromHash(talentNames, treeHash);
+    return prev;
+  }, {});
 };

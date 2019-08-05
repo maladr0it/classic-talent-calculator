@@ -15,42 +15,42 @@ const KLASSES = [
   },
   {
     name: "Hunter",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/hunter",
   },
   {
     name: "Mage",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/mage",
   },
   {
     name: "Paladin",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/paladin",
   },
   {
     name: "Priest",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/priest",
   },
   {
     name: "Rogue",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/rogue",
   },
   {
     name: "Shaman",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/shaman",
   },
   {
     name: "Warlock",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/warlock",
   },
   {
     name: "Warrior",
-    icon: "https://wow.zamimg.com/images/wow/icons/medium/class_druid.jpg",
+    icon: "",
     path: "/warrior",
   },
 ];
@@ -62,7 +62,7 @@ export const KlassList: React.FC<Props> = () => {
     <ul className="KlassList">
       {KLASSES.map(klass => (
         <li className="KlassList-item" key={klass.name}>
-          <Link to={klass.path} replace>
+          <Link to={klass.path}>
             <SquareButton icon={klass.icon} />
           </Link>
         </li>

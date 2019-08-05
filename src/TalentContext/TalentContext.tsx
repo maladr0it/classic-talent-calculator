@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext, useEffect } from "react";
+import React, { createContext, useReducer, useContext } from "react";
 
 import { State, TalentData } from "./types";
 import {
@@ -29,6 +29,7 @@ const TalentContext = createContext<{
   unspendPoint: (tree: string, talent: string) => void;
   resetTree: (tree: string) => void;
   resetAll: () => void;
+  restoreState: (newState: State) => void;
 } | null>(null);
 
 export const createTalentProvider = (data: TalentData): React.FC => {
@@ -71,6 +72,10 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       dispatch({ type: "ALL_RESET" });
     };
 
+    const restoreState = (newState: State) => {
+      dispatch({ type: "STATE_RESTORED", newState });
+    };
+
     const value = {
       state,
       data,
@@ -78,11 +83,8 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       unspendPoint,
       resetTree,
       resetAll,
+      restoreState,
     };
-
-    useEffect(() => {
-      // console.log(getSerializedState(state));
-    }, [state]);
 
     return (
       <TalentContext.Provider value={value}>{children}</TalentContext.Provider>

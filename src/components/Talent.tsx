@@ -34,6 +34,8 @@ export const Talent: React.FC<Props> = ({ name }) => {
     HTMLDivElement
   >(rank);
 
+  // TODO: too many edge cases here, hard to digest
+  // move to a selector?
   const talentState = (() => {
     if (pointsLeft < 1 && rank === 0) {
       return "locked";

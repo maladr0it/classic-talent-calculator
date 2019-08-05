@@ -75,4 +75,8 @@ export type Action =
     }
   | {
       type: "ALL_RESET";
+    }
+  | {
+      type: "STATE_RESTORED";
+      newState: State;
     };

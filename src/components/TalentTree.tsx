@@ -14,8 +14,6 @@ interface Props {
 
 export const TalentTree: React.FC<Props> = ({ name, children }) => {
   const { state, data, resetTree } = useTalentContext();
-
-  // const treeData = getTreeData(data, name);
   const pointsSpent = getTreePointsSpent(state, name);
   const treeData = getTreeData(data, name);
 

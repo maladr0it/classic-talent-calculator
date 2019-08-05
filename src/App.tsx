@@ -11,7 +11,7 @@ export const App: React.FC = () => {
   return (
     <div className="App">
       <KlassList />
-      <Route path="/druid" component={Druid} />
+      <Route path="/druid/:skills?" component={Druid} />
     </div>
   );
 };

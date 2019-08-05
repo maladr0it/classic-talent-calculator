@@ -46,6 +46,14 @@ export const makeReducer = (initialState: State) => (
       };
     }
 
+    case "STATE_RESTORED": {
+      const { newState } = action;
+
+      return {
+        ...newState,
+      };
+    }
+
     default:
       return state;
   }
