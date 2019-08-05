@@ -11,7 +11,8 @@ interface Props {
 }
 
 export const KlassTrees: React.FC<Props> = ({ klass }) => {
-  const { data, points, pointsSpent } = useTalentContext();
+  const { data, points, pointsSpent, resetAll } = useTalentContext();
+
   const treeNames = Object.keys(data);
   const treePoints = Object.values(pointsSpent).map(
     (value, i, arr) => `${value}${i < arr.length - 1 ? "/" : ""}`,
@@ -32,7 +33,7 @@ export const KlassTrees: React.FC<Props> = ({ klass }) => {
             </p>
             <p className="KlassTrees-summary">Points left: {points}</p>
           </div>
-          <ClearButton>Clear all</ClearButton>
+          <ClearButton onClick={() => resetAll()}>Clear all</ClearButton>
         </div>
         <div className="KlassTrees-list">
           {treeNames.map(name => (

@@ -167,3 +167,20 @@ export const getTalentDependents = (
     [],
   );
 };
+
+// return state as a string of rank numbers, with trees separated by '/'
+export const getSerializedState = (state: State) => {
+  return Object.values(state)
+    .reduce<string[]>((prev, ranks) => {
+      prev.push(
+        Object.values(ranks)
+          .reduce<number[]>((prev, rank) => {
+            prev.push(rank);
+            return prev;
+          }, [])
+          .join(""),
+      );
+      return prev;
+    }, [])
+    .join("/");
+};

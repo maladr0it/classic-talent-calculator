@@ -3,9 +3,13 @@ import React from "react";
 import "./ClearButton.css";
 import crossImage from "../assets/cross.gif";
 
-export const ClearButton: React.FC = ({ children }) => {
+interface Props {
+  onClick: () => void;
+}
+
+export const ClearButton: React.FC<Props> = ({ children, ...rest }) => {
   return (
-    <button className="ClearButton">
+    <button className="ClearButton" {...rest}>
       {children && <span className="ClearButton-label">{children}</span>}
       <div
         className="ClearButton-icon"

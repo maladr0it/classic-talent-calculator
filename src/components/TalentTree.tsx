@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const TalentTree: React.FC<Props> = ({ name, children }) => {
-  const { data, pointsSpent } = useTalentContext();
+  const { data, pointsSpent, resetTree } = useTalentContext();
   const treeData = data[name];
 
   return (
@@ -28,7 +28,7 @@ export const TalentTree: React.FC<Props> = ({ name, children }) => {
               Points spent: {pointsSpent[name]}
             </p>
           </div>
-          <ClearButton />
+          <ClearButton onClick={() => resetTree(name)} />
         </header>
         <div
           className="TalentTree-grid"

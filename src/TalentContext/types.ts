@@ -68,4 +68,11 @@ export type Action =
       type: "POINT_UNSPENT";
       tree: string;
       talent: string;
+    }
+  | {
+      type: "TREE_RESET";
+      tree: string;
+    }
+  | {
+      type: "ALL_RESET";
     };

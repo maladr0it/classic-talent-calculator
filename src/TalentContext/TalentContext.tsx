@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from "react";
+import React, { createContext, useReducer, useContext, useEffect } from "react";
 
 import { State, TalentData } from "./types";
 import {
@@ -9,8 +9,9 @@ import {
   getPrereqMetTalents,
   getUnlockedTalents,
   getTalentDependents,
+  getSerializedState,
 } from "./selectors";
-import { reducer } from "./reducer";
+import { makeReducer } from "./reducer";
 
 const createInitialState = (data: TalentData) =>
   Object.entries(data).reduce<State>((prev, [treeName, tree]) => {
@@ -35,13 +36,18 @@ const TalentContext = createContext<{
   unlockedTalents: ReturnType<typeof getUnlockedTalents>;
   spendPoint: (tree: string, talent: string) => void;
   unspendPoint: (tree: string, talent: string) => void;
+  resetTree: (tree: string) => void;
+  resetAll: () => void;
 } | null>(null);
 
 export const createTalentProvider = (data: TalentData): React.FC => {
   const initialState = createInitialState(data);
 
   return ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [state, dispatch] = useReducer(
+      makeReducer(initialState),
+      initialState,
+    );
 
     const pointsSpent = getPointsSpent(state);
     const points = getPoints(pointsSpent);
@@ -81,6 +87,14 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       }
     };
 
+    const resetTree = (tree: string) => {
+      dispatch({ type: "TREE_RESET", tree });
+    };
+
+    const resetAll = () => {
+      dispatch({ type: "ALL_RESET" });
+    };
+
     const value = {
       state,
       data,
@@ -92,7 +106,13 @@ export const createTalentProvider = (data: TalentData): React.FC => {
       unlockedTalents,
       spendPoint,
       unspendPoint,
+      resetTree,
+      resetAll,
     };
+
+    useEffect(() => {
+      console.log(getSerializedState(state));
+    }, [state]);
 
     return (
       <TalentContext.Provider value={value}>{children}</TalentContext.Provider>
