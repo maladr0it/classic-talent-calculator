@@ -62,7 +62,7 @@ export const KlassList: React.FC<Props> = () => {
     <ul className="KlassList">
       {KLASSES.map(klass => (
         <li className="KlassList-item" key={klass.name}>
-          <Link to={klass.path}>
+          <Link to={klass.path} replace>
             <SquareButton icon={klass.icon} />
           </Link>
         </li>
