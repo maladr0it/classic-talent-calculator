@@ -47,7 +47,11 @@ export const KlassTrees = withRouter<Props, React.FC<Props>>(
       });
       const klass = match && match.params && match.params.klass;
       const skillHash = getHashFromState(state);
-      history.replace(`/${klass}/${skillHash}`);
+      if (skillHash) {
+        history.replace(`/${klass}/${skillHash}`);
+      } else {
+        history.replace(`/${klass}`);
+      }
     }, [state]);
 
     return (
