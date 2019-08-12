@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Talent.css";
+import talentBubble from "../assets/talent-bubble.png";
 import { useTooltipPos } from "../hooks/useTooltipPos";
 import { useTreeContext } from "../TreeContext";
 import { useTalentContext } from "../TalentContext";
@@ -75,7 +76,12 @@ export const Talent: React.FC<Props> = ({ name }) => {
           {...anchorProps}
         />
         {talentState !== "locked" && (
-          <div className="Talent-pointCount">{rank}</div>
+          <div
+            className={`Talent-pointCount Talent-pointCount--${outlineColor}`}
+            style={{ backgroundImage: `url(${talentBubble})` }}
+          >
+            {rank}
+          </div>
         )}
         {tooltipVisible && (
           <TalentTooltip name={name} tree={tree} {...tooltipProps} />

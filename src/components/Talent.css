@@ -4,16 +4,23 @@
 
 .Talent-pointCount {
   position: absolute;
-  bottom: calc(-1 * var(--sp-xs));
-  right: calc(-1 * var(--sp-xs));
-  padding: var(--sp-xxxs) var(--sp-xxs);
-  background-color: black;
+  height: 1.5rem;
+  width: 1.5rem;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: 100% 100%;
   font-size: 0.75rem;
-  border-radius: 4px;
-  color: var(--col-text-inactive);
   pointer-events: none;
 }
 
-.Talent-pointCount--active {
-  color: white;
+.Talent-pointCount--green {
+  color: var(--col-green);
+}
+
+.Talent-pointCount--gold {
+  color: var(--col-yellow);
 }
