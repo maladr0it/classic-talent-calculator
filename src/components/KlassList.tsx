@@ -20,7 +20,7 @@ const KLASSES = [
   },
   {
     name: "Mage",
-    icon: "",
+    icon: icons["class_mage"],
     path: "/mage",
   },
   {
