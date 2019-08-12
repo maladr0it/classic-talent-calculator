@@ -38,7 +38,7 @@ export const TalentTooltip = React.forwardRef<HTMLDivElement, Props>(
         <p className="TalentTooltip-rank">
           Rank {rank}/{talentData.maxRank}
         </p>
-        {prereqData && !reqPointsMet && (
+        {!reqPointsMet && (
           <p className="TalentTooltip-error">
             Requires {talentData.reqPoints} points in {tree} Talents
           </p>

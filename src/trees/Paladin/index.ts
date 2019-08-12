@@ -1,0 +1,1 @@
+export { Paladin } from "./Paladin";

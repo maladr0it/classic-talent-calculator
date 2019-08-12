@@ -25,7 +25,7 @@ const KLASSES = [
   },
   {
     name: "Paladin",
-    icon: "",
+    icon: icons["class_paladin"],
     path: "/paladin",
   },
   {
