@@ -11,7 +11,8 @@ export const App: React.FC = () => {
   return (
     <div className="App">
       <KlassList />
-      <Route path="/druid/:skills?" component={Druid} />
+      <Route path="/druid" component={Druid} />
+      <Route path="/hunter" component={Hunter} />
     </div>
   );
 };

@@ -10,12 +10,12 @@ const icons = requireAll(require.context("../assets/icons", false));
 const KLASSES = [
   {
     name: "Druid",
-    icon: icons["druid-icon"],
+    icon: icons["class_druid"],
     path: "/druid",
   },
   {
     name: "Hunter",
-    icon: "",
+    icon: icons["class_hunter"],
     path: "/hunter",
   },
   {
