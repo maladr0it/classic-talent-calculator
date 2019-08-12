@@ -1,1 +1,2 @@
-export { Hunter } from "./Hunter";
+import { Hunter } from "./Hunter";
+export default Hunter;

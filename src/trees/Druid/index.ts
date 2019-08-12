@@ -1,2 +1,2 @@
-export { Druid } from "./Druid";
-
+import { Druid } from "./Druid";
+export default Druid;

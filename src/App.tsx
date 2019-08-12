@@ -1,13 +1,13 @@
-import React, { Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { Route } from "react-router-dom";
 
-import { KlassList } from "./components/KlassList";
-import { Druid } from "./trees/Druid/Druid";
-import { Hunter } from "./trees/Hunter";
-import { Mage } from "./trees/Mage";
-import { Paladin } from "./trees/Paladin";
-
 import "./App.css";
+import { KlassList } from "./components/KlassList";
+
+const Druid = lazy(() => import("./trees/Druid"));
+const Hunter = lazy(() => import("./trees/Hunter"));
+const Mage = lazy(() => import("./trees/Mage"));
+const Paladin = lazy(() => import("./trees/Paladin"));
 
 export const App: React.FC = () => {
   return (

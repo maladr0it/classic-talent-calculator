@@ -1,1 +1,2 @@
-export { Mage } from "./Mage";
+import { Mage } from "./Mage";
+export default Mage;

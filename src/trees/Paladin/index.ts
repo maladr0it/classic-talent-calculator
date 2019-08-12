@@ -1,1 +1,2 @@
-export { Paladin } from "./Paladin";
+import { Paladin } from "./Paladin";
+export default Paladin;
