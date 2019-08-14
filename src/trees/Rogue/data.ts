@@ -1,6 +1,5 @@
 import { TalentData } from "../../TalentContext";
 import { talentText, requireAll } from "../../utils";
-import { Talent } from "../../components/Talent";
 
 const backgrounds = requireAll(
   require.context("../../assets/tree-backgrounds/rogue"),
