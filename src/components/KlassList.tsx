@@ -30,27 +30,27 @@ const KLASSES = [
   },
   {
     name: "Priest",
-    icon: "",
+    icon: icons["class_priest"],
     path: "/priest",
   },
   {
     name: "Rogue",
-    icon: "",
+    icon: icons["class_rogue"],
     path: "/rogue",
   },
   {
     name: "Shaman",
-    icon: "",
+    icon: icons["class_shaman"],
     path: "/shaman",
   },
   {
     name: "Warlock",
-    icon: "",
+    icon: icons["class_warlock"],
     path: "/warlock",
   },
   {
     name: "Warrior",
-    icon: "",
+    icon: icons["class_warrior"],
     path: "/warrior",
   },
 ];
