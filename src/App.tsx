@@ -9,6 +9,7 @@ const Hunter = lazy(() => import("./trees/Hunter"));
 const Mage = lazy(() => import("./trees/Mage"));
 const Paladin = lazy(() => import("./trees/Paladin"));
 const Priest = lazy(() => import("./trees/Priest"));
+const Rogue = lazy(() => import("./trees/Rogue"));
 
 export const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ export const App: React.FC = () => {
         <Route path="/mage" component={Mage} />
         <Route path="/paladin" component={Paladin} />
         <Route path="/priest" component={Priest} />
+        <Route path="/rogue" component={Rogue} />
       </Suspense>
     </div>
   );

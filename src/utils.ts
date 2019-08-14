@@ -1,6 +1,6 @@
 export const talentText = (
   string: TemplateStringsArray,
-  ...expressions: (number)[][]
+  ...expressions: (string | number)[][]
 ) => (rank: number) => {
   const result = [string[0]];
   expressions.forEach((expression, i) => {
