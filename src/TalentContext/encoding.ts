@@ -1,7 +1,7 @@
 import { State, TalentData } from "./types";
 import { encodeState, decodeState, trimEnd } from "../utils";
 
-const SPLIT_SYMBOL = "x";
+const SPLIT_SYMBOL = "-";
 
 const getTreeStateFromHash = (talentNames: string[], hash: string = "") => {
   const ranks = decodeState(hash);
