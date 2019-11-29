@@ -213,7 +213,7 @@ export const data: TalentData = {
         name: "Healing Focus",
         pos: "a1",
         icon: icons["spell_holy_healingfocus"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 0,
         description: talentText`Gives you a ${[
           35,
