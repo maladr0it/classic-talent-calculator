@@ -588,20 +588,6 @@ export const data: TalentData = {
           5,
         ]}%.`,
       },
-      "Improved Reincarnation": {
-        name: "Improved Reincarnation",
-        pos: "b1",
-        icon: icons["spell_nature_reincarnation"],
-        maxRank: 2,
-        reqPoints: 5,
-        description: talentText`Reduces the cooldown of your Reincarnation spell by ${[
-          10,
-          20,
-        ]} min and increases the amount of health and mana you reincarnate with by an additional ${[
-          10,
-          20,
-        ]}%.`,
-      },
       "Ancestral Healing": {
         name: "Ancestral Healing",
         pos: "d1",
@@ -708,10 +694,10 @@ export const data: TalentData = {
       },
       "Tidal Mastery": {
         name: "Tidal Mastery",
-        pos: "d3",
+        pos: "a2",
         icon: icons["spell_nature_tranquility"],
         maxRank: 5,
-        reqPoints: 15,
+        reqPoints: 0,
         description: talentText`Increases the critical effect chance of your healing and lightning spells by ${[
           1,
           2,
@@ -758,10 +744,10 @@ export const data: TalentData = {
       },
       Purification: {
         name: "Purification",
-        pos: "f3",
+        pos: "e2",
         icon: icons["spell_frost_wizardmark"],
         maxRank: 5,
-        reqPoints: 25,
+        reqPoints: 20,
         description: talentText`Increases the effectiveness of your healing spells by ${[
           2,
           4,
