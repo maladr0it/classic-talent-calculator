@@ -310,10 +310,20 @@ export const data: TalentData = {
         reqPoints: 10,
         prereq: "Rockhide",
         arrows: [{ dir: "down", from: "b1", to: "c1" }],
-        description: talentText`Increases the amount of damage reduced by your Stoneskin Totem and Windwall Totem by ${[
-          10,
-          20,
-        ]}% and reduces the cooldown of your Grounding Totem by ${[1, 2]} sec.`,
+        description: talentText`Increases the effect of your Resistance Totems, Stoneskin Totem and Windwall Totem by ${[
+          25,
+          50,
+        ]}% and reduces the cooldown of your Grounding Totem by ${[10, 20]} sec.`,
+      },
+      "Rocky Bash": {
+        name: "Rocky Bash",
+        pos: "c3",
+        icon: icons["rocky_bash"],
+        maxRank: 2,
+        reqPoints: 10,
+        prereq: "Shield Specialization",
+        arrows: [{ dir: "down", from: "a3", to: "c3" }],
+        description: talentText`Smashes the target and its nearest allies with petrified shield, causing 79-89 damage, increased by Attack Power. Hits up to 3 targets.`,
       },
       "Thundering Strikes": {
         name: "Thundering Strikes",
@@ -342,15 +352,19 @@ export const data: TalentData = {
       },
       "Improved Lightning Shield": {
         name: "Improved Lightning Shield",
-        pos: "b4",
+        pos: "d4",
         icon: icons["spell_nature_lightningshield"],
         maxRank: 3,
-        reqPoints: 5,
+        reqPoints: 15,
         description: talentText`Increases the damage done by your Lightning Shield orbs by ${[
           5,
           10,
           15,
-        ]}%.`,
+        ]}% reduces it's mana cost by${[
+          5,
+          10,
+          15,
+        ]}% and increases it's number of orbs by 3.`,
       },
       "Enhancing Totems": {
         name: "Enhancing Totems",
@@ -452,15 +466,83 @@ export const data: TalentData = {
           10,
         ]}%.`,
       },
-      Stormstrike: {
-        name: "Stormstrike",
+      Bloodlust: {
+        name: "Bloodlust",
+        pos: "e2",
+        icon: icons["bloodlust"],
+        maxRank: 1,
+        reqPoints: 20,
+        description: talentText`Increases an ally's attack and casting speed by 10% for 3 min.`,
+      },
+      "Primal Endurance": {
+        name: "Primal Endurance",
+        pos: "e3",
+        icon: icons["primal_endurance"],
+        maxRank: 5,
+        reqPoints: 20,
+        description: talentText`Allows ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}% of your health regeneration and ${[
+          3,
+          6,
+          9,
+          12,
+          15,
+        ]}% of your mana regeneration to work always. In addition increases healing taken by ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}%.`,
+      },
+      "Armaments of Storm": {
+        name: "Armaments of Storm",
+        pos: "f1",
+        icon: icons["armaments_storm"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Imbue the weapon with storm, gives you a ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}% to deal up to 180 additional Nature damage (scales with your level).`,
+      },
+      "Shamanism": {
+        name: "Shamanism",
+        pos: "f3",
+        icon: icons["armaments_storm"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Gives your Melee attacks a chance to enter a Shamanic Trance. The Shamanic Trance reduces the cast time and mana cost of your next damage spell by 100% ${[
+          ".",
+          "Effect occurs more often than Shamanism (Rank 1).",
+          "Effect occurs more often than Shamanism (Rank 2).",
+          "Effect occurs more often than Shamanism (Rank 3).",
+          "Effect occurs more often than Shamanism (Rank 4).",
+        ]}`,
+      },
+      Aftershock: {
+        name: "Aftershock",
         pos: "g2",
-        icon: icons["spell_holy_sealofmight"],
+        icon: icons["bloodlust"],
         maxRank: 1,
         reqPoints: 30,
-        prereq: "Elemental Weapons",
+        prereq: "Bloodlust",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Gives you an extra attack. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec.`,
+        description: talentText`Blasts a target with an aftershocks, consuming your shock spells and applies an effects based on consumed shock spells. 
+
+        Flame Shock: instantly deals damage equal to 12 sec of Flame Shock.
+
+        Frost Shock: freeze the target for 4 sec. 
+
+        Earth Shock: breaks movement impairing effects for you and forces the target to focus attacks on you for 5 sec.`,
       },
     },
   },
