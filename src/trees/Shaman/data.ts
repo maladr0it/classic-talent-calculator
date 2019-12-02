@@ -444,14 +444,6 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
-      Parry: {
-        name: "Parry",
-        pos: "e3",
-        icon: icons["ability_parry"],
-        maxRank: 1,
-        reqPoints: 20,
-        description: talentText`Gives a chance to parry enemy melee attacks.`,
-      },
       "Weapon Mastery": {
         name: "Weapon Mastery",
         pos: "b4",
@@ -477,7 +469,7 @@ export const data: TalentData = {
       "Primal Endurance": {
         name: "Primal Endurance",
         pos: "e3",
-        icon: icons["primal_endurance"],
+        icon: icons["primal"],
         maxRank: 5,
         reqPoints: 20,
         description: talentText`Allows ${[
