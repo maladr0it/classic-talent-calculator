@@ -516,7 +516,7 @@ export const data: TalentData = {
         icon: icons["spell_nature_bloodlust"],
         maxRank: 2,
         reqPoints: 30,
-        prereq: "Death Wish",
+        prereq: "Bloodthirst",
         arrows: [{ dir: "right", from: "g2", to: "g3" }],
         description: talentText`Reduces the cost of your Bloodthirst by ${[
           5,
