@@ -55,22 +55,26 @@ export const data: TalentData = {
         icon: icons["spell_holy_wordfortitude"],
         maxRank: 2,
         reqPoints: 15,
-        description: talentText`Increases the effect of your Power Word: Fortitude and Prayer of Fortitude spells by ${[
+        description: talentText`Reduces Mana cost and increases the effect of your Power Word: Fortitude and Prayer of Fortitude spells by ${[
           15,
           30,
-        ]}%.`,
+        ]}%. In addition reduces the chance that listed spells be dispelled by 45%.`,
       },
       "Improved Power Word: Shield": {
         name: "Improved Power Word: Shield",
-        pos: "b3",
+        pos: "d4",
         icon: icons["spell_holy_powerwordshield"],
         maxRank: 3,
-        reqPoints: 5,
+        reqPoints: 15,
         description: talentText`Increases damage absorbed by your Power Word: Shield by ${[
-          5,
           10,
-          15,
-        ]}%.`,
+          20,
+          30,
+        ]}% and reduces duration of the Weakened Soul effect caused by your Power Word: Shield by ${[
+          1,
+          2,
+          3,
+        ]} sec.`,
       },
       Martyrdom: {
         name: "Martyrdom",
@@ -78,13 +82,16 @@ export const data: TalentData = {
         icon: icons["spell_nature_tranquility"],
         maxRank: 2,
         reqPoints: 5,
-        description: talentText`Gives you a ${[
+        description: talentText`Incoming melee and ranged critical strikes, gives you a ${[
           50,
           100,
-        ]}% chance to gain the Focused Casting effect that lasts for 6 sec after being the victim of a melee or ranged critical strike. The Focused Casting effect prevents you from losing casting time when taking damage and increases resistance to Interrupt effects by ${[
+        ]}% chance to increase your resistance to Interrupt effects by ${[
+          15,
+          30,
+        ]}% and to make you immune to melee and ranged critical strikes for ${[
+          5,
           10,
-          20,
-        ]}%.`,
+        ]} sec.`,
       },
       "Inner Focus": {
         name: "Inner Focus",
@@ -92,7 +99,9 @@ export const data: TalentData = {
         icon: icons["spell_frost_windwalkon"],
         maxRank: 1,
         reqPoints: 10,
-        description: talentText`When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is capable of a critical effect.`,
+        prereq: "Improved Inner Fire",
+        arrows: [{ dir: "down", from: "b2", to: "c2" }],
+        description: talentText`When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 100% if it is capable of a critical effect.`,
       },
       Meditation: {
         name: "Meditation",
@@ -100,19 +109,21 @@ export const data: TalentData = {
         icon: icons["spell_nature_sleep"],
         maxRank: 3,
         reqPoints: 10,
+        prereq: "Concentration",
+        arrows: [{ dir: "down", from: "b3", to: "c3" }],
         description: talentText`Allows ${[
-          5,
-          10,
-          15,
+          7,
+          14,
+          21,
         ]}% of your Mana regeneration to continue while casting.`,
       },
       "Improved Inner Fire": {
         name: "Improved Inner Fire",
-        pos: "d1",
+        pos: "b2",
         icon: icons["spell_holy_innerfire"],
         maxRank: 3,
-        reqPoints: 15,
-        description: talentText`Increases the Armor bonus of your Inner Fire spell by ${[
+        reqPoints: 5,
+        description: talentText`Increases the Armor bonus and number of charges of your Inner Fire spell by ${[
           10,
           20,
           30,
@@ -120,16 +131,16 @@ export const data: TalentData = {
       },
       "Mental Agility": {
         name: "Mental Agility",
-        pos: "d2",
+        pos: "d1",
         icon: icons["ability_hibernation"],
         maxRank: 5,
         reqPoints: 15,
         description: talentText`Reduces the Mana cost of your instant cast spells by ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}%`,
       },
       "Improved Mana Burn": {
@@ -145,16 +156,16 @@ export const data: TalentData = {
       },
       "Mental Strength": {
         name: "Mental Strength",
-        pos: "e2",
+        pos: "d3",
         icon: icons["spell_nature_enchantarmor"],
         maxRank: 5,
-        reqPoints: 20,
+        reqPoints: 15,
         description: talentText`Increases your maximum Mana by ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}%.`,
       },
       "Divine Spirit": {
@@ -169,10 +180,10 @@ export const data: TalentData = {
       },
       "Force of Will": {
         name: "Force of Will",
-        pos: "f3",
+        pos: "e2",
         icon: icons["spell_nature_slowingtotem"],
         maxRank: 5,
-        reqPoints: 25,
+        reqPoints: 20,
         description: talentText`Increases your spell damage by ${[
           1,
           2,
@@ -193,7 +204,7 @@ export const data: TalentData = {
         icon: icons["spell_holy_powerinfusion"],
         maxRank: 1,
         reqPoints: 30,
-        prereq: "Mental Strength",
+        prereq: "Force of Will",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
         description: talentText`Infuses the target with power, increasing their spell damage and healing by 20%. Lasts 15 sec.`,
       },
