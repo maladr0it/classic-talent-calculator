@@ -16,14 +16,12 @@ export const data: TalentData = {
         name: "Convection",
         pos: "a2",
         icon: icons["spell_nature_wispsplode"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 0,
         description: talentText`Reduces the many cost of your Shock, Lightening Bolt, and Chain Lightening spells by ${[
           5,
           10,
           15,
-          20,
-          25,
         ]}%.`,
       },
       Concussion: {
