@@ -19,11 +19,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 0,
         description: talentText`Reduces the many cost of your Shock, Lightening Bolt, and Chain Lightening spells by ${[
-          2,
-          4,
-          6,
-          8,
+          5,
           10,
+          15,
+          20,
+          25,
         ]}%.`,
       },
       Concussion: {
@@ -151,10 +151,10 @@ export const data: TalentData = {
       },
       "Storm Reach": {
         name: "Storm Reach",
-        pos: "e1",
+        pos: "a1",
         icon: icons["spell_nature_stormreach"],
         maxRank: 2,
-        reqPoints: 20,
+        reqPoints: 0,
         description: talentText`Increases the range of your Lightning Bolt and Chain Lightning spells by ${[
           3,
           6,
