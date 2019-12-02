@@ -599,6 +599,12 @@ export const data: TalentData = {
           6,
           8,
           10,
+        ]}% and increases the range of your shadow spells by ${[
+          10,
+          20,
+          30,
+          40,
+          50,
         ]}%.`,
       },
       "Improved Psychic Scream": {
@@ -634,6 +640,30 @@ export const data: TalentData = {
         reqPoints: 10,
         description: talentText`Assault the target's mind with Shadow energy, causing 75 Shadow damage over 3 sec and slowing their movement speed by 50%.`,
       },
+      "Improved Mind Flay": {
+        name: "Improved Mind Flay",
+        pos: "d2",
+        icon: icons["spell_shadow_siphonmana"],
+        maxRank: 3,
+        reqPoints: 15,
+        prereq: "Mind Flay",
+        arrows: [{ dir: "down", from: "c2", to: "d2" }],
+        description: talentText`Gives you a ${[
+          30,
+          60,
+          90,
+        ]}% chance to avoid interruption caused by damage while channeling the Mind Flay spell.`,
+      },
+      "Shadow Word: Numb": {
+        name: "Shadow Word: Numb",
+        pos: "c3",
+        icon: icons["shadowword_numb"],
+        maxRank: 1,
+        reqPoints: 10,
+        prereq: "Blackout",
+        arrows: [{ dir: "down", from: "a3", to: "c3" }],
+        description: talentText`A word of dark binding that strikes terror in the hearts, paralyzing target for 3 sec.`,
+      },
       "Improved Fade": {
         name: "Improved Fade",
         pos: "c4",
@@ -645,16 +675,44 @@ export const data: TalentData = {
           40,
         ]} sec.`,
       },
-      "Shadow Reach": {
-        name: "Shadow Reach",
-        pos: "d3",
-        icon: icons["spell_shadow_chilltouch"],
+      "Blur": {
+        name: "Blur",
+        pos: "e4",
+        icon: icons["Blur"],
         maxRank: 3,
-        reqPoints: 15,
-        description: talentText`Increases the range of your Shadow spells by ${[
-          6,
-          13,
+        reqPoints: 20,
+        prereq: "Improved Fade",
+        arrows: [{ dir: "down", from: "c4", to: "e4" }],
+        description: talentText`The darkness envelopes you. You become untrackable and the chance you are hit by melee and ranged attacks reduced by ${[
+          4,
+          8,
+          12,
+        ]}%.`,
+      },
+      "The Burning of the Soul": {
+        name: "The Burning of the Soul",
+        pos: "e1",
+        icon: icons["burning_soul"],
+        maxRank: 3,
+        reqPoints: 20,
+        description: talentText`${[
+          10,
           20,
+          30,
+        ]}% chance on successful spellcast to generate 3% of your total Mana over 9 sec at the cost of 9% of your total Health.`,
+      },
+      "Mind Overload": {
+        name: "Mind Overload",
+        pos: "f1",
+        icon: icons["mind_overload"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Reduces the mana cost of your Mind Blast, Mind Flay, Mind Control and Mind Vision spells by ${[
+          5,
+          10,
+          15,
+          20,
+          25,
         ]}%.`,
       },
       "Shadow Weaving": {
@@ -678,7 +736,7 @@ export const data: TalentData = {
         pos: "c1",
         icon: icons["shadowword_silence"],
         maxRank: 5,
-        reqPoints: 20,
+        reqPoints: 10,
         prereq: "Improved Psychic Scream",
         arrows: [{ dir: "down", from: "b1", to: "c1" }],
         description: talentText`Reduces the cooldown of your Shadow Word: Silence spell by ${[
@@ -722,6 +780,12 @@ export const data: TalentData = {
           6,
           8,
           10,
+        ]}% and the effect of your Shadow Protection by ${[
+          10,
+          20,
+          30,
+          40,
+          50,
         ]}%.`,
       },
       Shadowform: {
