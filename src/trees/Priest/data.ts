@@ -360,10 +360,10 @@ export const data: TalentData = {
       },
       "Blessed Recovery": {
         name: "Blessed Recovery",
-        pos: "c2",
+        pos: "b3",
         icon: icons["spell_holy_blessedrecovery"],
         maxRank: 3,
-        reqPoints: 10,
+        reqPoints: 5,
         description: talentText`After being struck by a melee or ranged critical hit, heal ${[
           8,
           16,
@@ -372,10 +372,10 @@ export const data: TalentData = {
       },
       Inspiration: {
         name: "Inspiration",
-        pos: "c4",
+        pos: "d4",
         icon: icons["spell_holy_layonhands"],
         maxRank: 3,
-        reqPoints: 10,
+        reqPoints: 15,
         description: talentText`Increase your target's armor by ${[
           8,
           16,
@@ -389,16 +389,38 @@ export const data: TalentData = {
         maxRank: 2,
         reqPoints: 15,
         description: talentText`Increases the range of your Smite and Holy Fire spells and the radius of your Prayer of Healing and Holy Nova spells by ${[
+          20,
+          40,
+        ]}%.`,
+      },
+      "Light Penetration": {
+        name: "Light Penetration",
+        pos: "b1",
+        icon: icons["light_penetration"],
+        maxRank: 2,
+        reqPoints: 5,
+        description: talentText`Reduces your target's chance to resist your Holy and Discipline Spells by ${[
+          4,
+          8,
+        ]}%.`,
+      },
+      "Light's Grace": {
+        name: "Light's Grace",
+        pos: "b1",
+        icon: icons["lights_grace"],
+        maxRank: 2,
+        reqPoints: 5,
+        description: talentText`Reduces the mana cost of your Resurrection, Lightwell, Shackle Undead, Cure Disease, Abolish Disease and Dispel Magic by ${[
           10,
           20,
         ]}%.`,
       },
       "Improved Healing": {
         name: "Improved Healing",
-        pos: "d2",
+        pos: "c4",
         icon: icons["spell_holy_heal02"],
         maxRank: 3,
-        reqPoints: 15,
+        reqPoints: 10,
         description: talentText`Reduces the Mana cost of your Lesser Heal, Heal, and Greater Heal spells by ${[
           5,
           10,
@@ -414,10 +436,25 @@ export const data: TalentData = {
         prereq: "Divine Fury",
         arrows: [{ dir: "down", from: "b3", to: "d3" }],
         description: talentText`Increases the damage of your Smite and Holy Fire spells by ${[
-          5,
-          10,
+          15,
+          30,
         ]}%.`,
       },
+      "Light Eruption": {
+        name: "Light Eruption",
+        pos: "d2",
+        icon: icons["light_eruption"],
+        maxRank: 3,
+        reqPoints: 15,
+        prereq: "Divine Fury",
+        arrows: [{ dir: "down", from: "c2", to: "d2" }],
+        description: talentText`Increases the critical strike damage of your Holy spells by ${[
+          50,
+          100,
+          150,
+        ]}%.`,
+      },
+
       "Improved Prayer of Healing": {
         name: "Improved Prayer of Healing",
         pos: "e1",
@@ -425,8 +462,8 @@ export const data: TalentData = {
         maxRank: 2,
         reqPoints: 20,
         description: talentText`Reduces the Mana cost of your Prayer of Healing spell by ${[
-          10,
-          20,
+          15,
+          30,
         ]}%.`,
       },
       "Spirit of Redemption": {
@@ -451,9 +488,23 @@ export const data: TalentData = {
           25,
         ]}% of your total Spirit.`,
       },
+      "Faith": {
+        name: "Faith",
+        pos: "f3",
+        icon: icons["divine_spirit"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Increases your spirit ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}%.`,
+      },
       "Spiritual Healing": {
         name: "Spiritual Healing",
-        pos: "f3",
+        pos: "f1",
         icon: icons["spell_nature_moonglow"],
         maxRank: 5,
         reqPoints: 25,
@@ -465,15 +516,15 @@ export const data: TalentData = {
           10,
         ]}%.`,
       },
-      Lightwell: {
-        name: "Lightwell",
+      Sacrifice: {
+        name: "Sacrifice",
         pos: "g2",
-        icon: icons["spell_holy_summonlightwell"],
+        icon: icons["sacrifice"],
         maxRank: 1,
         reqPoints: 30,
         prereq: "Spirit of Redemption",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Creates a holy Lightwell near the priest. Members of your raid or party can click the Lightwell to restore 800 health over 10 sec. Being attacked cancels the effect. Lightwell lasts for 3 min or 5 charges.`,
+        description: talentText`Sacrifices the caster's life in order to heal party members within 30 yards for an amount equal to the caster's maximum health. And gives you a chance to being resurrected with 100% health and mana.`,
       },
     },
   },
