@@ -671,7 +671,7 @@ export const data: TalentData = {
         pos: "d2",
         icon: icons["nature_guardian"],
         maxRank: 3,
-        reqPoints: 5,
+        reqPoints: 15,
         description: talentText`Reduces the chance you are critically hit by ${[
           2,
           4,
