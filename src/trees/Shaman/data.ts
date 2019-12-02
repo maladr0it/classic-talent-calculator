@@ -18,7 +18,7 @@ export const data: TalentData = {
         icon: icons["spell_nature_wispsplode"],
         maxRank: 3,
         reqPoints: 0,
-        description: talentText`Reduces the many cost of your Shock, Lightening Bolt, and Chain Lightening spells by ${[
+        description: talentText`Reduces the mana cost of your Shock, Lightening Bolt, and Chain Lightening spells by ${[
           5,
           10,
           15,
@@ -512,12 +512,12 @@ export const data: TalentData = {
         icon: icons["armaments_storm"],
         maxRank: 5,
         reqPoints: 25,
-        description: talentText`Gives your Melee attacks a chance to enter a Shamanic Trance. The Shamanic Trance reduces the cast time and mana cost of your next damage spell by 100% ${[
+        description: talentText`Gives your Melee attacks a chance to enter a Shamanic Trance. The Shamanic Trance reduces the cast time and mana cost of your next damage spell by 100%${[
           ".",
-          "Effect occurs more often than Shamanism (Rank 1).",
-          "Effect occurs more often than Shamanism (Rank 2).",
-          "Effect occurs more often than Shamanism (Rank 3).",
-          "Effect occurs more often than Shamanism (Rank 4).",
+          " Effect occurs more often than Shamanism (Rank 1).",
+          " Effect occurs more often than Shamanism (Rank 2).",
+          " Effect occurs more often than Shamanism (Rank 3).",
+          " Effect occurs more often than Shamanism (Rank 4).",
         ]}`,
       },
       Aftershock: {
