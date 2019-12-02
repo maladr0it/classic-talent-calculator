@@ -357,6 +357,8 @@ export const data: TalentData = {
         name: "Piercing Howl",
         pos: "c2",
         icon: icons["spell_shadow_deathscream"],
+        prereq: "Booming Voice",
+        arrows: [{ dir: "down", from: "a2", to: "c2" }],
         maxRank: 1,
         reqPoints: 10,
         description: talentText`Causes all enemies near the warrior to be dazed, reducing movement speed by 50% for 6 sec.`,
