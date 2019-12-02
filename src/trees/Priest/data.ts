@@ -360,7 +360,7 @@ export const data: TalentData = {
       },
       "Blessed Recovery": {
         name: "Blessed Recovery",
-        pos: "b3",
+        pos: "b4",
         icon: icons["spell_holy_blessedrecovery"],
         maxRank: 3,
         reqPoints: 5,
@@ -406,7 +406,7 @@ export const data: TalentData = {
       },
       "Light's Grace": {
         name: "Light's Grace",
-        pos: "b1",
+        pos: "b2",
         icon: icons["lights_grace"],
         maxRank: 2,
         reqPoints: 5,
