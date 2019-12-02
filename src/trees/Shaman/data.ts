@@ -49,6 +49,16 @@ export const data: TalentData = {
           300,
         ]}% and the radius of your Earthbind Totem by ${[2, 4]} yards and the duration of your Earth Shock by ${[0.5, 1]} sec.`,
       },
+      "Sandblast": {
+        name: "Sandblast",
+        pos: "c1",
+        icon: icons["sandblast"],
+        maxRank: 1,
+        reqPoints: 10,
+        prereq: "Earth's Grasp",
+        arrows: [{ dir: "down", from: "b1", to: "c1" }],
+        description: talentText`Sends a wave of sand, blinding nearby enemies for 5 sec. Targets must be facing you. Any damage caused will remove the effect..`,
+      },
       "Elemental Warding": {
         name: "Elemental Warding",
         pos: "b2",
