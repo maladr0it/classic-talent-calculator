@@ -351,7 +351,7 @@ export const data: TalentData = {
         description: talentText`Increases the number of targets your Cleave ability hit by ${[
           1,
           2,
-        ]}%.`,
+        ]}.`,
       },
       "Piercing Howl": {
         name: "Piercing Howl",
