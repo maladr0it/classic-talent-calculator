@@ -278,18 +278,26 @@ export const data: TalentData = {
     background: backgrounds["fury"],
     icon: icons["ability_warrior_innerrage"],
     talents: {
+      "Combat Endurance": {
+        name: "Combat Endurance",
+        pos: "a1",
+        icon: icons["booming_voice"],
+        maxRank: 2,
+        reqPoints: 0,
+        description: talentText`Allows ${[
+          10,
+          20,
+        ]}% of your Health regeneration to work while in combat.`,
+      },
       "Booming Voice": {
         name: "Booming Voice",
         pos: "a2",
         icon: icons["spell_nature_purge"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 0,
         description: talentText`Increases the area of effect and duration of your Battle Shout and Demoralizing Shout by ${[
-          10,
-          20,
           30,
-          40,
-          50,
+          60,
         ]}%.`,
       },
       Cruelty: {
@@ -308,16 +316,16 @@ export const data: TalentData = {
       },
       "Improved Demoralizing Shout": {
         name: "Improved Demoralizing Shout",
-        pos: "b2",
+        pos: "b1",
         icon: icons["ability_warrior_warcry"],
         maxRank: 5,
         reqPoints: 5,
-        description: talentText`Increases the melee attack power reduction of your Demoralizing Shout by ${[
-          8,
-          16,
-          24,
-          32,
+        description: talentText`Increases the attack power and spell damage reduction of your Demoralizing Shout by ${[
+          10,
+          20,
+          30,
           40,
+          50,
         ]}%.`,
       },
       "Unbridled Wrath": {
@@ -327,23 +335,22 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 5,
         description: talentText`Gives you a ${[
-          8,
-          16,
-          24,
-          32,
-          40,
-        ]}% chance to generate an additional Rage point when you deal melee damage with a weapon.`,
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}% chance to generate 5 Rage points when you deal melee damage with a weapon.`,
       },
       "Improved Cleave": {
         name: "Improved Cleave",
         pos: "c1",
         icon: icons["ability_warrior_cleave"],
-        maxRank: 3,
+        maxRank: 2,
         reqPoints: 10,
-        description: talentText`Increases the bonus damage done by your Cleave ability by ${[
-          40,
-          80,
-          120,
+        description: talentText`Increases the number of targets your Cleave ability hit by ${[
+          1,
+          2,
         ]}%.`,
       },
       "Piercing Howl": {
@@ -361,9 +368,9 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 10,
         description: talentText`Regenerates ${[
-          1,
-          2,
           3,
+          6,
+          9,
         ]}% of your total Health over 6 sec after being the victim of a critical strike.`,
       },
       "Improved Battle Shout": {
@@ -380,18 +387,18 @@ export const data: TalentData = {
           25,
         ]}%.`,
       },
-      "Dual Wield Specialization": {
-        name: "Dual Wield Specialization",
+      "Precision": {
+        name: "Precision",
         pos: "d1",
-        icon: icons["ability_dualwield"],
+        icon: icons["Precision"],
         maxRank: 5,
         reqPoints: 15,
-        description: talentText`Increases the damage done by your offhand weapon by ${[
+        description: talentText`Increases your chance to hit with melee weapons by ${[
+          1,
+          2,
+          3,
+          4,
           5,
-          10,
-          15,
-          20,
-          25,
         ]}%.`,
       },
       "Improved Execute": {
@@ -400,10 +407,10 @@ export const data: TalentData = {
         icon: icons["inv_sword_48"],
         maxRank: 2,
         reqPoints: 15,
-        description: talentText`Reduces the Rage cost of your Execute ability by ${[
-          2,
-          5,
-        ]}.`,
+        description: talentText`Reduces the cooldown of your Execute ability by ${[
+          40,
+          80,
+        ]}%.`,
       },
       Enrage: {
         name: "Enrage",
@@ -412,26 +419,24 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 15,
         description: talentText`Gives you a ${[
+          1,
+          2,
+          3,
+          4,
           5,
-          10,
-          15,
-          20,
-          25,
-        ]}% melee damage bonus for 12 sec up to a maximum of 12 swings after being the victim of a critical strike.`,
+        ]}% melee damage bonus for 30 sec after being the victim of a critical strike. The effect stacks up to 10 times.`,
       },
       "Improved Slam": {
         name: "Improved Slam",
-        pos: "e1",
+        pos: "d4",
         icon: icons["ability_warrior_decisivestrike"],
-        maxRank: 5,
-        reqPoints: 20,
+        maxRank: 3,
+        reqPoints: 15,
         description: talentText`Decreases the casting time of your Slam ability by ${[
-          0.1,
-          0.2,
-          0.3,
-          0.4,
           0.5,
-        ]} sec.`,
+          1,
+          1.5,
+        ]} sec${["", "", " but Slam now has a cooldown"]}.`,
       },
       "Death Wish": {
         name: "Death Wish",
@@ -439,7 +444,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_deathpact"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 20%.`,
+        description: talentText`When activated, increases your physical damage by 20% and makes you immune to Fear effects, but lowers your armor and all resistances by 50%. Lasts 30 sec.`,
       },
       "Improved Intercept": {
         name: "Improved Intercept",
@@ -447,30 +452,28 @@ export const data: TalentData = {
         icon: icons["ability_rogue_sprint"],
         maxRank: 2,
         reqPoints: 20,
-        description: talentText`Reduces the cooldown of your Intercept abiilty by ${[
-          5,
-          10,
-        ]} sec.`,
+        description: talentText`Reduces the rage cost of your Intercept and Pummel abilities by ${[
+          50,
+          100,
+        ]}% and reduces the cooldown of your Intercept ability by 5 sec.`,
       },
-      "Improved Berserker Rage": {
-        name: "Improved Berserker Rage",
-        pos: "f1",
-        icon: icons["spell_nature_ancestralguardian"],
+      "Inner Rage": {
+        name: "Inner Rage",
+        pos: "e1",
+        icon: icons["inner_rage"],
         maxRank: 2,
-        reqPoints: 25,
-        description: talentText`The Berserker Rage ability will generate ${[
-          5,
-          10,
-        ]} rage when used.`,
+        reqPoints: 20,
+        description: talentText`Reduces the cooldown of your Bloodrage, Berserker Rage and Recklessness by ${[
+          25,
+          50,
+        ]}%.`,
       },
-      Flurry: {
+      "Flurry": {
         name: "Flurry",
-        pos: "f3",
+        pos: "f1",
         icon: icons["ability_ghoulfrenzy"],
         maxRank: 5,
         reqPoints: 25,
-        prereq: "Enrage",
-        arrows: [{ dir: "down", from: "d3", to: "f3" }],
         description: talentText`Increases your attack speed by ${[
           10,
           15,
@@ -479,7 +482,23 @@ export const data: TalentData = {
           30,
         ]}% for your next 3 swings aftre dealing a melee critical strike.`,
       },
-      Bloodthirst: {
+      "Berserker's Blood": {
+        name: "Berserker's Blood",
+        pos: "f1",
+        icon: icons["berserker_blood"],
+        maxRank: 5,
+        reqPoints: 25,
+	prereq: "Enrage",
+        arrows: [{ dir: "down", from: "d3", to: "f3" }],
+        description: talentText`Increases your attack speed, chance to resist hostile spells and healing taken by 1% to 30%. At full health the bonus is 1% with a greater effect up to 30% if you are badly hurt. Max bonus health threshold:  ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}%.`,
+      },
+      "Bloodthirst": {
         name: "Bloodthirst",
         pos: "g2",
         icon: icons["spell_nature_bloodlust"],
@@ -487,7 +506,20 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Death Wish",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Instantly attack the target causing damage equal to 45% of your attack power. In addition, the next 5 successful melee attacks will restore 10 health. This effect lasts 8 sec.`,
+        description: talentText`Instantly attack the target causing damage equal to 50% of your attack power. In addition, your successful melee attacks have a chance to drain 50 life. This effect lasts 3 charges or 15 sec.`,
+      },
+      "Improved Bloodthirst": {
+        name: "Improved Bloodthirst",
+        pos: "g3",
+        icon: icons["spell_nature_bloodlust"],
+        maxRank: 1,
+        reqPoints: 30,
+        prereq: "Death Wish",
+        arrows: [{ dir: "right", from: "g2", to: "g3" }],
+        description: talentText`Reduces the cost of your Bloodthirst by ${[
+          5,
+          10,
+        ]} Rage.`,
       },
     },
   },
