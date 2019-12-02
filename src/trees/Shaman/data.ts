@@ -319,7 +319,7 @@ export const data: TalentData = {
         name: "Rocky Bash",
         pos: "c3",
         icon: icons["rocky_bash"],
-        maxRank: 2,
+        maxRank: 1,
         reqPoints: 10,
         prereq: "Shield Specialization",
         arrows: [{ dir: "down", from: "a3", to: "c3" }],
