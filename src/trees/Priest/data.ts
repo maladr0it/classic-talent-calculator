@@ -49,6 +49,17 @@ export const data: TalentData = {
           20,
         ]}%.`,
       },
+      "Pilgrimage": {
+        name: "Pilgrimage",
+        pos: "b1",
+        icon: icons["Pilgrimage"],
+        maxRank: 2,
+        reqPoints: 5,
+        description: talentText`Increases movement and mounted movement speed by ${[
+          5,
+          10,
+        ]}%. This does not stack with other movement speed increasing effects.`,
+      },
       "Improved Power Word: Fortitude": {
         name: "Improved Power Word: Fortitude",
         pos: "d2",
@@ -76,6 +87,16 @@ export const data: TalentData = {
           3,
         ]} sec.`,
       },
+      "Power Word: Requital": {
+        name: "Power Word: Requital",
+        pos: "e3",
+        icon: icons["requital"],
+        maxRank: 1,
+        reqPoints: 20,
+        prereq: "Mental Strength",
+        arrows: [{ dir: "down", from: "d3", to: "e3" }],
+        description: talentText`Blasts an enemy with Light, instantly causing 173 to 186 Holy damage, 347 to 371 if the target is feared, stunned or incapacitated.`,
+      },
       Martyrdom: {
         name: "Martyrdom",
         pos: "b4",
@@ -93,6 +114,17 @@ export const data: TalentData = {
           10,
         ]} sec.`,
       },
+      "Focused Casting": {
+        name: "Focused Casting",
+        pos: "c4",
+        icon: icons["focused_casting"],
+        maxRank: 1,
+        reqPoints: 10,
+        prereq: "Martyrdom",
+        arrows: [{ dir: "down", from: "b4", to: "c4" }],
+        description: talentText`While active, you no longer lose casting time from taking damage and you are immune to Silence and Interrupt mechanics.  Lasts 8 sec.`,
+      },
+
       "Inner Focus": {
         name: "Inner Focus",
         pos: "c2",
@@ -102,6 +134,20 @@ export const data: TalentData = {
         prereq: "Improved Inner Fire",
         arrows: [{ dir: "down", from: "b2", to: "c2" }],
         description: talentText`When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 100% if it is capable of a critical effect.`,
+      },
+      "Concentration": {
+        name: "Concentration",
+        pos: "b3",
+        icon: icons["Concentration"],
+        maxRank: 5,
+        reqPoints: 5,
+        description: talentText`Gives you a ${[
+          3,
+          6,
+          9,
+          12,
+          15,
+        ]}% chance to enter a Clearcasting state after casting any damaging spell. The clearcasting state reduces the Mana cost of your next damage spell by 100%.`,
       },
       Meditation: {
         name: "Meditation",
@@ -143,15 +189,15 @@ export const data: TalentData = {
           15,
         ]}%`,
       },
-      "Improved Mana Burn": {
+      "Stratagem": {
         name: "Improved Mana Burn",
-        pos: "d4",
+        pos: "c1",
         icon: icons["spell_shadow_manaburn"],
         maxRank: 2,
-        reqPoints: 15,
-        description: talentText`Reduces the casting time of your Mana Burn spell by ${[
-          0.25,
+        reqPoints: 10,
+        description: talentText`Reduces the casting time of your Mind Control and Mana Burn spells by ${[
           0.5,
+          1,
         ]} sec.`,
       },
       "Mental Strength": {
@@ -168,15 +214,39 @@ export const data: TalentData = {
           15,
         ]}%.`,
       },
-      "Divine Spirit": {
-        name: "Divine Spirit",
-        pos: "e3",
-        icon: icons["spell_holy_divinespirit"],
-        maxRank: 1,
-        reqPoints: 20,
-        prereq: "Meditation",
-        arrows: [{ dir: "down", from: "c3", to: "e3" }],
-        description: talentText`Holy power infuses the target, increasing their Spirit by 17 for 30 min.`,
+      "Improved Memory": {
+        name: "Improved Memory",
+        pos: "f1",
+        icon: icons["improved_memory"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Increases your casting speed by ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}%.`,
+      },
+      "Twin Disciplines": {
+        name: "Twin Disciplines",
+        pos: "f3",
+        icon: icons["twin_disciplines"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Your holy damage spells have a ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}% chance to reduce the mana cost of your next shadow damage spell by 100% and your shadow damage spells have a ${[
+          5,
+          10,
+          15,
+          20,
+          25,
+        ]}% chance to reduce the mana cost of your next holy damage spell by 100%.`,
       },
       "Force of Will": {
         name: "Force of Will",
