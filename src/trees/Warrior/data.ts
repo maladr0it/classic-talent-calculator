@@ -738,12 +738,13 @@ export const data: TalentData = {
         name: "Training and Discipline",
         pos: "e2",
         icon: icons["training_discipline"],
-        maxRank: 1,
+        maxRank: 3,
         reqPoints: 20,
         description: talentText`Reduces the cost of all your abilities by ${[
           1,
           2,
-        ]} rage point${["", "s"]}.`,
+          3,
+        ]} rage point${["", "s", "s"]}.`,
       },
       "Vitality": {
         name: "Vitality",
