@@ -514,7 +514,7 @@ export const data: TalentData = {
         name: "Improved Bloodthirst",
         pos: "g3",
         icon: icons["spell_nature_bloodlust"],
-        maxRank: 1,
+        maxRank: 2,
         reqPoints: 30,
         prereq: "Death Wish",
         arrows: [{ dir: "right", from: "g2", to: "g3" }],
