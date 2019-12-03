@@ -787,8 +787,6 @@ export const data: TalentData = {
         icon: icons["spell_shadow_shadowform"],
         maxRank: 1,
         reqPoints: 30,
-        prereq: "Vampiric Embrace",
-        arrows: [{ dir: "down", from: "e2", to: "g2" }],
         description: talentText`Assume a Shadowform, increasing your Shadow damage by 15%. However, you may not cast Holy spells while in this form.`,
       },
     },
