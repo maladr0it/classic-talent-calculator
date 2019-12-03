@@ -726,7 +726,7 @@ export const data: TalentData = {
       },
       "Killer Instinct": {
         name: "Killer Instinct",
-        pos: "d4",
+        pos: "d3",
         icon: icons["spell_holy_blessingofstamina"],
         maxRank: 3,
         reqPoints: 15,
@@ -827,7 +827,7 @@ export const data: TalentData = {
         maxRank: 1,
         reqPoints: 20,
         prereq: "Killer Instinct",
-        arrows: [{ dir: "down", from: "d4", to: "e4" }],
+        arrows: [{ dir: "right-down", from: "d3", to: "e4" }],
         description: talentText`A stinging shot that puts the target to sleep for 15 sec. Any damage will cancel the effect. When the target wakes up, the Sting causes 300 Nature damage over 12 sec. Only usable out of combat. Only one Sting per Hunter can be active on the target at a time.`,
       },
       "Savage Blow": {
