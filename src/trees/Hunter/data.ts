@@ -615,38 +615,6 @@ export const data: TalentData = {
           5,
         ]}%. Also increases the effectiveness of Track Hidden.`,
       },
-      "Monster Slaying": {
-        name: "Monster Slaying",
-        pos: "a1",
-        icon: icons["inv_misc_head_dragon_black"],
-        maxRank: 3,
-        reqPoints: 0,
-        description: talentText`Increases all damage against Beasts, Giants and Dragonkin targets by ${[
-          1,
-          2,
-          3,
-        ]}% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional ${[
-          1,
-          2,
-          3,
-        ]}%.`,
-      },
-      "Humanoid Slaying": {
-        name: "Humanoid Slaying",
-        pos: "a2",
-        icon: icons["spell_holy_prayerofhealing"],
-        maxRank: 3,
-        reqPoints: 0,
-        description: talentText`Increases all damage against Humanoid targets by ${[
-          1,
-          2,
-          3,
-        ]}% and increases the critical damage caused against Humanoid targets by an additional ${[
-          1,
-          2,
-          3,
-        ]}%.`,
-      },
       Deflection: {
         name: "Deflection",
         pos: "a3",
@@ -659,20 +627,6 @@ export const data: TalentData = {
           3,
           4,
         ]}%.`,
-      },
-      Entrapment: {
-        name: "Entrapment",
-        pos: "b1",
-        icon: icons["spell_nature_stranglevines"],
-        maxRank: 5,
-        reqPoints: 5,
-        description: talentText`Gives your Immolation Trap, Frost Trap, and Explosive Trap a ${[
-          5,
-          10,
-          15,
-          20,
-          25,
-        ]}% chance to entrap the target, preventing them from moving for 5 sec.`,
       },
       "Savage Strikes": {
         name: "Savage Strikes",
@@ -768,33 +722,6 @@ export const data: TalentData = {
           10,
           20,
           30,
-        ]}%.`,
-      },
-      Surefooted: {
-        name: "Surefooted",
-        pos: "d2",
-        icon: icons["ability_kick"],
-        maxRank: 3,
-        reqPoints: 15,
-        description: talentText`Increases hit chance by ${[
-          1,
-          2,
-          3,
-        ]}% and increases the chance movement impairing effects will be resisted by an additional ${[
-          5,
-          10,
-          15,
-        ]}%`,
-      },
-      "Improved Feign Death": {
-        name: "Improved Feign Death",
-        pos: "d4",
-        icon: icons["ability_rogue_feigndeath"],
-        maxRank: 2,
-        reqPoints: 15,
-        description: talentText`Reduces the chance your Feign Death ability will be resisted by ${[
-          2,
-          4,
         ]}%.`,
       },
       "Killer Instinct": {
