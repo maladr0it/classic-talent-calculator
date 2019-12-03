@@ -16,7 +16,7 @@
   height: 100%;
   background-size: auto var(--arrow-thickness);
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: right;
 }
 
 .Arrow-container--right {
