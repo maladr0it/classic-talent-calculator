@@ -94,17 +94,6 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
-      Pathfinding: {
-        name: "Pathfinding",
-        pos: "c1",
-        icon: icons["ability_mount_jungletiger"],
-        maxRank: 2,
-        reqPoints: 10,
-        description: talentText`Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by ${[
-          3,
-          6,
-        ]}%.`,
-      },
       "Bestial Swiftness": {
         name: "Bestial Swiftness",
         pos: "b1",
@@ -128,7 +117,6 @@ export const data: TalentData = {
           50,
         ]}% and reduces mana cost of all your Aspects by 50%.`,
       },
-
       "Unleashed Fury": {
         name: "Unleashed Fury",
         pos: "c3",
