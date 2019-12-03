@@ -450,11 +450,10 @@ export const data: TalentData = {
         arrows: [{ dir: "down", from: "c2", to: "d2" }],
         description: talentText`Increases the critical strike damage of your Holy spells by ${[
           50,
+          75,
           100,
-          150,
         ]}%.`,
       },
-
       "Improved Prayer of Healing": {
         name: "Improved Prayer of Healing",
         pos: "e1",
@@ -591,20 +590,14 @@ export const data: TalentData = {
         name: "Shadow Focus",
         pos: "b4",
         icon: icons["spell_shadow_burningspirit"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 5,
         description: talentText`Reduces your target's chance to resist your Shadow spells by ${[
-          2,
-          4,
-          6,
-          8,
+          5,
           10,
         ]}% and increases the range of your shadow spells by ${[
           10,
           20,
-          30,
-          40,
-          50,
         ]}%.`,
       },
       "Improved Psychic Scream": {
@@ -796,7 +789,7 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Vampiric Embrace",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Assume a Shadowform, increasing your Shadow damage by 15% and reducing Physical damage done to you by 15%. However, you may not cast Holy spells while in this form.`,
+        description: talentText`Assume a Shadowform, increasing your Shadow damage by 15%. However, you may not cast Holy spells while in this form.`,
       },
     },
   },
