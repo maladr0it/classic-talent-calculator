@@ -530,7 +530,7 @@ export const data: TalentData = {
       },
       "Bow Specialization": {
         name: "Bow Specialization",
-        pos: "d2",
+        pos: "d3",
         icon: icons["bow"],
         maxRank: 5,
         reqPoints: 15,
@@ -544,7 +544,7 @@ export const data: TalentData = {
       },
       "Gun Specialization": {
         name: "Gun Specialization",
-        pos: "d3",
+        pos: "d4",
         icon: icons["gun"],
         maxRank: 5,
         reqPoints: 15,
