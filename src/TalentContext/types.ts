@@ -28,7 +28,7 @@ export type Position =
   | "g3"
   | "g4";
 
-export type ArrowDir = "right" | "down" | "right-down" | "right-down-down";
+export type ArrowDir = "left" | "right"  | "down" | "right-down" | "right-down-down";
 
 interface Talent {
   name: string;
