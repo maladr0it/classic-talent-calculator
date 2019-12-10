@@ -1,4 +1,8 @@
-import { Position, ArrowDir, TalentData } from "./types";
+import {
+  Position as _Position,
+  ArrowDir as _ArrowDir,
+  TalentData as _TalentData,
+} from "./types";
 
 export { createTalentProvider, useTalentContext } from "./TalentContext";
 export {
@@ -17,6 +21,6 @@ export {
 export { getStateFromHash, getHashFromState } from "./encoding";
 
 // TODO: think of a cleaner way to re-export
-export type Position = Position;
-export type ArrowDir = ArrowDir;
-export type TalentData = TalentData;
+export type Position = _Position;
+export type ArrowDir = _ArrowDir;
+export type TalentData = _TalentData;
