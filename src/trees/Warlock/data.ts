@@ -225,7 +225,7 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 25,
         prereq: "Nightfall",
-        arrows: [{ dir: "down", from: "e2", to: "f2" }],
+        arrows: [{ dir: "down", from: "d2", to: "f2" }],
         description: talentText`Gives your Corruption, Curse of Agony, Curse of Weakness and Curse of Exhaustion spells an additional ${[
           20,
           40,
@@ -268,7 +268,7 @@ export const data: TalentData = {
     talents: {
       "Improved Healthstone": {
         name: "Improved Healthstone",
-        pos: "a1",
+        pos: "a2",
         icon: icons["inv_stone_04"],
         maxRank: 2,
         reqPoints: 0,
@@ -279,7 +279,7 @@ export const data: TalentData = {
       },
       "Improved Imp": {
         name: "Improved Imp",
-        pos: "a2",
+        pos: "a1",
         icon: icons["spell_shadow_summonimp"],
         maxRank: 3,
         reqPoints: 0,
