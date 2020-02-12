@@ -282,11 +282,12 @@ export const data: TalentData = {
         name: "Combat Endurance",
         pos: "a1",
         icon: icons["booming_voice"],
-        maxRank: 2,
+        maxRank: 3,
         reqPoints: 0,
         description: talentText`Allows ${[
           10,
           20,
+	  30,
         ]}% of your Health regeneration to work while in combat.`,
       },
       "Booming Voice": {
