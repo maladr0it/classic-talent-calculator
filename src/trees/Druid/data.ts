@@ -790,12 +790,12 @@ export const data: TalentData = {
       },
       "Gift of Nature": {
         name: "Gift of Nature",
-        pos: "d3",
+        pos: "d2",
         icon: icons["spell_nature_protectionformnature"],
         maxRank: 5,
         reqPoints: 15,
         prereq: "Insect Swarm",
-        arrows: [{ dir: "down", from: "c3", to: "d3" }],
+        arrows: [{ dir: "down", from: "c2", to: "d2" }],
         description: talentText`Increases nature damage by ${[
           2,
           4,
@@ -808,17 +808,6 @@ export const data: TalentData = {
           6,
           8,
           10,
-        ]}%.`,
-      },
-      "Improved Tranquility": {
-        name: "Improved Tranquility",
-        pos: "e4",
-        icon: icons["spell_nature_tranquility"],
-        maxRank: 2,
-        reqPoints: 20,
-        description: talentText`Reduces the threat caused by Tranquility by ${[
-          50,
-          100,
         ]}%.`,
       },
       "Animism": {
