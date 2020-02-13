@@ -149,7 +149,7 @@ export const data: TalentData = {
       "Master of Elements": {
         name: "Master of Elements",
         pos: "b3",
-        icon: icons["master_of_elements"],
+        icon: icons["spell_fire_masterofelements"],
         maxRank: 3,
         reqPoints: 5,
         prereq: "Elemental Precision",
