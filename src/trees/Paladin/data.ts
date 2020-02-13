@@ -595,7 +595,7 @@ export const data: TalentData = {
     talents: {
       Benediction: {
         name: "Benediction",
-        pos: "d3",
+        pos: "d2",
         icon: icons["spell_frost_windwalkon"],
         maxRank: 5,
         reqPoints: 15,
@@ -730,7 +730,7 @@ export const data: TalentData = {
       },
       "Divine Might": {
         name: "Divine Might",
-        pos: "d4",
+        pos: "d3",
         icon: icons["divine_might"],
         maxRank: 2,
         reqPoints: 15,
