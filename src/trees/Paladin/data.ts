@@ -816,6 +816,32 @@ export const data: TalentData = {
           50,
         ]}% of your total Strength.`,
       },
+      "Codex of the Silver Hand": {
+        name: "Codex of the Silver Hand",
+        pos: "f3",
+        icon: icons["codex_silver_hand"],
+        maxRank: 5,
+        reqPoints: 25,
+        description: talentText`Allow ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}% of your Mana regeneration to continue during and for 5 sec after casting. \nIn addition, reduces the Mana cost of your Holy Light spell by ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}%, but increases it's casting time by ${[
+          0.3,
+          0.6,
+          0.9,
+          1.2,
+          1.5,
+        ]} sec.`,
+      },
       "Crusader Strike": {
         name: "Crusader Strike",
         pos: "g2",
