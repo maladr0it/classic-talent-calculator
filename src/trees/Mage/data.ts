@@ -38,8 +38,27 @@ export const data: TalentData = {
           6,
           8,
           10,
-        ]}%.`,
+        ]}% and gives you a ${[
+          20,
+          40,
+          60,
+          80,
+          100,
+        ]}% chance to avoid interruption caused by damage while channeling Arcane Missiles.`,
       },
+      "Elemental Precision": {
+        name: "Elemental Precision",
+        pos: "a3",
+        icon: icons["spell_ice_magicdamage"],
+        maxRank: 3,
+        reqPoints: 0,
+        description: talentText`Reduces the chance that the opponent can resist your Frost and Fire spells by ${[
+          2,
+          4,
+          6,
+        ]}%`,
+      },
+
       "Improved Arcane Missiles": {
         name: "Improved Arcane Missiles",
         pos: "a3",
@@ -56,13 +75,13 @@ export const data: TalentData = {
       },
       "Wand Specialization": {
         name: "Wand Specialization",
-        pos: "b1",
+        pos: "a1",
         icon: icons["inv_wand_01"],
         maxRank: 2,
-        reqPoints: 5,
+        reqPoints: 0,
         description: talentText`Increases your damage with Wands by ${[
-          13,
           25,
+          50,
         ]}%.`,
       },
       "Magic Absorption": {
@@ -72,11 +91,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 5,
         description: talentText`Increases all resistances by ${[
-          2,
-          4,
-          6,
-          8,
+          5,
           10,
+          15,
+          20,
+          25,
         ]} and causes all spells you fully resist to restore ${[
           1,
           2,
@@ -87,29 +106,60 @@ export const data: TalentData = {
       },
       "Arcane Concentration": {
         name: "Arcane Concentration",
-        pos: "b3",
+        pos: "c2",
         icon: icons["spell_shadow_manaburn"],
         maxRank: 5,
-        reqPoints: 5,
+        reqPoints: 10,
         description: talentText`Gives you a ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}% chance of entering a Clearcasting state after any damage spell hits a target. The Clearcasting state reduces the mana cost of your next damage spell by 100%.`,
       },
-      "Magic Attunement": {
-        name: "Magic Attunement",
-        pos: "c1",
+      "Practical Defensive Magic": {
+        name: "Practical Defensive Magic",
+        pos: "b1",
         icon: icons["spell_nature_abolishmagic"],
         maxRank: 2,
-        reqPoints: 10,
+        reqPoints: 5,
         description: talentText`Increases the effect of your Amplify Magic and Dampen Magic spells by ${[
           25,
           50,
+        ]}%, decreases the mana lost per point of damage taken when Mana Shield is active by ${[
+          25,
+          50,
+        ]}% and gives your Polymorph a ${[
+          45,
+          90,
+        ]}% chance to not lose casting time when you take damage.`,
+      },
+      "Arcane Subtlety": {
+        name: "Arcane Subtlety",
+        pos: "c1",
+        icon: icons["arcane_subtlety"],
+        maxRank: 2,
+        reqPoints: 10,
+        description: talentText`Reduces your target's resistance to all your spells by ${[
+          10,
+          20,
+        ]}% and reduces the threat caused by your Arcane spells by ${[
+          20,
+          40,
         ]}%.`,
       },
+      "Spell Twisting": {
+        name: "Spell Twisting",
+        pos: "c3",
+        icon: icons["spell_nature_enchantarmor"],
+        maxRank: 1,
+        reqPoints: 10,
+        prereq: "Master of Elements",
+        arrows: [{ dir: "down", from: "b3", to: "c3" }],
+        description: talentText`Your Fire damage spells increases your chance to get a critical strike chance with your next Frost damage spell by 10%. \n\nYour Frost damage spells increases your chance to get a critical strike chance with your next Fire damage spell by 10%. \n\nYour Arcane damage spells increases your chance to get a critical strike chance with your next  Fire or Frost damage spell by 10%.`,
+      },
+
       "Improved Arcane Explosion": {
         name: "Improved Arcane Explosion",
         pos: "c2",
@@ -124,12 +174,35 @@ export const data: TalentData = {
       },
       "Arcane Resilience": {
         name: "Arcane Resilience",
-        pos: "c3",
+        pos: "a4",
         icon: icons["spell_arcane_arcaneresilience"],
-        maxRank: 1,
-        reqPoints: 10,
-        description: talentText`Increases your armor by an amount equal to 50% of your Intellect.`,
+        maxRank: 3,
+        reqPoints: 0,
+        description: talentText`Increases your armor by an amount equal to ${[
+          50,
+          100,
+          150,
+        ]}% of your Intellect and increases the effects of your Mage Armor by ${[
+          10,
+          20,
+          30,
+        ]}%.`,
       },
+      "Master of Elements": {
+        name: "Master of Elements",
+        pos: "b3",
+        icon: icons["master_of_elements"],
+        maxRank: 3,
+        reqPoints: 5,
+        prereq: "Elemental Precision",
+        arrows: [{ dir: "down", from: "a3", to: "b3" }],
+        description: talentText`Your Fire and Frost spell criticals will refund ${[
+          10,
+          20,
+          30,
+        ]}% of their base mana cost.`,
+      },
+
       "Improved Mana Shield": {
         name: "Improved Mana Shield",
         pos: "d1",
