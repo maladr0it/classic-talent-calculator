@@ -435,20 +435,6 @@ export const data: TalentData = {
           50,
         ]}%.`,
       },
-      Anticipation: {
-        name: "Anticipation",
-        pos: "c4",
-        icon: icons["spell_magic_lesserinvisibilty"],
-        maxRank: 5,
-        reqPoints: 10,
-        description: talentText`Increases your Defense skill by ${[
-          2,
-          4,
-          6,
-          8,
-          10,
-        ]}.`,
-      },
       "Improved Hammer of Justice": {
         name: "Improved Hammer of Justice",
         pos: "b4",
