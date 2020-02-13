@@ -606,7 +606,7 @@ export const data: TalentData = {
       },
       "Ice Shards": {
         name: "Ice Shards",
-        pos: "e2",
+        pos: "e3",
         icon: icons["spell_frost_iceshard"],
         maxRank: 5,
         reqPoints: 20,
