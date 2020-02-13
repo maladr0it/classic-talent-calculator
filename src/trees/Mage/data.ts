@@ -172,7 +172,7 @@ export const data: TalentData = {
         ]}% chance to silence the target for 4 sec, reduces the cooldown of your Blink by 5 secs and increases the radius of your Arcane Explosion by ${[
           1,
           2,
-        ]}% yards.`,
+        ]} yards.`,
       },
       "Arcane Meditation": {
         name: "Arcane Meditation",
