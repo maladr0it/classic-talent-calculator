@@ -214,7 +214,7 @@ export const data: TalentData = {
           5,
           10,
           15,
-        ]} seconds and reduces target speed by an additional 5 sec.`,
+        ]} and reduces target speed by an additional 5%.`,
       },
       "Parabellum": {
         name: "Parabellum",
