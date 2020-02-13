@@ -214,11 +214,7 @@ export const data: TalentData = {
           5,
           10,
           15,
-        ]} seconds and reduces target speed by an additional ${[
-          5,
-          10,
-          15,
-        ]}%.`,
+        ]} seconds and reduces target speed by an additional 5 sec.`,
       },
       "Parabellum": {
         name: "Parabellum",
@@ -458,7 +454,10 @@ export const data: TalentData = {
         description: talentText`Reduces the rage cost of your Intercept and Pummel abilities by ${[
           50,
           100,
-        ]}% and reduces the cooldown of your Intercept ability by 5 sec.`,
+        ]}% and reduces the cooldown of your Intercept ability by ${[
+          5,
+          10,
+        ]} sec.`,
       },
       "Inner Rage": {
         name: "Inner Rage",
