@@ -360,11 +360,15 @@ export const data: TalentData = {
           5,
           10,
           15,
-        ]}% reduces it's mana cost by${[
+        ]}% reduces it's mana cost by ${[
           5,
           10,
           15,
-        ]}% and increases it's number of orbs by 3.`,
+        ]}% and increases it's number of orbs by ${[
+          3,
+          4,
+          5,
+        ]}.`,
       },
       "Enhancing Totems": {
         name: "Enhancing Totems",
