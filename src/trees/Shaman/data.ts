@@ -559,7 +559,7 @@ export const data: TalentData = {
           0.3,
           0.4,
           0.5,
-        ]}%.`,
+        ]} sec.`,
       },
       "Spiritwalking": {
         name: "Spiritwalking",
