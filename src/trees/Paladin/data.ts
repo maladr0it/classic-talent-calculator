@@ -292,7 +292,7 @@ export const data: TalentData = {
         icon: icons["blinding_light"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Flash of inner Light emerges from Paladin, making all spells cost no Mana and blinding nearby enemies. Lasts $d. Targets must be facing you. Any damage caused will remove the effect.`,
+        description: talentText`Flash of inner Light emerges from Paladin, making all spells cost no Mana and blinding nearby enemies. Lasts 6 sec. Targets must be facing you. Any damage caused will remove the effect.`,
       },
       "Holy Shock": {
         name: "Holy Shock",
