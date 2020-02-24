@@ -670,7 +670,7 @@ export const data: TalentData = {
         name: "Shield Toss",
         pos: "e1",
         icon: icons["shield_toss"],
-        maxRank: 3,
+        maxRank: 1,
         reqPoints: 20,
         description: talentText`Hurls a shield at the enemy, causing 90 to 100 damage, increased by Attack Power and knocks down for 4 sec. This ability damage ignores target's armor and causes a high amount of threat.`,
       },
