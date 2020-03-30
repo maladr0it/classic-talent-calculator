@@ -78,7 +78,7 @@ export const data: TalentData = {
       "Duelist": {
         name: "Duelist",
         pos: "b3",
-        icon: icons["ability_warrior_challange"],
+        icon: icons["duelist"],
         maxRank: 2,
         reqPoints: 5,
         prereq: "Deflection",
@@ -118,7 +118,7 @@ export const data: TalentData = {
       "Maim": {
         name: "Maim",
         pos: "e4",
-        icon: icons["ability_rogue_feigndeath"],
+        icon: icons["maim"],
         maxRank: 3,
         reqPoints: 20,
         prereq: "Deep Wounds",
@@ -219,7 +219,7 @@ export const data: TalentData = {
       "Parabellum": {
         name: "Parabellum",
         pos: "f1",
-        icon: icons["spell_holy_prayerofhealing"],
+        icon: icons["parabellum"],
         maxRank: 5,
         reqPoints: 25,
         description: talentText`Reduces the cooldown of your abilities by ${[
@@ -233,7 +233,7 @@ export const data: TalentData = {
       "Dog of War": {
         name: "Dog of War",
         pos: "f3",
-        icon: icons["spell_holy_prayerofhealing"],
+        icon: icons["dog_of_war"],
         maxRank: 5,
         reqPoints: 25,
         description: talentText`Reduces the rage cost of your abilities by ${[
@@ -277,7 +277,7 @@ export const data: TalentData = {
       "Combat Endurance": {
         name: "Combat Endurance",
         pos: "a1",
-        icon: icons["booming_voice"],
+        icon: icons["combat_endurance"],
         maxRank: 3,
         reqPoints: 0,
         description: talentText`Allows ${[
@@ -389,7 +389,7 @@ export const data: TalentData = {
       "Precision": {
         name: "Precision",
         pos: "d1",
-        icon: icons["Precision"],
+        icon: icons["precision"],
         maxRank: 5,
         reqPoints: 15,
         description: talentText`Increases your chance to hit with melee weapons by ${[
@@ -462,7 +462,7 @@ export const data: TalentData = {
       "Inner Rage": {
         name: "Inner Rage",
         pos: "e1",
-        icon: icons["inner_rage"],
+        icon: icons["innerrage"],
         maxRank: 2,
         reqPoints: 20,
         description: talentText`Reduces the cooldown of your Bloodrage, Berserker Rage and Recklessness by ${[
@@ -487,7 +487,7 @@ export const data: TalentData = {
       "Berserker's Blood": {
         name: "Berserker's Blood",
         pos: "f3",
-        icon: icons["berserker_blood"],
+        icon: icons["zerkerblood"],
         maxRank: 5,
         reqPoints: 25,
 	prereq: "Enrage",
@@ -737,7 +737,7 @@ export const data: TalentData = {
       "Training and Discipline": {
         name: "Training and Discipline",
         pos: "e2",
-        icon: icons["training_discipline"],
+        icon: icons["training_and_discipline"],
         maxRank: 3,
         reqPoints: 20,
         description: talentText`Reduces the cost of all your abilities by ${[
@@ -777,7 +777,7 @@ export const data: TalentData = {
       "Prowess": {
         name: "Prowess",
         pos: "g2",
-        icon: icons["Prowess"],
+        icon: icons["prowess"],
         maxRank: 1,
         reqPoints: 30,
         prereq: "Training and Discipline",
