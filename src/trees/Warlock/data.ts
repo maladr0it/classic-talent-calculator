@@ -521,7 +521,7 @@ export const data: TalentData = {
         pos: "f3",
         icon: icons["fel_pact"],
         maxRank: 5,
-        reqPoints: 30,
+        reqPoints: 25,
         prereq: "Demonic Onslaught",
         arrows: [{ dir: "down", from: "c3", to: "f3" }],
         description: talentText`Demon's melee and spell critical hits have a ${[
