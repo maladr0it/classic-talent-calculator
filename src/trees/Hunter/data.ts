@@ -267,7 +267,7 @@ export const data: TalentData = {
       },
       "Terrifying Roar": {
         name: "Terrifying Roar",
-        pos: "g2",
+        pos: "g3",
         icon: icons["terrifying_roar"],
         maxRank: 1,
         reqPoints: 30,
@@ -275,11 +275,11 @@ export const data: TalentData = {
       },
       "Kill Command": {
         name: "Kill Command",
-        pos: "g1",
+        pos: "g2",
         icon: icons["kill_command"],
         maxRank: 1,
         reqPoints: 30,
-        prereq: "Intimidation",
+        prereq: "Bestial Wrath",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
         description: talentText`Give the command to kill, increasing damage done by your pet by 50% for 5 sec. Only usable against enemies that have 20% or less health.`,
       },
