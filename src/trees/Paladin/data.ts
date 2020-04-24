@@ -304,13 +304,10 @@ export const data: TalentData = {
         name: "Improved Defensive Auras",
         pos: "d1",
         icon: icons["spell_holy_devotionaura"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 15,
         description: talentText`Increases the armor and resistance bonus of your Devotion and Resistance Auras by ${[
-          10,
-          20,
-          30,
-          40,
+          25,
           50,
         ]}%.`,
       },
@@ -352,13 +349,10 @@ export const data: TalentData = {
         icon: icons["spell_holy_sealofprotection"],
         maxRank: 2,
         reqPoints: 5,
-        description: talentText`Reduces the cooldown of your Blessing of Protection and Blessing of Freedom by ${[
-          30,
-          60,
-        ]}%, increases the effect of your Blessing of Salvation, Blessing of Sacrifice and Blessing of Sanctuary by ${[
+        description: talentText`Increases effect of your Blessing of Salvation and Blessing of Sanctuary by ${[
           10,
           20,
-        ]} sec and reduces mana cost of listed spells by ${[
+        ]}%.\n\n Also increases duration and reduces mana cost of your Blessing of Salvation, Sacrifice, Sanctuary, Freedom and Protection by ${[
           50,
           100,
         ]}%.`,
@@ -370,11 +364,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 0,
         description: talentText`Increases your armor value from items by ${[
-          3,
+          2,
+          4,
           6,
-          9,
-          12,
-          15,
+          8,
+          10,
         ]}%.`,
       },
       "Blessing of Kings": {
@@ -463,14 +457,13 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 15,
         description: talentText`Gives you a ${[
-          5,
           10,
-          15,
           20,
-          25,
-        ]}% chance to generate 1% of your total Mana after being hit.`,
+          30,
+          40,
+          50,
+        ]}% chance to generate 1% of your total Mana after being healed.`,
       },
-
       "Blessing of Sanctuary": {
         name: "Blessing of Sanctuary",
         pos: "c2",
@@ -511,13 +504,11 @@ export const data: TalentData = {
         name: "Anticipation",
         pos: "e3",
         icon: icons["anticipation"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 20,
         description: talentText`Reduces chance you are hit by spells and ranged attacks by ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
         ]}%.`,
       },
@@ -573,7 +564,7 @@ export const data: TalentData = {
         icon: icons["seal_of_fury"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Fills the Paladin with divine fury for 30 sec, causing all melee attacks deals additional Holy damage equal to 25% of normal weapon damage to all targets infront Paladin. Only one Seal can be active on the Paladin at any one time. \n\nUnleashing this Seal's energy will judge an enemy for 4 sec, forcing the target to attack you, but has no effect if the target is already attacking you.`,
+        description: talentText`Fills the Paladin with divine fury for 30 sec, causing melee attacks to deal additional physical damage equal to 30% of normal weapon damage to all targets infront of the Paladin. Only one Seal can be active on the Paladin at any one time. \n\nUnleashing this Seal's energy will judge an enemy for 4 sec, forcing the target to attack you, but has no effect if the target is already attacking you.`,
       },
     },
   },
