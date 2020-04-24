@@ -655,11 +655,11 @@ export const data: TalentData = {
       },
       Survivalist: {
         name: "Survivalist",
-        pos: "c3",
+        pos: "c4",
         icon: icons["spell_shadow_twilight"],
         maxRank: 5,
         reqPoints: 10,
-        description: talentText`Increases total health by ${[2, 4, 6, 8, 10]}%. Increases total health by $s1%. In addition, gives your stings an additional 15% chance to resist dispel effects and cures 1 Poison and 1 Disease every 60 sec.`,
+        description: talentText`Increases total health by ${[2, 4, 6, 8, 10]}%. In addition, gives your stings an additional 15% chance to resist dispel effects and cures 1 Poison and 1 Disease every 60 sec.`,
       },
       Deterrence: {
         name: "Deterrence",
