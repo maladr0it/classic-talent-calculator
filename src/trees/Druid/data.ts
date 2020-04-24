@@ -619,11 +619,11 @@ export const data: TalentData = {
           40,
           50,
         ]}% and reduces the chance of listed spells to be dispelled by ${[
-          15,
+          10,
+          20,
           30,
-          45,
-          60,
-          75,
+          40,
+          50,
         ]}%.`,
       },
       Furor: {
@@ -632,10 +632,10 @@ export const data: TalentData = {
         icon: icons["spell_nature_unyeildingstamina"],
         maxRank: 2,
         reqPoints: 0,
-        description: talentText`Gives you ${[
-          50,
-          100,
-        ]}% chance to gain 10 Rage when you shapeshift into Bear and Dire Bear Form or 40 Energy when you shapeshift into Cat Form.`,
+        description: talentText`You gain 20 Rage when you shapeshift into Bear and Dire Bear Form or 40 Energy when you shapeshift into Cat Form. This effect can only occur once every ${[
+          30,
+          15,
+        ]} sec.`,
       },
       "Naturalist": {
         name: "Naturalist",
@@ -678,8 +678,8 @@ export const data: TalentData = {
         maxRank: 2,
         reqPoints: 5,
         description: talentText`The Enrage ability now instantly generates ${[
-          5,
           10,
+          20,
         ]} Rage.`,
       },
       Reflection: {
@@ -729,11 +729,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 20,
         description: talentText`Reduces the mana cost of your Healing Touch and Tranquility spells by ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}%. In addition, reduces threat caused by Tranquility by ${[
           20,
           40,
@@ -754,24 +754,28 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
-      "The Caretaker": {
-        name: "The Caretaker",
+      "Catharsis": {
+        name: "Catharsis",
         pos: "d4",
-        icon: icons["caretaker"],
+        icon: icons["catharsis"],
         maxRank: 3,
         reqPoints: 15,
         description: talentText`Reduces the Mana cost of your Soothe Animal, Hibernate, Remove Curse, Cure Poison, Abolish Poison and Rebirth spells by ${[
-          10,
-          20,
+          15,
           30,
-        ]}%.`,
+          45,
+        ]}%. In addition, your Innervate casts grant you ${[
+          5,
+          10,
+          15,
+        ]} sec of Innervate effect.`,
       },
       "Custody of the Nature": {
         name: "Custody of the Nature",
-        pos: "e4",
+        pos: "d4",
         icon: icons["custody_of_nature"],
         maxRank: 3,
-        reqPoints: 20,
+        reqPoints: 15,
         description: talentText`After being struck by a critical hit, you become immune to critical strikes for next ${[
           3,
           6,
