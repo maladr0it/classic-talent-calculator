@@ -127,7 +127,7 @@ export const data: TalentData = {
         icon: icons["survival_instincts"],
         maxRank: 3,
         reqPoints: 15,
-        prereq: "Thick Hide ",
+        prereq: "Thick Hide",
         arrows: [{ dir: "down", from: "b1", to: "d1" }],
         description: talentText`Reduces the chance your pets are critically hit by melee attacks by ${[
           2,
