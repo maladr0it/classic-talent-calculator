@@ -241,8 +241,6 @@ export const data: TalentData = {
         icon: icons["ability_druid_ferociousbite"],
         maxRank: 1,
         reqPoints: 20,
-        prereq: "Intimidation",
-        arrows: [{ dir: "down", from: "c2", to: "e2" }],
         description: talentText`Send your pet into a rage causing 50% additional damage for 18 sec. While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.`,
       },
       "Team Play": {
