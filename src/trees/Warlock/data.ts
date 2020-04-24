@@ -56,20 +56,6 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
-      "Improved Drain Soul": {
-        name: "Improved Drain Soul",
-        pos: "d1",
-        icon: icons["spell_shadow_haunting"],
-        maxRank: 2,
-        reqPoints: 15,
-        description: talentText`Reduces the cooldown of your Drain Soul by ${[
-          5,
-          10,
-        ]} seconds and gives you a ${[
-          50,
-          100,
-        ]}% chance to get a 100% increase to your Mana regeneration for 10 sec if the target is killed by you while you drain its soul. In addition your Mana may continue to regenerate while casting at 50% of normal.`,
-      },
       "Improved Life Tap": {
         name: "Improved Life Tap",
         pos: "a2",
@@ -127,7 +113,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_contagion"],
         maxRank: 1,
         reqPoints: 10,
-        description: talentText`Increases the effect of your next Curse of Weakness or Curse of Agony by 50%, or your next Curse of Exhaustion by 20%. Lasts 30 sec.`,
+        description: talentText`Increases the effect of your next Curse by 50%. Lasts 30 sec.`,
       },
       "Herald of Woe": {
         name: "Herald of Woe",
@@ -144,27 +130,31 @@ export const data: TalentData = {
         ]} seconds.`,
       },
 
-      "Grim Reach": {
-        name: "Grim Reach",
+      "Improved Drain Soul": {
+        name: "Improved Drain Soul",
         pos: "d1",
-        icon: icons["spell_shadow_callofbone"],
+        icon: icons["improved_drain_soul"],
         maxRank: 2,
         reqPoints: 15,
-        description: talentText`Increases the range of your Affliction spells by ${[
+        description: talentText`Reduces the cooldown of your Drain Soul Spell by ${[
+          5,
           10,
-          20,
-        ]}%.`,
+        ]} sec.\nAlso gives you a ${[
+          50,
+          100,
+        ]}% chance to to get a 100% increase to your Mana regeneration, that may continue to regenerate while casting at 50% of normal, for 10 sec if the target is killed by you while you drain its soul.`,
       },
       Nightfall: {
         name: "Nightfall",
         pos: "d2",
         icon: icons["spell_shadow_twilight"],
-        maxRank: 2,
+        maxRank: 3,
         reqPoints: 15,
-        description: talentText`Gives your Corruption and Drain Life spells a ${[
+        description: talentText`Your periodic damage spells have a ${[
+          1,
           2,
-          4,
-        ]}% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.`,
+          3,
+        ]}% chance to cause you to enter a Shadow Trance state.\n\nThe Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.`,
       },
       "Improved Drain Mana": {
         name: "Improved Drain Mana",
@@ -205,7 +195,7 @@ export const data: TalentData = {
         reqPoints: 20,
         prereq: "Improved Corruption",
         arrows: [{ dir: "down", from: "a4", to: "e4" }],
-        description: talentText`Invokes the malignant power of death and decay, inflicting 525 Shadow damage to nearby enemies over 30 sec. In addition, the area of effect will remain corrupted, reducing the effectiveness of any healing by 20% and reducing the Health generation rate by 100%.`,
+        description: talentText`Invokes the malignant power of death and decay, inflicting 900 to 2250 (scales with your level) Shadow damage to nearby enemies over 30 sec. In addition, the area of effect will remain corrupted, reducing the effectiveness of any healing by 25%.`,
       },
       "Prolonged Misery": {
         name: "Prolonged Misery",
@@ -226,13 +216,19 @@ export const data: TalentData = {
         reqPoints: 25,
         prereq: "Nightfall",
         arrows: [{ dir: "down", from: "d2", to: "f2" }],
-        description: talentText`Gives your Corruption, Curse of Agony, Curse of Weakness and Curse of Exhaustion spells an additional ${[
+        description: talentText`Gives your Affliction spells an additional ${[
           20,
           40,
           60,
           80,
           100,
-        ]}% chance to resist dispel effects.`,
+        ]}% chance to resist dispel effects and increases damage done by your Curse of Doom by ${[
+          10,
+          20,
+          30,
+          40,
+          50,
+        ]}%.`,
       },
 
       "Shadow Mastery": {
@@ -251,13 +247,13 @@ export const data: TalentData = {
           10,
         ]}%.`,
       },
-      "Distortion": {
-        name: "Distortion",
+      "Defiler": {
+        name: "Defiler",
         pos: "g2",
-        icon: icons["distortion"],
+        icon: icons["defiler"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Reduces the damage taken by 50% for 5 sec. In addition, attacks made against you cause you to be healed for 1% of your maximum health while active.`,
+        description: talentText`Reduces the time between periodic damage ticks of your Corruption and Siphon Life Spells by 1 sec and Curse of Agony, Death and Decay, Drain Life and Drain Mana by 0.5 sec.`,
       },
     },
   },
