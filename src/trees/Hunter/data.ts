@@ -574,24 +574,30 @@ export const data: TalentData = {
     talents: {
        Brutality: {
         name: "Brutality",
-        pos: "a1",
+        pos: "a3",
         icon: icons["brutality"],
         maxRank: 5,
         reqPoints: 0,
-        description: talentText`Increases your chance to get a critical strike in melee by ${[
+        description: talentText`Increases your and your pets chance to get a critical strike in melee by ${[
           1,
           2,
           3,
           4,
           5,
+        ]}%. Also increases the critical strike chance of Raptor Strike and Mongoose Bite by an additional ${[
+          3,
+          6,
+          9,
+          12,
+          15,
         ]}%.`,
       },
       "Improved Tracking": {
         name: "Improved Tracking",
-        pos: "a2",
+        pos: "b2",
         icon: icons["improved_tracking"],
         maxRank: 5,
-        reqPoints: 0,
+        reqPoints: 5,
         description: talentText`While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids and Undead, all damage done and critical damage caused to those types by the Hunter is increased by ${[
           1,
           2,
@@ -602,15 +608,15 @@ export const data: TalentData = {
       },
       Deflection: {
         name: "Deflection",
-        pos: "a3",
+        pos: "a1",
         icon: icons["ability_parry"],
         maxRank: 4,
         reqPoints: 0,
         description: talentText`Increases your Parry chance by ${[
-          1,
           2,
-          3,
           4,
+          6,
+          8,
         ]}%.`,
       },
       "Savage Strikes": {
@@ -640,10 +646,10 @@ export const data: TalentData = {
       },
       "Clever Traps": {
         name: "Clever Traps",
-        pos: "c2",
+        pos: "b1",
         icon: icons["spell_nature_timestop"],
         maxRank: 2,
-        reqPoints: 10,
+        reqPoints: 5,
         description: talentText`Increases the duration of Freezing and Frost trap effects by ${[
           15,
           30,
@@ -659,20 +665,20 @@ export const data: TalentData = {
       },
       Deterrence: {
         name: "Deterrence",
-        pos: "a4",
+        pos: "a2",
         icon: icons["ability_whirlwind"],
         maxRank: 1,
         reqPoints: 0,
         prereq: "Deterrence",
-        arrows: [{ dir: "right", from: "a3", to: "a4" }],
-        description: talentText`When activated, gives you a 25% chance to reflect hostile spells and increases your Dodge and Parry chance by 25% for 10 sec.`,
+        arrows: [{ dir: "right", from: "a1", to: "a2" }],
+        description: talentText`When activated, gives increase your Dodge and Parry Chance by 25% and reflects the next spell cast on you. Lasts 10 sec.`,
       },
       "Trapper": {
         name: "Trapper",
-        pos: "b2",
+        pos: "d1",
         icon: icons["ability_ensnare"],
         maxRank: 2,
-        reqPoints: 5,
+        reqPoints: 15,
         description: talentText`Gives your traps a ${[
           10,
           20,
@@ -683,7 +689,7 @@ export const data: TalentData = {
       },
       "Thrill of the Hunt": {
         name: "Thrill of the Hunt",
-        pos: "d1",
+        pos: "d4",
         icon: icons["thrill"],
         maxRank: 3,
         reqPoints: 15,
@@ -695,10 +701,10 @@ export const data: TalentData = {
       },
       "Deep Freeze": {
         name: "Deep Freeze",
-        pos: "d2",
+        pos: "e1",
         icon: icons["deep_freeze"],
         maxRank: 3,
-        reqPoints: 15,
+        reqPoints: 20,
         description: talentText`While affected by your Freezing Trap, the target receives an additional  ${[
           5,
           10,
@@ -723,63 +729,63 @@ export const data: TalentData = {
       },
       "Dual Wield Specialization": {
         name: "Dual Wield Specialization",
-        pos: "e1",
+        pos: "c1",
         icon: icons["dual_wield_spec"],
-        maxRank: 2,
-        reqPoints: 20,
+        maxRank: 4,
+        reqPoints: 10,
         prereq: "Melee Specialization",
-        arrows: [{ dir: "left", from: "e2", to: "e1" }],
+        arrows: [{ dir: "left", from: "c2", to: "c1" }],
         description: talentText`Increases the damage done by your offhand weapon by ${[
-          25,
-          50,
+          20,
+          40,
+          60,
+          80
         ]}%.`,
       },
       "Melee Specialization": {
         name: "Melee Specialization",
-        pos: "e2",
+        pos: "c2",
         icon: icons["melee_spec"],
-        maxRank: 3,
-        reqPoints: 20,
-        description: talentText`Increases your melee attack speed by ${[
-          10,
-          20,
-          30,
-        ]}% but reduces your ranged attack speed by ${[
-          10,
-          20,
-          30,
-        ]}% and increases the shot time of your Aimed Shot and Multi-Shot by ${[
-          0.5,
-          1,
-          1.5,
-        ]}% sec.`,
+        maxRank: 1,
+        reqPoints: 10,
+        description: talentText`Increases your melee attack speed by 30% but reduces your ranged attack speed by 30% and increases the shot time of your Aimed Shot and Multi-Shot by 1.5 sec.`,
       },
       "Two Handed Specialization": {
         name: "Two Handed Specialization",
-        pos: "e3",
+        pos: "c3",
         icon: icons["2h_spec"],
-        maxRank: 2,
+        maxRank: 4,
         reqPoints: 20,
         prereq: "Melee Specialization",
-        arrows: [{ dir: "right", from: "e2", to: "e3" }],
+        arrows: [{ dir: "right", from: "c2", to: "c3" }],
         description: talentText`Increases the damage done you deal with two-handed melee weapons by ${[
-          5,
-          10,
+          4,
+          8,
+          12,
+          16
         ]}%.`,
       },
-      Counterattack: {
-        name: "Counterattack",
-        pos: "c4",
-        icon: icons["ability_warrior_challange"],
+      "Improved Raptor Strike": {
+        name: "Improved Raptor Strike",
+        pos: "b4",
+        icon: icons["improv_raptor_strike"],
         maxRank: 1,
-        reqPoints: 10,
-        prereq: "Deterrence",
-        arrows: [{ dir: "down", from: "a4", to: "c4" }],
-        description: talentText`A strike that becomes active after parrying an opponent's attack. This attack deals 40 damage and immobilizes the target for 8 sec. Counterattack cannot be blocked, dodged, or parried.`,
+        reqPoints: 5,
+        prereq: "Brutality",
+        arrows: [{ dir: "right-down", from: "a3", to: "a4" },
+                 { dir: "right-down-down", from: "a4", to: "b4" },
+        ],
+        description: talentText`Reduces the cooldown of your Raptor Strike by ${[
+          1,
+          2,
+          3,
+          4,
+          5
+        ]} sec.`,
       },
       "Find Weakness": {
         name: "Find Weakness",
-        pos: "f1",
+        pos: "f2",
         icon: icons["find_weakness"],
         maxRank: 5,
         reqPoints: 25,
@@ -789,7 +795,7 @@ export const data: TalentData = {
           60,
           80,
           100,
-        ]}% chance to reveal a flaw in your target's defenses, increasing your melee and ranged damage by 5% for 20 sec.`,
+        ]}% chance to reveal a flaw in your target's defenses, increasing your melee and ranged damage by 5% for 20 sec. Stacks up to 3 times.`,
       },
       "Lightening Reflexes": {
         name: "Lightening Reflexes",
@@ -807,27 +813,54 @@ export const data: TalentData = {
       },
       "Wyvern Sting": {
         name: "Wyvern Sting",
-        pos: "e4",
+        pos: "e3",
         icon: icons["inv_spear_02"],
         maxRank: 1,
         reqPoints: 20,
         prereq: "Killer Instinct",
         arrows: [
-          { dir: "right-down", from: "d3", to: "d4" },
-          { dir: "right-down-down", from: "d4", to: "e4" },
+          { dir: "down", from: "d3", to: "e3" },
         ],
         description: talentText`A stinging shot that puts the target to sleep for 15 sec. Any damage will cancel the effect. When the target wakes up, the Sting causes 300 Nature damage over 12 sec. Only usable out of combat. Only one Sting per Hunter can be active on the target at a time.`,
       },
-      "Savage Blow": {
-        name: "Savage Blow",
+      "Whirling Axe": {
+        name: "Whirling Axe",
         pos: "g2",
-        icon: icons["savage_blow"],
+        icon: icons["whirling_axe"],
         maxRank: 1,
         reqPoints: 30,
+        description: talentText`Hurls an axe at a target, causing damage equal to 10% of your melee attack power, stunning the target for 3 sec and slowing target's movement speed by 50% for 8 sec. This attack always crits.`,
+      },
+      "Savage Blow": {
+        name: "Savage Blow",
+        pos: "e2",
+        icon: icons["savage_blow"],
+        maxRank: 1,
+        reqPoints: 20,
         prereq: "Melee Specialization",
-        arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Lethal strike that inflicts 120% weapon damage and allows to use Mongoose Bite. Also, applies Savagery effect.
-        Savagery effect increases the critical strike damage bonus of your melee abilities by 5%. Stacks up to 5 times and lasts 30 sec.`,
+        arrows: [{ dir: "down", from: "c2", to: "e2" }],
+        description: talentText`Lethal strike that inflicts 120% weapon damage and applies an effects based on aspects you took on.
+
+Aspect of the Beast: 
+Wounds the target, reducing the effectiveness of any healing by 50%,
+preventing from fleeing and limiting target's movement speed. Lasts 8 sec.
+
+Aspect of the Cheetah: 
+Makes you immune to movement impairing effects for 5 sec.
+
+Aspect of the Hawk: 
+Increases the range of Savage Blow by 5 yd.
+
+Aspect of the Monkey: 
+Allows to use Mongoose Bite.
+
+Aspect of the Pack: 
+Reduces the cost of all spells and abilities
+of all nearby party members by 10% for 20 sec.
+
+Aspect of the Wild: 
+Regenerates 5% of your total Health over 25 sec.
+Stacks up to 5 times.`,
       },
 
     },
