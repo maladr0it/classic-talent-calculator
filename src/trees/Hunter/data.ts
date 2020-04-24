@@ -30,26 +30,12 @@ export const data: TalentData = {
         name: "Endurance Training",
         pos: "a3",
         icon: icons["spell_nature_reincarnation"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 0,
         description: talentText`Increases the Health of your pets by ${[
-          5,
           10,
-          15,
           20,
-          25,
         ]}%.`,
-      },
-      "Improved Eyes of the Beast": {
-        name: "Improved Eyes of the Beast",
-        pos: "b1",
-        icon: icons["ability_eyeoftheowl"],
-        maxRank: 2,
-        reqPoints: 5,
-        description: talentText`Increases the duration of your Eyes of the Beast by ${[
-          30,
-          60,
-        ]} sec.`,
       },
       "Improved Aspect of the Monkey": {
         name: "Improved Aspect of the Monkey",
@@ -67,7 +53,7 @@ export const data: TalentData = {
       },
       "Thick Hide": {
         name: "Thick Hide",
-        pos: "b3",
+        pos: "b1",
         icon: icons["inv_misc_pelt_bear_03"],
         maxRank: 3,
         reqPoints: 5,
@@ -87,8 +73,8 @@ export const data: TalentData = {
           3,
           6,
         ]} sec, mana cost is reduced by ${[
-          25,
           50,
+          100,
         ]}%, and increases the health your pet returns with by an additional ${[
           15,
           30,
@@ -96,22 +82,26 @@ export const data: TalentData = {
       },
       "Bestial Swiftness": {
         name: "Bestial Swiftness",
-        pos: "b1",
+        pos: "c4",
         icon: icons["ability_druid_dash"],
         maxRank: 3,
-        reqPoints: 5,
+        reqPoints: 10,
         description: talentText`Increases the outdoor movement speed of your pets by ${[
           10,
           20,
           30,
+        ]}% and their dodge chance by ${[
+          5,
+          10,
+          15,
         ]}%.`,
       },
       "Aspect Mastery": {
         name: "Aspect Mastery",
-        pos: "c1",
+        pos: "b3",
         icon: icons["aspect_mastery"],
         maxRank: 2,
-        reqPoints: 10,
+        reqPoints: 5,
         description: talentText`Increases the effectiveness of your Aspect of the Cheetah, Aspect of the Pack and Aspect of the Wild by ${[
           25,
           50,
@@ -137,6 +127,8 @@ export const data: TalentData = {
         icon: icons["survival_instincts"],
         maxRank: 3,
         reqPoints: 15,
+        prereq: "Thick Hide ",
+        arrows: [{ dir: "down", from: "b1", to: "d1" }],
         description: talentText`Reduces the chance your pets are critically hit by melee attacks by ${[
           2,
           4,
@@ -172,12 +164,12 @@ export const data: TalentData = {
           15,
         ]}%.`,
       },
-      "Bestial Agility": {
-        name: "Bestial Agility",
-        pos: "d4",
-        icon: icons["bestial_agility"],
+      "Savage Flurry": {
+        name: "Savage Flurry",
+        pos: "e4",
+        icon: icons["savage_flurry"],
         maxRank: 5,
-        reqPoints: 15,
+        reqPoints: 20,
         description: talentText`Increases your and your pets attack speed by ${[
           3,
           6,
@@ -188,14 +180,25 @@ export const data: TalentData = {
       },
       "Spirit Bond": {
         name: "Spirit Bond",
-        pos: "e1",
+        pos: "f1",
         icon: icons["ability_druid_demoralizingroar"],
-        maxRank: 2,
-        reqPoints: 20,
-        description: talentText`While your pet is active, you and your pet will regenerate ${[
+        maxRank: 5,
+        reqPoints: 25,
+        prereq: "Team Play",
+        arrows: [{ dir: "down", from: "e1", to: "f1" }],
+        description: talentText`Your pet gets Strength, Agility and Stamina equal to ${[
+          10,
+          20,
+          30,
+          40,
+          50
+        ]}% of your Strength, Agility and Stamina.\n\n While your pet is active you will regenerate ${[
+          1,
+          2,
           3,
-          6,
-        ]}% of total health every 10 sec.`,
+          4,
+          5
+        ]}% of your total health every 5 sec.`,
       },
       Intimidation: {
         name: "Intimidation",
@@ -207,15 +210,12 @@ export const data: TalentData = {
       },
       "Bestial Discipline": {
         name: "Bestial Discipline",
-        pos: "e4",
+        pos: "d2",
         icon: icons["spell_nature_abolishmagic"],
-        maxRank: 5,
-        reqPoints: 20,
+        maxRank: 2,
+        reqPoints: 15,
         description: talentText`Increase the Focus regeneration of your pets by ${[
-          20,
-          40,
-          60,
-          80,
+          50,
           100,
         ]}%.`,
       },
@@ -247,12 +247,10 @@ export const data: TalentData = {
       },
       "Team Play": {
         name: "Team Play",
-        pos: "f1",
+        pos: "e1",
         icon: icons["team_play"],
         maxRank: 5,
-        reqPoints: 25,
-        prereq: "Spirit Bond",
-        arrows: [{ dir: "down", from: "e1", to: "f1" }],
+        reqPoints: 20,
         description: talentText`Your attacks have a ${[
           3,
           6,
@@ -262,36 +260,30 @@ export const data: TalentData = {
         ]}% chance to invigorate your pet. Invigorated pet instantly generates 50 Focus and frees from 1 Curse, Disease, Magic, Poison or Fear effects.
 
         Your pet attacks have a ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
+          20,
+          25,
         ]}% chance to inspire you, reducing Mana cost of all your spells and abilities by 100% for 5 sec.`,
       },
-      "Two Hearts One Soul": {
-        name: "Two Hearts One Soul",
-        pos: "g1",
-        icon: icons["ability_druid_ferociousbite"],
-        maxRank: 3,
+      "Terrifying Roar": {
+        name: "Terrifying Roar",
+        pos: "g2",
+        icon: icons["terrifying_roar"],
+        maxRank: 1,
         reqPoints: 30,
-        prereq: "Intimidation",
-        arrows: [{ dir: "down", from: "f1", to: "g1" }],
-        description: talentText`Your pet gets Strength, Agility and Stamina equal to ${[
-          15,
-          30,
-          50,
-        ]}% of your Strength, Agility and Stamina.`,
+        description: talentText`Roars at an enemy, paralyzing it with terror for 5 sec and greatly reducing your threat for that target. In addition, up to 5 total enemies will flee in fear for 10 sec.`,
       },
       "Kill Command": {
         name: "Kill Command",
-        pos: "g2",
+        pos: "g1",
         icon: icons["kill_command"],
         maxRank: 1,
         reqPoints: 30,
         prereq: "Intimidation",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Give the command to kill, increasing damage done by your pet by 100% for 5 sec. Only usable against enemies that have 20% or less health.`,
+        description: talentText`Give the command to kill, increasing damage done by your pet by 50% for 5 sec. Only usable against enemies that have 20% or less health.`,
       },
     },
   },
