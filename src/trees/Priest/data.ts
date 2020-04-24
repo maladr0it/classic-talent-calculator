@@ -62,10 +62,10 @@ export const data: TalentData = {
       },
       "Improved Power Word: Fortitude": {
         name: "Improved Power Word: Fortitude",
-        pos: "d2",
+        pos: "c1",
         icon: icons["spell_holy_wordfortitude"],
         maxRank: 2,
-        reqPoints: 15,
+        reqPoints: 10,
         description: talentText`Reduces Mana cost and increases the effect of your Power Word: Fortitude and Prayer of Fortitude spells by ${[
           15,
           30,
@@ -73,10 +73,10 @@ export const data: TalentData = {
       },
       "Improved Power Word: Shield": {
         name: "Improved Power Word: Shield",
-        pos: "d4",
+        pos: "e1",
         icon: icons["spell_holy_powerwordshield"],
         maxRank: 3,
-        reqPoints: 15,
+        reqPoints: 20,
         description: talentText`Increases damage absorbed by your Power Word: Shield by ${[
           10,
           20,
@@ -122,7 +122,7 @@ export const data: TalentData = {
         reqPoints: 10,
         prereq: "Martyrdom",
         arrows: [{ dir: "down", from: "b4", to: "c4" }],
-        description: talentText`While active, you no longer lose casting time from taking damage and you are immune to Silence and Interrupt mechanics.  Lasts 8 sec.`,
+        description: talentText`While active, you no longer lose casting time from taking damage and you are immune to Silence and Interrupt mechanics.  Lasts 10 sec.`,
       },
 
       "Inner Focus": {
@@ -177,24 +177,22 @@ export const data: TalentData = {
       },
       "Mental Agility": {
         name: "Mental Agility",
-        pos: "d1",
+        pos: "d2",
         icon: icons["ability_hibernation"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 15,
         description: talentText`Reduces the Mana cost of your instant cast spells by ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
         ]}%`,
       },
       "Stratagem": {
         name: "Improved Mana Burn",
-        pos: "c1",
+        pos: "d1",
         icon: icons["spell_shadow_manaburn"],
         maxRank: 2,
-        reqPoints: 10,
+        reqPoints: 15,
         description: talentText`Reduces the casting time of your Mind Control and Mana Burn spells by ${[
           0.5,
           1,
@@ -206,7 +204,7 @@ export const data: TalentData = {
         icon: icons["spell_nature_enchantarmor"],
         maxRank: 5,
         reqPoints: 15,
-        description: talentText`Increases your maximum Mana by ${[
+        description: talentText`Increases your total Intellect by ${[
           3,
           6,
           9,
@@ -276,7 +274,7 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Force of Will",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Infuses the target with power, increasing their spell damage and healing by 20%. Lasts 15 sec.`,
+        description: talentText`Infuses the target with power, increasing their spell damage and healing by 20%. Lasts 20 sec.`,
       },
     },
   },
