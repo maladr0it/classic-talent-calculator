@@ -327,8 +327,8 @@ export const data: TalentData = {
           20,
           40,
         ]}% and the damage caused by your Ferocious Bite by ${[
+          5,
           10,
-          20,
         ]}%.`,
       },
       "Feral Instinct": {
@@ -447,11 +447,7 @@ export const data: TalentData = {
         icon: icons["ability_hunter_pet_cat"],
         maxRank: 3,
         reqPoints: 20,
-        description: talentText`Increases the critical strike damage bonus of your Feral Combat abilities by ${[
-          10,
-          20,
-          30,
-        ]}%. In addition, increases your attack power in Cat, Bear and Dire Bear Forms by ${[
+        description: talentText`Increases your melee attack power in Cat, Bear and Dire Bear Forms by ${[
           100,
           200,
           300,
@@ -481,7 +477,7 @@ export const data: TalentData = {
         description: talentText`Gives you ${[
           50,
           100,
-        ]} chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form.`,
+        ]}% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear Form.`,
       },
       "Savage Fury": {
         name: "Savage Fury",
@@ -568,7 +564,7 @@ export const data: TalentData = {
           3,
           4,
           5,
-        ]}% Health to you.`,
+        ]}% Health to you. This effect can only occur once every 5 sec.`,
       },
 
       "Leader of the Pack": {
