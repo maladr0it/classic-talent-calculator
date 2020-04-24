@@ -599,11 +599,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 0,
         description: talentText`Gives your Destruction spells a ${[
+          5,
           10,
+          15,
           20,
-          30,
-          40,
-          50,
+          25,
         ]}% chance to daze the target for 10 sec.`,
       },
       "Demonic Power": {
@@ -619,29 +619,6 @@ export const data: TalentData = {
           25,
           50,
         ]}%.`,
-      },
-
-      "Improved Firebolt": {
-        name: "Improved Firebolt",
-        pos: "c1",
-        icon: icons["spell_fire_firebolt"],
-        maxRank: 2,
-        reqPoints: 10,
-        description: talentText`Reduces the casting time of your Imp's Firebolt spell by ${[
-          0.5,
-          1,
-        ]} sec.`,
-      },
-      "Improved Lash of Pain": {
-        name: "Improved Lash of Pain",
-        pos: "c2",
-        icon: icons["spell_shadow_curse"],
-        maxRank: 2,
-        reqPoints: 10,
-        description: talentText`Reduces the cooldown of your Succubus' Lash of Pain by ${[
-          3,
-          6,
-        ]} sec.`,
       },
       Devastation: {
         name: "Devastation",
@@ -690,7 +667,7 @@ export const data: TalentData = {
         description: talentText`Your spell critical strikes have a ${[
           50,
           100,
-        ]} chance to restore 2 per level Mana to your demon.`,
+        ]} chance to restore 5 per level Mana to your demon.`,
       },
 
       "Destructive Reach": {
@@ -775,10 +752,10 @@ export const data: TalentData = {
           25,
         ]}% chance to restore 666 Mana.`,
       },
-      Annihilation: {
-        name: "Annihilation",
+      Mayhem: {
+        name: "Mayhem",
         pos: "e4",
-        icon: icons["annihilation"],
+        icon: icons["mayhem"],
         maxRank: 1,
         reqPoints: 20,
         description: talentText`When activated, increases the critical strike chance of your next Destruction spell by 100%.`,
