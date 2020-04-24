@@ -754,7 +754,7 @@ export const data: TalentData = {
         name: "Improved Raptor Strike",
         pos: "b4",
         icon: icons["improv_raptor_strike"],
-        maxRank: 1,
+        maxRank: 5,
         reqPoints: 5,
         prereq: "Brutality",
         arrows: [{ dir: "right-down", from: "a3", to: "a4" },
