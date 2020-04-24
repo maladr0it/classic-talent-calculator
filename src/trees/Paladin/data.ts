@@ -19,11 +19,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 0,
         description: talentText`Increases your Strength by ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}%.`,
       },
       "Divine Intellect": {
@@ -33,11 +33,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 0,
         description: talentText`Increases your total Intellect by ${[
-          2,
-          4,
+          3,
           6,
-          8,
-          10,
+          9,
+          12,
+          15,
         ]}%.`,
       },
       "Spiritual Focus": {
@@ -80,22 +80,22 @@ export const data: TalentData = {
       },
       "Healing Light": {
         name: "Healing Light",
-        pos: "f2",
+        pos: "f1",
         icon: icons["spell_holy_holybolt"],
         maxRank: 5,
         reqPoints: 25,
         description: talentText`Increases your healing done by ${[
-          3,
+          2,
+          4,
           6,
-          9,
-          12,
-          15,
-        ]}% but reduces all damage done by ${[
+          8,
+          10,
+        ]}% but reduces Holy damage by ${[
+          1,
+          2,
           3,
-          6,
-          9,
-          12,
-          15,
+          4,
+          5,
         ]}%.`,
       },
       Consecration: {
@@ -108,31 +108,32 @@ export const data: TalentData = {
       },
       "Improved Lay on Hands": {
         name: "Improved Lay on Hands",
-        pos: "d4",
+        pos: "b4",
         icon: icons["spell_holy_layonhands"],
         maxRank: 2,
-        reqPoints: 15,
+        reqPoints: 5,
         description: talentText`Gives the target of your Lay on Hands spell a ${[
-          15,
           30,
-        ]}% bonus to their armor value from items for 2 min. In addition, the cooldown of your Lay on Hands spell is reduced by ${[
+          60,
+        ]}% bonus to their resistance and armor value from items for 2 min. In addition, the cooldown of your Lay on Hands spell is reduced by ${[
           15,
           30,
         ]} min.`,
       },
       "Unyielding Faith": {
         name: "Unyielding Faith",
-        pos: "b4",
+        pos: "d4",
         icon: icons["spell_holy_unyieldingfaith"],
-        maxRank: 2,
-        reqPoints: 5,
+        maxRank: 3,
+        reqPoints: 15,
         description: talentText`Increases your chance to resist Fear and Disorient effects by an additional ${[
-          15,
+          10,
+          20,
           30,
         ]}%.`,
       },
-      "The Long Arm of Justice": {
-        name: "The Long Arm of Justice",
+      "Long Arm of Justice": {
+        name: "Long Arm of Justice",
         pos: "c4",
         icon: icons["long_arm_of_justice"],
         maxRank: 3,
@@ -177,10 +178,10 @@ export const data: TalentData = {
           60,
           80,
           100,
-        ]}% chance to gain Mana equal to the base cost of the spell.`,
+        ]}% chance to gain Mana equal to 50% of the base cost of the spell.`,
       },
-      "Divine Wisdom": {
-        name: "Divine Wisdom",
+      "Divine Grace": {
+        name: "Divine Grace",
         pos: "d1",
         icon: icons["spell_holy_sealofwisdom"],
         maxRank: 2,
@@ -189,7 +190,7 @@ export const data: TalentData = {
           10,
           20,
           30,
-        ]}%. In addition, reduces Mana cost of Blessings of Wisdom and Light by ${[
+        ]}%. In addition, increases duration reduces Mana cost of Blessings of Wisdom and Light by ${[
           50,
           100,
         ]}%.`,
@@ -212,8 +213,8 @@ export const data: TalentData = {
           30,
         ]}%.`,
       },
-      "The Light's Mercy": {
-        name: "The Light's Mercy",
+      "Light's Mercy": {
+        name: "Light's Mercy",
         pos: "e1",
         icon: icons["lights_mercy"],
         maxRank: 3,
@@ -226,7 +227,7 @@ export const data: TalentData = {
       },
       "Inevitable Justice": {
         name: "Inevitable Justice",
-        pos: "e2",
+        pos: "e3",
         icon: icons["inevitable_justice"],
         maxRank: 3,
         reqPoints: 20,
@@ -239,18 +240,6 @@ export const data: TalentData = {
           60,
           90,
         ]}%.`,
-      },
-      "Lasting Judgement": {
-        name: "Lasting Judgement",
-        pos: "e3",
-        icon: icons["spell_holy_healingaura"],
-        maxRank: 3,
-        reqPoints: 20,
-        description: talentText`Increases the duration of your Judgement of Light and Judgement of Wisdom by ${[
-          10,
-          20,
-          30,
-        ]} sec.`,
       },
       "Holy Power": {
         name: "Holy Power",
@@ -272,18 +261,18 @@ export const data: TalentData = {
         icon: icons["searing_light"],
         maxRank: 5,
         reqPoints: 25,
-        description: talentText`Increases your damage done by ${[
-          3,
+        description: talentText`Increases your Holy damage by ${[
+          2,
+          4,
           6,
-          9,
-          12,
-          15,
+          8,
+          10,
         ]}% but reduces all healing done by ${[
+          1,
+          2,
           3,
-          6,
-          9,
-          12,
-          15,
+          4,
+          5,
         ]}%.`,
       },
       "Blinding Light": {
@@ -292,16 +281,16 @@ export const data: TalentData = {
         icon: icons["blinding_light"],
         maxRank: 1,
         reqPoints: 30,
+        prereq: "Holy Shock",
+        arrows: [{ dir: "down", from: "e2", to: "g2" }],
         description: talentText`Flash of inner Light emerges from Paladin, making all spells cost no Mana and blinding nearby enemies. Lasts 6 sec. Targets must be facing you. Any damage caused will remove the effect.`,
       },
       "Holy Shock": {
         name: "Holy Shock",
-        pos: "e3",
+        pos: "e2",
         icon: icons["spell_holy_searinglight"],
         maxRank: 1,
         reqPoints: 20,
-        prereq: "Illumination",
-        arrows: [{ dir: "down", from: "d3", to: "e3" }],
         description: talentText`Blasts the target with Holy energy, causing 204 to 220 Holy damage to an enemy, or 204 to 220 healing to an ally.`,
       },
     },
