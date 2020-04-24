@@ -306,10 +306,12 @@ export const data: TalentData = {
       },
       "Rockhide": {
         name: "Rockhide",
-        pos: "b1",
+        pos: "c1",
         icon: icons["Rockhide"],
         maxRank: 5,
-        reqPoints: 5,
+        reqPoints: 10,
+        prereq: "Guardian Totems",
+        arrows: [{ dir: "down", from: "b1", to: "c1" }],
         description: talentText`When struck in combat has a ${[
           1,
           2,
@@ -320,12 +322,10 @@ export const data: TalentData = {
       },
       "Guardian Totems": {
         name: "Guardian Totems",
-        pos: "c1",
+        pos: "b1",
         icon: icons["spell_nature_stoneskintotem"],
         maxRank: 2,
-        reqPoints: 10,
-        prereq: "Rockhide",
-        arrows: [{ dir: "down", from: "b1", to: "c1" }],
+        reqPoints: 5,
         description: talentText`Increases the effect of your Resistance Totems, Stoneskin Totem and Windwall Totem by ${[
           25,
           50,
@@ -347,7 +347,7 @@ export const data: TalentData = {
         icon: icons["ability_thunderbolt"],
         maxRank: 5,
         reqPoints: 5,
-        description: talentText`Improves your chance to get a critical strike with your weapon by ${[
+        description: talentText`Improves your chance to get a critical strike with your weapon and shock spells by ${[
           1,
           2,
           3,
@@ -392,17 +392,17 @@ export const data: TalentData = {
         icon: icons["spell_nature_earthbindtotem"],
         maxRank: 2,
         reqPoints: 15,
-        description: talentText`Increase the effect of your Strength of Earth and Grace of Air Totems by ${[
+        description: talentText`Increase the effect and reduces mana cost of your Strength of Earth and Grace of Air Totems by ${[
           20,
           40,
         ]}%.`,
       },
       Anticipation: {
         name: "Anticipation",
-        pos: "c4",
+        pos: "b4",
         icon: icons["spell_nature_mirrorimage"],
         maxRank: 5,
-        reqPoints: 10,
+        reqPoints: 5,
         description: talentText`Increases your stealth detection and reduces the chance you are hit by spells and ranged attacks by ${[
           3,
           6,
@@ -447,7 +447,7 @@ export const data: TalentData = {
         icon: icons["spell_fire_enchantweapon"],
         maxRank: 2,
         reqPoints: 20,
-        description: talentText`Increases the effect of your Windfury Totem and Flametongue Totem by ${[
+        description: talentText`Increases the effect and reduces mana cost of your Windfury Totem and Flametongue Totem by ${[
           20,
           40,
         ]}%.`,
@@ -466,10 +466,10 @@ export const data: TalentData = {
       },
       "Weapon Mastery": {
         name: "Weapon Mastery",
-        pos: "b4",
+        pos: "c4",
         icon: icons["ability_hunter_swiftstrike"],
         maxRank: 5,
-        reqPoints: 5,
+        reqPoints: 10,
         description: talentText`Increases the damage you deal with all weapons by ${[
           2,
           4,
@@ -499,11 +499,11 @@ export const data: TalentData = {
           40,
           50,
         ]}% of your health regeneration and ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
+          20,
+          25,
         ]}% of your mana regeneration to work always. In addition increases healing taken by ${[
           5,
           10,
@@ -519,12 +519,12 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 25,
         description: talentText`Imbue the weapon with storm, gives you a ${[
+          5,
           10,
+          15,
           20,
-          30,
-          40,
-          50,
-        ]}% to deal up to 180 additional Nature damage (scales with your level).`,
+          25,
+        ]}% to deal up to 300 additional Nature damage (scales with your level).`,
       },
       "Shamanism": {
         name: "Shamanism",
