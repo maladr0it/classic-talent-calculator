@@ -461,6 +461,18 @@ export const data: TalentData = {
           15,
         ]}%.`,
       },
+      "Improved Felhunter": {
+        name: "Improved Felhunter",
+        pos: "e1",
+        icon: icons["improved_felhunter"],
+        maxRank: 3,
+        reqPoints: 20,
+        description: talentText`Increases the effectiveness of your Felhunter's Mana Burn and Paranoia Spells by ${[
+          10,
+          20,
+          30,
+        ]}% sec and reduces the cooldown of your Felhunter's Devour Magic and Spell Lock Spells by ${[10, 20, 30]}%.`,
+      },
       "Improved Enslave Demon": {
         name: "Improved Enslave Demon",
         pos: "e4",
