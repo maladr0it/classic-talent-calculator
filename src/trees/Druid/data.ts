@@ -13,41 +13,18 @@ export const data: TalentData = {
     icon: icons["spell_nature_starfall"],
     talents: {
       "Improved Wrath": {
-        name: "Improved Wrath",
+        name: "Starlight Wrath",
         pos: "a1",
         icon: icons["spell_nature_abolishmagic"],
         maxRank: 5,
         reqPoints: 0,
-        description: talentText`Reduces the cast time of your Wrath spell by ${[
+        description: talentText`Reduces the cast time of your Wrath and Starfire spell by ${[
           0.1,
           0.2,
           0.3,
           0.4,
           0.5,
         ]} sec.`,
-      },
-      "Nature's Grasp": {
-        name: "Nature's Grasp",
-        pos: "a2",
-        icon: icons["spell_nature_natureswrath"],
-        maxRank: 1,
-        reqPoints: 0,
-        description: talentText`While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1). Only useable outdoors. 1 charge. Lasts 45 sec.`,
-      },
-      "Improved Nature's Grasp": {
-        name: "Improved Nature's Grasp",
-        pos: "a3",
-        icon: icons["spell_nature_natureswrath"],
-        maxRank: 4,
-        reqPoints: 0,
-        prereq: "Nature's Grasp",
-        arrows: [{ dir: "right", from: "a2", to: "a3" }],
-        description: talentText`Increases the chance of your Nature's Grasp to entangle an enemy by ${[
-          15,
-          30,
-          45,
-          65,
-        ]}%.`,
       },
       "Improved Entangling Roots": {
         name: "Improved Entangling Roots",
@@ -63,14 +40,30 @@ export const data: TalentData = {
       },
       "Improved Moonfire": {
         name: "Improved Moonfire",
-        pos: "b1",
+        pos: "a2",
         icon: icons["spell_nature_starfall"],
         maxRank: 3,
-        reqPoints: 5,
+        reqPoints: 0,
         description: talentText`Increases the damage and critical strike chance of your Moonfire spell by ${[
           10,
           20,
           30,
+        ]}%.`,
+      },
+      "Unity with Nature": {
+        name: "Unity with Nature",
+        pos: "a3",
+        icon: icons["unity_nature"],
+        maxRank: 3,
+        reqPoints: 0,
+        description: talentText`Reduces cooldown of your Barkskin by ${[
+          1,
+          2,
+          3,
+        ]} min and reduces damage taken by Arcane and Nature effects by ${[
+          5,
+          10,
+          15,
         ]}%.`,
       },
       "Natural Weapons": {
@@ -79,12 +72,12 @@ export const data: TalentData = {
         icon: icons["inv_staff_01"],
         maxRank: 5,
         reqPoints: 5,
-        description: talentText`Increases the damage you deal with physical attacks in all forms by ${[
+        description: talentText`Increases the damage you deal with all attacks and spells by ${[
+          1,
           2,
+          3,
           4,
-          6,
-          8,
-          10,
+          5,
         ]}%.`,
       },
       "Cycle of Life": {
@@ -104,10 +97,10 @@ export const data: TalentData = {
         icon: icons["spell_nature_thorns"],
         maxRank: 3,
         reqPoints: 10,
-        description: talentText`Increases the damage caused by your Thorns and Entangling Root spells by ${[
-          25,
-          50,
-          75,
+        description: talentText`Increases the duration and damage caused by your Thorns and Entangling Root spells by ${[
+          40,
+          70,
+          100,
         ]}%.`,
       },
       "Omen of Clarity": {
@@ -121,7 +114,7 @@ export const data: TalentData = {
           { dir: "right-down", from: "b2", to: "b3" },
           { dir: "right-down-down", from: "b3", to: "c3" },
         ],
-        description: talentText`Imbues the Druid with natural energy.  Each of the Druid's melee attacks has a chance to reduce the cost and to increase critical strike chance of your next damage or healing spell by 100%.  Lasts 2 min.`,
+        description: talentText`Imbues the Druid with natural energy.  Each of the Druid's melee attacks has a chance to reduce the cost and cast time of your next damage or healing spell by 100%.  Lasts 2 min.`,
       },
       "Nature's Reach": {
         name: "Nature's Reach",
@@ -142,12 +135,18 @@ export const data: TalentData = {
         reqPoints: 15,
         prereq: "Natural Weapons",
         arrows: [{ dir: "down", from: "b2", to: "d2" }],
-        description: talentText`Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by ${[
+        description: talentText`Increases the critical strike damage bonus of your offensive spells by ${[
           20,
           40,
           60,
           80,
           100,
+        ]}% and of your Feral abilities by ${[
+          6,
+          12,
+          18,
+          24,
+          30,
         ]}%.`,
       },
       "Improved Starfire": {
@@ -156,32 +155,30 @@ export const data: TalentData = {
         icon: icons["spell_arcane_starfire"],
         maxRank: 5,
         reqPoints: 10,
-        description: talentText`Reduces the cast time of Starfire by ${[
-          0.2,
-          0.4,
-          0.6,
-          0.8,
+        description: talentText`Causes your Starfire and Moonfire spells to stun the target for 4 sec if the target is within 8 yds. Can only occur once every ${[
           1,
-        ]} sec and has a ${[
-          5,
-          10,
-          15,
+          50,
+          40,
+          30,
           20,
-          25,
-        ]}% chance to stun the target for 3 sec.`,
+        ]} ${[
+          "min",
+          "sec",
+          "sec",
+          "sec",
+          "sec",
+        ]}.`,
       },
       "Improved Faerie Fire": {
         name: "Improved Faerie Fire",
-        pos: "d1",
+        pos: "c1",
         icon: icons["spell_nature_faeriefire"],
-        maxRank: 5,
-        reqPoints: 15,
+        maxRank: 3,
+        reqPoints: 10,
         description: talentText`Increases the range and armor reduction of your Faerie Fire spells by ${[
           10,
           20,
           30,
-          40,
-          50,
         ]}%`,
       },
       "Power of Nature": {
@@ -193,12 +190,15 @@ export const data: TalentData = {
         description: talentText`Increases the duration of your Moonfire, Insect Swarm, Faerie Fire, Rejuvenation, Regrowth, Hibernate, Soothe Animal and Abolish Poison by ${[
           25,
           50,
-        ]}%.`,
+        ]}%. In addition, increases the number of charges of your Nature's Grasp spell by ${[
+          2,
+          4,
+        ]}.`,
       },
-      "Omnipraesentia Naturae": {
-        name: "Omnipraesentia Naturae",
+      "Omnipresence": {
+        name: "Omnipresence",
         pos: "e1",
-        icon: icons["omni_natur"],
+        icon: icons["omnipresence"],
         maxRank: 2,
         reqPoints: 20,
         description: talentText`Increases the range of your offensive Balance spells by ${[
@@ -209,10 +209,9 @@ export const data: TalentData = {
           4,
         ]}%.`,
       },
-
       "Nature's Grace": {
         name: "Nature's Grace",
-        pos: "e2",
+        pos: "e3",
         icon: icons["spell_nature_naturesblessing"],
         maxRank: 1,
         reqPoints: 20,
@@ -220,19 +219,19 @@ export const data: TalentData = {
       },
       Moonglow: {
         name: "Moonglow",
-        pos: "e3",
+        pos: "e4",
         icon: icons["spell_nature_sentinal"],
         maxRank: 3,
         reqPoints: 20,
         description: talentText`Reduce the Mana cost of your Moonfire, Starfire, Wrath, Healing Touch, Regrowth and Rejuvenation spells by ${[
-          7,
-          14,
-          21,
+          5,
+          10,
+          15,
         ]}%.`,
       },
       Dreamstate: {
         name: "Dreamstate",
-        pos: "e4",
+        pos: "e1",
         icon: icons["dreamstate"],
         maxRank: 3,
         reqPoints: 20,
@@ -240,16 +239,16 @@ export const data: TalentData = {
           1,
           2,
           3,
-        ]}% of your total Mana every 5sec.`,
+        ]}% of your total Mana every 10 sec.`,
       },
       "Nature Balancer": {
         name: "Nature Balancer",
-        pos: "f2",
+        pos: "f3",
         icon: icons["nature_balancer"],
         maxRank: 5,
         reqPoints: 25,
         prereq: "Nature's Grace",
-        arrows: [{ dir: "down", from: "e2", to: "f2" }],
+        arrows: [{ dir: "down", from: "e3", to: "f3" }],
         description: talentText`Your Wrath spell have a ${[
           5,
           10,
@@ -264,7 +263,6 @@ export const data: TalentData = {
           25,
         ]}% chance to increase critical strike chance of your next Wrath by 30%.`,
       },
-
       Moonfury: {
         name: "Moonfury",
         pos: "f3",
@@ -281,12 +279,23 @@ export const data: TalentData = {
       },
       "Moonkin Form": {
         name: "Moonkin Form",
-        pos: "g2",
+        pos: "e2",
         icon: icons["spell_nature_forceofnature"],
         maxRank: 1,
-        reqPoints: 30,
-        description: talentText`Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.`,
+        reqPoints: 20,
+        description: talentText`Transforms the Druid into Moonkin Form, increasing your intellect by 5% and armor contribution from items is increased by 360%. The Moonkin can only cast Balance spells while shapeshifted.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.`,
       },
+       "Moonkin Aura": {
+        name: "Moonkin Aura",
+        pos: "g2",
+        icon: icons["moonkin_aura"],
+        maxRank: 1,
+        reqPoints: 30,
+        prereq: "Moonkin Form",
+        arrows: [{ dir: "down", from: "e2", to: "g2" }],
+        description: talentText`While in Moonkin Form, the Moonkin Aura increases spell critical chance of all friendly units within 20 yards by 3%.`,
+      },
+
     },
   },
   "Feral Combat": {
