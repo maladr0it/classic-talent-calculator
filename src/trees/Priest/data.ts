@@ -340,7 +340,7 @@ export const data: TalentData = {
         icon: icons["spell_holy_sealofwrath"],
         maxRank: 5,
         reqPoints: 5,
-        description: talentText`Reduces the casting time of your Smite, Holy Fire and Greater Heal spells by ${[
+        description: talentText`Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by ${[
           0.1,
           0.2,
           0.3,
@@ -363,10 +363,10 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 5,
         description: talentText`After being struck by a melee or ranged critical hit, heal ${[
-          8,
-          16,
-          25,
-        ]}% of the damage taken over 6 sec.`,
+          15,
+          30,
+          45,
+        ]}% of the damage taken over 5 sec.`,
       },
       Inspiration: {
         name: "Inspiration",
@@ -375,10 +375,10 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 15,
         description: talentText`Increase your target's armor by ${[
-          8,
-          16,
-          25,
-        ]}% for 15 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, or Prayer of Healing spell.`,
+          5,
+          10,
+          15,
+        ]}% for 20 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, or Prayer of Healing spell.`,
       },
       "Holy Reach": {
         name: "Holy Reach",
