@@ -673,7 +673,7 @@ export const data: TalentData = {
         icon: icons["ability_warrior_innerrage"],
         maxRank: 1,
         reqPoints: 10,
-        description: talentText`Gives the Paladin a chance to deal Holy damage equal to 70% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.\n\nUnleashing this Seal's energy will judge an enemy, instantly causing 90 to 95 Holy damage, 137 to 146 if the target is stunned, incapacitated or disoriented.`,
+        description: talentText`Gives the Paladin a chance to deal Holy damage equal to 75% of normal weapon damage. Only one Seal can be active on the Paladin at any one time. Lasts 30 sec.\n\nUnleashing this Seal's energy will judge an enemy, instantly causing 90 to 95 Holy damage, 137 to 146 if the target is stunned, incapacitated or disoriented.`,
       },
       "Pursuit of Justice": {
         name: "Pursuit of Justice",
@@ -682,8 +682,8 @@ export const data: TalentData = {
         maxRank: 2,
         reqPoints: 10,
         description: talentText`Increases movement and mounted movement speed by ${[
-          7,
-          15,
+          10,
+          20,
         ]}%. This does not stack with other movement speed increasing effects.`,
       },
       "Eye for an Eye": {
@@ -704,8 +704,8 @@ export const data: TalentData = {
         maxRank: 2,
         reqPoints: 5,
         description: talentText`Increases the damage done by your Retribution Aura by ${[
-          25,
           50,
+          100,
         ]}%.`,
       },
       "Divine Might": {
@@ -729,9 +729,9 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 20,
         description: talentText`Increases the damage you deal with two-handed melee weapons by ${[
-          3,
-          7,
-          10,
+          4,
+          8,
+          12,
         ]}%.`,
       },
       "Sanctity Aura": {
@@ -767,20 +767,20 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 20,
         description: talentText`Gives you a ${[
-          4,
-          8,
+          3,
+          6,
+          9,
           12,
-          16,
-          20,
+          15,
         ]}% bonus to Physical and Holy damage you deal for 8 sec after dealing a critical strike from a weapon swing, spell, or ability.`,
       },
-      Repentence: {
-        name: "Repentence",
+      Repentance: {
+        name: "Repentance",
         pos: "e4",
         icon: icons["spell_holy_prayerofhealing"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`Puts the enemy target in a state of meditation, incapacitating them for up to 10 sec. Any damage caused will awaken the target. Only works against Humanoids.`,
+        description: talentText`Puts the enemy target in a state of meditation, incapacitating them and increasing their Mana regeneration. Lasts up to 1 min. Any damage caused will awaken the target. Only works against Humanoids.`,
       },
       "Crusade": {
         name: "Crusade",
@@ -828,7 +828,7 @@ export const data: TalentData = {
         icon: icons["crusader_strike"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Paladin deals weapon damage and consecrates his/her weapon, increasing attack speed by 10% for 30 sec. The effect stacks up to 3 times.`,
+        description: talentText`Paladin deals weapon damage and consecrates his/her weapon, increasing attack speed by 5% for 30 sec. The effect stacks up to 7 times.`,
       },
     },
   },
