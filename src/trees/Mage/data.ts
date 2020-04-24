@@ -611,10 +611,10 @@ export const data: TalentData = {
       },
       "Ice Shards": {
         name: "Ice Shards",
-        pos: "e3",
+        pos: "d2",
         icon: icons["spell_frost_iceshard"],
         maxRank: 5,
-        reqPoints: 20,
+        reqPoints: 15,
         description: talentText`Increases the critical strike damage bonus of your Frost spells by ${[
           20,
           40,
@@ -627,19 +627,15 @@ export const data: TalentData = {
         name: "Cryo Core",
         pos: "b1",
         icon: icons["cryo_core"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 5,
         description: talentText`Reduces all spell damage taken by ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
         ]}%, but increases physical damage taken by ${[
-          3,
-          6,
-          9,
-          12,
+          5,
+          10,
           15,
         ]}%.`,
       },
@@ -678,18 +674,6 @@ export const data: TalentData = {
           3,
         ]} sec and reduces the target's speed by an additional ${[4, 7, 10]}%.`,
       },
-      "Piercing Ice": {
-        name: "Piercing Ice",
-        pos: "c1",
-        icon: icons["spell_frost_frostbolt"],
-        maxRank: 3,
-        reqPoints: 10,
-        description: talentText`Increases the damage done by your Frost spells by ${[
-          2,
-          4,
-          6,
-        ]}%.`,
-      },
       "Cold Snap": {
         name: "Cold Snap",
         pos: "e2",
@@ -705,14 +689,10 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 10,
         description: talentText`Adds a chill effect to your Blizzard spell. This effect lowers the target's movement speed by ${[
-          25,
+          40,
           50,
-          75,
-        ]}%. Lasts ${[
-          1.5,
-          3,
-          5,
-        ]} sec.`,
+          60,
+        ]}%. Lasts 5 sec.`,
       },
       "Arctic Reach": {
         name: "Arctic Reach",
@@ -727,18 +707,22 @@ export const data: TalentData = {
       },
       "Frost Channeling": {
         name: "Frost Channeling",
-        pos: "d2",
+        pos: "b4",
         icon: icons["spell_frost_stun"],
-        maxRank: 3,
-        reqPoints: 15,
+        maxRank: 5,
+        reqPoints: 5,
         description: talentText`Reduces the mana cost of your Frost spells by ${[
+          3,
+          6,
+          9,
+          12,
+          15
+        ]}% and reduces the threat caused by your Frost spells by ${[
           5,
           10,
           15,
-        ]}% and reduces the threat caused by your Frost spells by ${[
-          10,
           20,
-          30,
+          25
         ]}%.`,
       },
       Shatter: {
@@ -769,18 +753,14 @@ export const data: TalentData = {
         name: "Ice Mirror",
         pos: "e1",
         icon: icons["ice_mirror"],
-        maxRank: 3,
+        maxRank: 1,
         reqPoints: 20,
         prereq: "Ice Block",
         arrows: [{ dir: "down", from: "c1", to: "e1" }],
-        description: talentText`Gives you a ${[
-          3,
-          6,
-          9,
-        ]}% chance to reflect hostile spells back at their caster. This effect can only occur once every 30sec.`,
+        description: talentText`Protects the friendly target with a mirror of ice. Mirror reflects spell casts for 5 sec.`,
       },
-      "Coldbringer": {
-        name: "Coldbringer",
+      "Lord of the North Wind": {
+        name: "Lord of the North Wind",
         pos: "f1",
         icon: icons["coldbringer"],
         maxRank: 5,
@@ -815,6 +795,20 @@ export const data: TalentData = {
           15,
         ]} sec.`,
       },
+      "Icing": {
+        name: "Icing",
+        pos: "e3",
+        icon: icons["icing"],
+        maxRank: 5,
+        reqPoints: 20,
+        description: talentText`Generates ${[
+          1,
+          2,
+          3,
+          4,
+          5
+        ]}% of your total health and mana every 10 sec if you are standing still. Usually solidification process takes 10 sec.`,
+      },
       "Winter's Chill": {
         name: "Winter's Chill",
         pos: "f3",
@@ -837,7 +831,7 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Cold Snap",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`Instantly sheilds you, absorbing 455 damage. Lasts 1 min. While the shield holds, spells will not be interrupted.`,
+        description: talentText`Instantly shields you, absorbing 455 damage. Lasts 1 min. While the shield holds, spells will not be interrupted.`,
       },
       "Improved Ice Shields": {
         name: "Improved Ice Shields",
@@ -854,8 +848,8 @@ export const data: TalentData = {
           10,
           20,
         ]}% and reduces the chance your Ice Barrier will be dispelled by ${[
-          20,
           40,
+          80,
         ]}%.`,
       },
     },
