@@ -617,19 +617,6 @@ export const data: TalentData = {
           8,
         ]}%.`,
       },
-      "Savage Strikes": {
-        name: "Savage Strikes",
-        pos: "b1",
-        icon: icons["ability_racial_bloodrage"],
-        maxRank: 2,
-        reqPoints: 5,
-        prereq: "Brutality",
-        arrows: [{ dir: "down", from: "a1", to: "b1" }],
-        description: talentText`Increases the critical strike chance of Raptor Strike and Mongoose Bite by ${[
-          5,
-          10,
-        ]}%.`,
-      },
       "Improved Wing Clip": {
         name: "Improved Wing Clip",
         pos: "b3",
