@@ -128,7 +128,7 @@ export const data: TalentData = {
         reqPoints: 10,
         prereq: "Master of Elements",
         arrows: [{ dir: "down", from: "b3", to: "c3" }],
-        description: talentText`Your Fire damage spells increases your chance to get a critical strike chance with your next Frost damage spell by 10%. \n\nYour Frost damage spells increases your chance to get a critical strike chance with your next Fire damage spell by 10%. \n\nYour Arcane damage spells increases your chance to get a critical strike chance with your next  Fire or Frost damage spell by 10%.`,
+        description: talentText`Your Fire damage spells increases your chance to get a critical strike chance with your next Frost damage spell by 20%. \n\nYour Frost damage spells increases your chance to get a critical strike chance with your next Fire damage spell by 20%. \n\nYour Arcane damage spells increases your chance to get a critical strike chance with your next  Fire or Frost damage spell by 20%.`,
       },
       "Arcane Resilience": {
         name: "Arcane Resilience",
@@ -181,9 +181,9 @@ export const data: TalentData = {
         maxRank: 3,
         reqPoints: 15,
         description: talentText`Allows ${[
+          5,
           10,
-          20,
-          30,
+          15,
         ]}% of your Mana regeneration to continue while casting.`,
       },
       "Presence of Mind": {
@@ -272,7 +272,7 @@ export const data: TalentData = {
         ]} min and increases duration by ${[
           3,
           6,
-        ]}% secs.`,
+        ]} secs.`,
       },
       "Time Pressure": {
         name: "Time Pressure",
@@ -294,7 +294,7 @@ export const data: TalentData = {
         icon: icons["brilliance_aura"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Generates 3% of total Mana every 10 sec to all party members within 15 yards.`,
+        description: talentText`Generates 3% of total Mana every 10 sec to all party members within 30 yards.`,
       },
       "Arcane Wrath": {
         name: "Arcane Wrath",
