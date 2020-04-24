@@ -340,11 +340,11 @@ export const data: TalentData = {
         prereq: "Improved Fire Blast",
         arrows: [{ dir: "down", from: "a3", to: "b3" }],
         description: talentText`Gives your Fire spells a ${[
-          6,
-          12,
-          18,
-          24,
-          30,
+          5,
+          10,
+          15,
+          20,
+          25,
         ]}% chance to stun the target for 2 sec.`,
       },
       Ignite: {
@@ -389,11 +389,12 @@ export const data: TalentData = {
         name: "Incinerate",
         pos: "c4",
         icon: icons["spell_fire_flameshock"],
-        maxRank: 2,
+        maxRank: 3,
         reqPoints: 10,
-        description: talentText`Increases the critical strike chance of your Fire Blast and Scorch spells by ${[
-          5,
-          10,
+        description: talentText`Increases the critical strike chance of your Fire Blast, Scorch, Flamestrike and Blast Wave spells by ${[
+          3,
+          6,
+          9,
         ]}%.`,
       },
       Pyroblast: {
@@ -410,14 +411,16 @@ export const data: TalentData = {
         name: "Burning Soul",
         pos: "b2",
         icon: icons["spell_fire_fire"],
-        maxRank: 2,
+        maxRank: 3,
         reqPoints: 5,
         description: talentText`Gives your Fire spells a ${[
-          35,
+          25,
+          50,
           70,
         ]}% chance to not lose casting time when you take damage and reduces the threat caused by your Fire spells by ${[
+          5,
+          10,
           15,
-          30,
         ]}%.`,
       },
       "Improved Scorch": {
@@ -462,7 +465,7 @@ export const data: TalentData = {
       },
       "Blast Wave": {
         name: "Blast Wave",
-        pos: "c3",
+        pos: "c2",
         icon: icons["spell_holy_excorcism_02"],
         maxRank: 1,
         reqPoints: 10,
@@ -486,22 +489,24 @@ export const data: TalentData = {
         name: "Hot Streak",
         pos: "d4",
         icon: icons["hot_streak"],
-        maxRank: 3,
+        maxRank: 5,
         reqPoints: 15,
         description: talentText`Your Fire spell crits gives you a ${[
+          5,
           10,
+          15,
           20,
-          30,
+          25,
         ]}% chance your next Pyroblast or Scorch spell cast within 5 sec will be instant cast and cost no mana.`,
       },
-      "Thermana Expansion": {
-        name: "Thermana Expansion",
+      "Thermal Expansion": {
+        name: "Thermal Expansion",
         pos: "e3",
-        icon: icons["thermana_expansion"],
+        icon: icons["thermal_expansion"],
         maxRank: 1,
         reqPoints: 20,
         prereq: "Blast Wave",
-        arrows: [{ dir: "down", from: "c3", to: "e3" }],
+        arrows: [{ dir: "right-down", from: "c2", to: "c3" }, { dir: "right-down-down", from: "c3", to: "e3" }],
         description: talentText`Generates mana equal to your level every 5 sec.`,
       },
       "Overheat": {
@@ -515,9 +520,9 @@ export const data: TalentData = {
           4,
           6,
         ]}%, but your Fire spells have a ${[
-          6,
-          4,
+          3,
           2,
+          1,
         ]}% chance to stun you for 2 sec.`,
       },
       "Chain Reaction": {
@@ -542,7 +547,7 @@ export const data: TalentData = {
         ]}%, and your Flamestrike spell by ${[
           50,
           100,
-        ]}%.`,
+        ]}%. In addition, reduces the cooldown of your Blast Wave Spell by 15 sec.`,
       },
 
       "Fire Power": {
@@ -567,7 +572,7 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Overheat",
         arrows: [{ dir: "down", from: "e2", to: "g2" }],
-        description: talentText`When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 3 critical strikes with Fire spells.`,
+        description: talentText`When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%. This effect lasts until you have caused 5 critical strikes with Fire spells.`,
       },
     },
   },
