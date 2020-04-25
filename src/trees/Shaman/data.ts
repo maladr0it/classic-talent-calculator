@@ -225,7 +225,7 @@ export const data: TalentData = {
         name: "Lightning Overlord",
         pos: "f3",
         icon: icons["lightning_overlord"],
-        maxRank: 1,
+        maxRank: 2,
         reqPoints: 25,
         prereq: "Lightning Mastery",
         arrows: [{ dir: "down", from: "e3", to: "f3" }],
