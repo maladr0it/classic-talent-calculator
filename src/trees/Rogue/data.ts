@@ -549,8 +549,8 @@ export const data: TalentData = {
         reqPoints: 0,
         description: talentText`Reduces the chance enemies have to detect you while in Stealth mode.${[
           "",
-          " More effective than Master of Deception (Rank 1)",
-        ]}.`,
+          " More effective than Master of Deception (Rank 1).",
+        ]}`,
       },
       Opportunity: {
         name: "Opportunity",
@@ -576,8 +576,8 @@ export const data: TalentData = {
           2,
           4,
         ]}% and increases the threat reduction of your Feint ability by ${[
-          50,
-          100,
+          30,
+          60,
         ]}%.`,
       },
       "Thug Life": {
@@ -586,14 +586,13 @@ export const data: TalentData = {
         icon: icons["thug_life"],
         maxRank: 2,
         reqPoints: 5,
-        description: talentText`Reduces the Energy cost of your Pickpocket, Distract and Disarm Trap by ${[
-          "50",
-          "100",
-        ]}% and increases the radius of your Distract by ${[
-          "3",
-          "6",
-        ]} yds.
-        Also reputation gains increased by ${[
+        description: talentText`Reduces the cooldown of your Pickpocket, Distract and Disarm Trap by ${[
+          40,
+          80,
+        ]}% and reduces the cost of your Distract by ${[
+          50,
+          100,
+        ]}%.\nAlso reputation gains increased by ${[
           "5",
           "10",
         ]}%.`,
@@ -605,6 +604,8 @@ export const data: TalentData = {
         icon: icons["spell_magic_lesserinvisibilty"],
         maxRank: 2,
         reqPoints: 15,
+        prereq: "Ghostly Strike",
+        arrows: [{ dir: "down", from: "c2", to: "d2" }],
         description: talentText`Reduces the cooldown of your Evasion, Vanish, Blind and Cloak of Shadows abilities by ${[
           "1",
           "2 min",
@@ -612,16 +613,16 @@ export const data: TalentData = {
       },
       Camouflage: {
         name: "Camouflage",
-        pos: "d3",
+        pos: "c4",
         icon: icons["ability_stealth"],
         maxRank: 5,
-        reqPoints: 15,
+        reqPoints: 10,
         description: talentText`Increases your speed while stealthed by ${[
-          5,
-          10,
+          3,
+          6,
+          9,
+          12,
           15,
-          20,
-          25,
         ]}% and reduces the cooldown of your Stealth ability by ${[
           1,
           2,
@@ -648,7 +649,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_curse"],
         maxRank: 1,
         reqPoints: 10,
-        description: talentText`A strike that deals 150% weapon damage and increases your chance to dodge by 15% for 5 sec. Awards 1 combo point.`,
+        description: talentText`A strike that deals 150% weapon damage and increases your chance to dodge melee attacks, to avoid ranged attacks or to resist offensive spells by 15% for 5 sec. Awards 1 combo point.`,
       },
       "Improved Ambush": {
         name: "Improved Ambush",
@@ -694,15 +695,19 @@ export const data: TalentData = {
       },
       "Serrated Blades": {
         name: "Serrated Blades",
-        pos: "d4",
+        pos: "d3",
         icon: icons["inv_sword_17"],
         maxRank: 3,
         reqPoints: 15,
-        description: talentText`Causes your attacks to ignore up to 180 of your target's Armor and increases the damage dealt by your Rupture ability by ${[
-          5,
-          10,
-          15,
-        ]}%. The amount of Armor reduced increases with your level.`,
+        description: talentText`Causes your attacks to ignore up to ${[
+          180,
+          360,
+          540,
+        ]} of your target's Armor and increases the duration of your Garrote and Rupture abilities by ${[
+          2,
+          4,
+          6,
+        ]} sec. The amount of Armor reduced increases with your level.`,
       },
       "Heightened Senses": {
         name: "Heightened Senses",
@@ -713,7 +718,7 @@ export const data: TalentData = {
         description: talentText`Increases your Stealth detection and reduces the chance you are hit by spells and ranged attacks by ${[
           5,
           10,
-        ]}.${["", " More effective than Heightened Senses (Rank 1)."]}`,
+        ]}%.${["", " More effective than Heightened Senses (Rank 1)."]}`,
       },
       "Cloak of Shadows": {
         name: "Cloak of Shadows",
@@ -749,7 +754,7 @@ export const data: TalentData = {
         maxRank: 1,
         reqPoints: 20,
         prereq: "Serrated Blades",
-        arrows: [{ dir: "down", from: "d4", to: "e4" }],
+        arrows: [{ dir: "right-down", from: "d3", to: "d4" }, { dir: "right-down-down", from: "d4", to: "e4" }],
         description: talentText`An instant strike that damages the opponent and causes the target to hemmorhage, increasing any Physical damage dealt to the target by up to 5. Lasts 30 charges or 15 sec. Awards 1 combo point.`,
       },
       Deadliness: {
@@ -766,11 +771,11 @@ export const data: TalentData = {
           15,
         ]}%.`,
       },
-      "The Moral Thief": {
-        name: "The Moral Thief",
+      "Brigandage": {
+        name: "Brigandage",
         pos: "f1",
-        icon: icons["moral_thief"],
-        maxRank: 1,
+        icon: icons["brigandage"],
+        maxRank: 5,
         reqPoints: 25,
         description: talentText`Your auto attacks drains ${[
           0.4,
@@ -778,7 +783,7 @@ export const data: TalentData = {
           1.2,
           1.6,
           2,
-        ]} per level amount of Mana from a target. For each mana drained in this way, the target takes 0.2 Shadow damage.`,
+        ]} per level amount of Mana from a target. For each mana drained in this way, the target takes 0.3 Shadow damage.`,
       },
       "Enveloping Shadows": {
         name: "Enveloping Shadows",
