@@ -635,7 +635,7 @@ export const data: TalentData = {
           15,
           30,
           45,
-        ]}% chance to stun the target for 4 sec.`,
+        ]}% chance to stun the target for 3 sec.`,
       },
       Defiance: {
         name: "Defiance",
@@ -704,7 +704,7 @@ export const data: TalentData = {
         reqPoints: 10,
 	prereq: "Improved Revenge",
         arrows: [{ dir: "down", from: "b4", to: "c4" }],
-        description: talentText`Stuns the opponent for 5 sec.`,
+        description: talentText`Stuns the opponent for 4 sec.`,
       },
       "Improved Shield Bash": {
         name: "Improved Shield Bash",
