@@ -206,7 +206,7 @@ export const data: TalentData = {
         description: talentText`Increases the duration of your Corruption, Curse of Agony, Curse of Exhaustion and Immolate spells by ${[
           3,
           6,
-        ]}% sec.`,
+        ]} sec.`,
       },
       "Inevitable Doom": {
         name: "Inevitable Doom",
