@@ -491,7 +491,7 @@ export const data: TalentData = {
         reqPoints: 25,
 	prereq: "Enrage",
         arrows: [{ dir: "down", from: "d3", to: "f3" }],
-        description: talentText`Increases your attack speed, chance to resist hostile spells and healing taken by 1% to 30%. At full health the bonus is 1% with a greater effect up to 30% if you are badly hurt. Max bonus health threshold:  ${[
+        description: talentText`Increases your attack speed, chance to resist hostile spells and healing taken by 0% to 30%. At full health the bonus is 0% with a greater effect up to 30% if you are badly hurt. Max bonus health threshold:  ${[
           10,
           20,
           30,
