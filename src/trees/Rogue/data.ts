@@ -457,7 +457,7 @@ export const data: TalentData = {
         icon: icons["ability_warrior_punishingblow"],
         maxRank: 1,
         reqPoints: 20,
-        description: talentText`Increases your attack speed by 10%. In addition, attacks strike an additional nearby opponent. Lasts 15 sec.`,
+        description: talentText`Your next 15 attacks strike an additional nearby opponent. Lasts 20 sec.`,
       },
       "Sword Specialization": {
         name: "Sword Specialization",
@@ -494,11 +494,11 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 25,
         description: talentText`Your auto attacks have a ${[
-          5,
           10,
-          15,
           20,
-          25,
+          30,
+          40,
+          50,
         ]}% chance to regain 5 energy.`,
       },
       "Weapon Expertise": {
@@ -520,7 +520,7 @@ export const data: TalentData = {
         icon: icons["ability_racial_avatar"],
         maxRank: 3,
         reqPoints: 25,
-        description: talentText`Increases the damage of your Sinister Strike and Eviscerate abilities by ${[
+        description: talentText`Increases the damage of your Sinister Strike, Hemorrhage and Eviscerate abilities by ${[
           3,
           6,
           9,
@@ -532,7 +532,7 @@ export const data: TalentData = {
         icon: icons["spell_shadow_shadowworddominate"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`You feeling the adrenaline, becoming immune to Fear and Incapacitate effects and increases your Energy regeneration rate by 100%. Lasts 15 sec.`,
+        description: talentText`You're feeling the adrenaline, becoming immune to Fear and Incapacitate effects and increases your Energy regeneration rate by 100%. Lasts 20 sec.`,
       },
     },
   },
