@@ -265,7 +265,7 @@ export const data: TalentData = {
       },
       Moonfury: {
         name: "Moonfury",
-        pos: "f3",
+        pos: "f1",
         icon: icons["spell_nature_moonglow"],
         maxRank: 5,
         reqPoints: 25,
