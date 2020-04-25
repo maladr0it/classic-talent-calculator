@@ -33,7 +33,7 @@ export const data: TalentData = {
         description: talentText`After killing a target that yields experience or honor, gives you a ${[
           20,
           40,
-        ]}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 20 sec.`,
+        ]}% increased critical strike chance on your next Sinister Strike, Backstab, Ambush, or Ghostly Strike. Lasts 30 sec.`,
       },
       Malice: {
         name: "Malice",
@@ -61,13 +61,13 @@ export const data: TalentData = {
           90,
         ]}% chance to add a combo point to your target.`,
       },
-      "Born Adventurer": {
-        name: "Born Adventurer",
+      "Seek and Destroy": {
+        name: "Seek and Destroy",
         pos: "b2",
         icon: icons["born_adventurer"],
         maxRank: 2,
         reqPoints: 5,
-        description: talentText`Increases movement and mounted movement speed by ${[
+        description: talentText`Your Detection ability now shows the location of all nearby humanoids on the minimap.\nAlso increases movement and mounted movement speed by ${[
           5,
           10,
         ]}%. This does not stack with other movement speed increasing effects.`,
@@ -112,10 +112,10 @@ export const data: TalentData = {
       },
       "Vile Poisons": {
         name: "Vile Poisons",
-        pos: "c2",
+        pos: "d1",
         icon: icons["ability_rogue_feigndeath"],
         maxRank: 5,
-        reqPoints: 10,
+        reqPoints: 15,
         description: talentText`Increases the damage dealt by your poisons by ${[
           5,
           10,
@@ -137,19 +137,21 @@ export const data: TalentData = {
         maxRank: 5,
         reqPoints: 10,
         description: talentText`Increases the chance to apply poisons to your target by ${[
-          3,
+          2,
+          4,
           6,
-          9,
-          12,
-          15,
+          8,
+          10,
         ]}%.`,
       },
-      "Assassin's Mark": {
-        name: "Assassin's Mark",
-        pos: "d1",
-        icon: icons["assassin_mark"],
+      "Death Mark": {
+        name: "Death Mark",
+        pos: "d2",
+        icon: icons["death_mark"],
         maxRank: 2,
         reqPoints: 15,
+        prereq: "Seek and Destroy",
+        arrows: [{ dir: "down", from: "b2", to: "d2" }],
         description: talentText`Your Ambush, Garrote and Cheap Shot applies Death Mark effect to the target. Marked enemy can always be seen by the rogue whether it stealths or turns invisible, the target also appears on the mini-map and cannot move faster than his normal movement speed.
         This effect lasts ${[
           10,
@@ -158,7 +160,7 @@ export const data: TalentData = {
       },
       "Bloodthirsty": {
         name: "Bloodthirsty",
-        pos: "d2",
+        pos: "d3",
         icon: icons["Bloodthirsty"],
         maxRank: 1,
         reqPoints: 15,
@@ -170,7 +172,7 @@ export const data: TalentData = {
       },
       "Vitality": {
         name: "Vitality",
-        pos: "d3",
+        pos: "d4",
         icon: icons["Vitality"],
         maxRank: 2,
         reqPoints: 15,
