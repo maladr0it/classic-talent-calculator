@@ -302,7 +302,7 @@ export const data: TalentData = {
         description: talentText`Increases your chance to block attacks with a shield by ${[
           5,
           10,
-        ]}% and has a ${[50, 100]}% to restore 5% of your Mana when a block occurs.`,
+        ]}% and has a ${[50, 100]}% to restore 1% of your Mana when a block occurs.`,
       },
       "Rockhide": {
         name: "Rockhide",
@@ -318,7 +318,7 @@ export const data: TalentData = {
           3,
           4,
           5,
-        ]}% chance to inflict up to 120 Nature damage (scales with your level) to nearby enemies and stun them for 3 sec. In addition reduces all damage taken by ${[1,2,3,4,5]}%.`,
+        ]}% chance to inflict up to 120 physical damage (scales with your level) to nearby enemies and stun them for 3 sec. In addition reduces all damage taken by ${[1,2,3,4,5]}%.`,
       },
       "Guardian Totems": {
         name: "Guardian Totems",
