@@ -12,7 +12,7 @@ export const data: TalentData = {
     background: backgrounds["balance"],
     icon: icons["spell_nature_starfall"],
     talents: {
-      "Improved Wrath": {
+      "Starlight Wrath": {
         name: "Starlight Wrath",
         pos: "a1",
         icon: icons["spell_nature_abolishmagic"],
