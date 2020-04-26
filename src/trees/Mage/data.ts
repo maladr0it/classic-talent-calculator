@@ -841,7 +841,7 @@ export const data: TalentData = {
         reqPoints: 30,
         prereq: "Ice Barrier",
         arrows: [{ dir: "right", from: "g2", to: "g3" }],
-        description: talentText`Reduces the cooldown of your Ice Barrier and Ice Block by ${[
+        description: talentText`Reduces the cooldown of your Ice Barrier, Ice Block and Ice Mirror by ${[
           25,
           50,
         ]}%, reduces their Mana cost by ${[
