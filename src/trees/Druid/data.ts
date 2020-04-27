@@ -197,10 +197,10 @@ export const data: TalentData = {
       },
       "Omnipresence": {
         name: "Omnipresence",
-        pos: "e1",
+        pos: "d1",
         icon: icons["omnipresence"],
         maxRank: 2,
-        reqPoints: 20,
+        reqPoints: 15,
         description: talentText`Increases the range of your offensive Balance spells by ${[
           10,
           20,
