@@ -1,9 +1,9 @@
-# Classic WoW Talent Calculator
+# Classic WoW Talent Calculator, forked and adapted for the Vanilla+ Private Server
 
 CSS-grid based talent calculator
 
 Check it out:
-https://www.classiccalc.xyz/druid
+https://vanillaplus-talent-calc.herokuapp.com/
 
 ## Features
 
