@@ -622,7 +622,7 @@ export const data: TalentData = {
         description: talentText`Allows your Shield Block and Shield Reflection abilities to block/reflect an additional attack and reduces cooldown by ${[
           15,
           30,
-          45,
+          50,
         ]}%.`,
       },
       "Improved Revenge": {
