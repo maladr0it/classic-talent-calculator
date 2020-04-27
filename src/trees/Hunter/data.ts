@@ -740,7 +740,7 @@ export const data: TalentData = {
         pos: "c3",
         icon: icons["2h_spec"],
         maxRank: 4,
-        reqPoints: 20,
+        reqPoints: 10,
         prereq: "Melee Specialization",
         arrows: [{ dir: "right", from: "c2", to: "c3" }],
         description: talentText`Increases the damage done you deal with two-handed melee weapons by ${[
