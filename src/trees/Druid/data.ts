@@ -26,17 +26,17 @@ export const data: TalentData = {
           0.5,
         ]} sec.`,
       },
-      "Improved Entangling Roots": {
-        name: "Improved Entangling Roots",
+      "Mighty Roots": {
+        name: "Mighty Roots",
         pos: "b1",
         icon: icons["spell_nature_stranglevines"],
         maxRank: 3,
         reqPoints: 5,
-        description: talentText`Gives you a ${[
+        description: talentText`Increases duration and damage caused by your Thorns and Entangling Roots spells by ${[
           40,
           70,
           100,
-        ]}% chance to avoid interruption caused by damage while casting Entangling Roots.`,
+        ]}%.`,
       },
       "Improved Moonfire": {
         name: "Improved Moonfire",
@@ -756,14 +756,14 @@ export const data: TalentData = {
       },
       "Catharsis": {
         name: "Catharsis",
-        pos: "d4",
+        pos: "e4",
         icon: icons["catharsis"],
         maxRank: 3,
-        reqPoints: 15,
+        reqPoints: 20,
         description: talentText`Reduces the Mana cost of your Soothe Animal, Hibernate, Remove Curse, Cure Poison, Abolish Poison and Rebirth spells by ${[
           15,
           30,
-          45,
+          50,
         ]}%. In addition, your Innervate casts grant you ${[
           5,
           10,
