@@ -247,22 +247,16 @@ export const data: TalentData = {
         name: "Team Play",
         pos: "e1",
         icon: icons["team_play"],
-        maxRank: 5,
+        maxRank: 2,
         reqPoints: 20,
         description: talentText`Your attacks have a ${[
-          3,
-          6,
-          9,
-          12,
-          15,
+          5,
+          10,
         ]}% chance to invigorate your pet. Invigorated pet instantly generates 50 Focus and frees from 1 Curse, Disease, Magic, Poison or Fear effects.
 
         Your pet attacks have a ${[
           5,
           10,
-          15,
-          20,
-          25,
         ]}% chance to inspire you, reducing Mana cost of all your spells and abilities by 100% for 5 sec.`,
       },
       "Terrifying Roar": {
