@@ -12,13 +12,13 @@ export const data: TalentData = {
     background: backgrounds["balance"],
     icon: icons["spell_nature_starfall"],
     talents: {
-      "Improved Wrath": {
+      "Improved Wrath and starfire": {
         name: "Improved Wrath",
         pos: "a1",
         icon: icons["spell_nature_abolishmagic"],
         maxRank: 5,
         reqPoints: 0,
-        description: talentText`Reduces the cast time of your Wrath spell by ${[
+        description: talentText`Reduces the cast time of your Wrath and starfire spells by ${[
           0.1,
           0.2,
           0.3,
@@ -26,44 +26,58 @@ export const data: TalentData = {
           0.5,
         ]} sec.`,
       },
-      "Nature's Grasp": {
+	  "Longer dots": {
         name: "Nature's Grasp",
-        pos: "a2",
-        icon: icons["spell_nature_natureswrath"],
-        maxRank: 1,
-        reqPoints: 0,
-        description: talentText`While active, any time an enemy strikes the caster they have a 35% chance to become afflicted by Entangling Roots (Rank 1). Only useable outdoors. 1 charge. Lasts 45 sec.`,
-      },
-      "Improved Nature's Grasp": {
-        name: "Improved Nature's Grasp",
         pos: "a3",
         icon: icons["spell_nature_natureswrath"],
-        maxRank: 4,
+        maxRank: 5,
         reqPoints: 0,
-        prereq: "Nature's Grasp",
-        arrows: [{ dir: "right", from: "a2", to: "a3" }],
-        description: talentText`Increases the chance of your Nature's Grasp to entangle an enemy by ${[
-          15,
+        description: talentText`Increase durations of Bleeds, Hots and Dots by ${[
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+        ]} sec.`,
+      },
+	  "Natural Shapeshifter": {
+        name: "Natural Shapeshifter",
+        pos: "a4",
+        icon: icons["spell_nature_wispsplode"],
+        maxRank: 3,
+        reqPoints: 0,
+        description: talentText`Reduces the mana cost of all shapeshifting by ${[
+          10,
+          20,
           30,
-          45,
-          65,
         ]}%.`,
       },
-      "Improved Entangling Roots": {
+      "Spell hit": {
         name: "Improved Entangling Roots",
         pos: "b1",
-        icon: icons["spell_nature_stranglevines"],
+        icon: icons["spell_nature_starfall"],
         maxRank: 3,
         reqPoints: 5,
-        description: talentText`Gives you a ${[
-          40,
-          70,
-          100,
-        ]}% chance to avoid interruption caused by damage while casting Entangling Roots.`,
+        description: talentText`Increase your chance to hit with spells by ${[
+          1,
+          2,
+          3,
+        ]}%`,
+      },
+	  "spell crit": {
+        name: "Improved Moonfire",
+        pos: "b2",
+        icon: icons["spell_arcane_starfire"],
+        maxRank: 2,
+        reqPoints: 5,
+        description: talentText`Increases the critical strike chance of your Wrath and Starfire spells by ${[
+          2,
+          4,
+        ]}%.`,
       },
       "Improved Moonfire": {
         name: "Improved Moonfire",
-        pos: "b2",
+        pos: "b3",
         icon: icons["spell_nature_starfall"],
         maxRank: 5,
         reqPoints: 5,
@@ -75,33 +89,7 @@ export const data: TalentData = {
           10,
         ]}%.`,
       },
-      "Natural Weapons": {
-        name: "Natural Weapons",
-        pos: "b3",
-        icon: icons["inv_staff_01"],
-        maxRank: 5,
-        reqPoints: 5,
-        description: talentText`Increases the damage you deal with physical attacks in all forms by ${[
-          2,
-          4,
-          6,
-          8,
-          10,
-        ]}%.`,
-      },
-      "Natural Shapeshifter": {
-        name: "Natural Shapeshifter",
-        pos: "b4",
-        icon: icons["spell_nature_wispsplode"],
-        maxRank: 3,
-        reqPoints: 5,
-        description: talentText`Reduces the mana cost of all shapeshifting by ${[
-          10,
-          20,
-          30,
-        ]}%.`,
-      },
-      "Improved Thorns": {
+      "Improved root and Thorns": {
         name: "Improved Thorns",
         pos: "c1",
         icon: icons["spell_nature_thorns"],
@@ -111,17 +99,19 @@ export const data: TalentData = {
           25,
           50,
           75,
-        ]}%.`,
+        ]}% and gives a you a ${[
+          30,
+          60,
+          100,
+        ]}% chance to avoid interruption caused by damage while casting entangling roots `,
       },
-      "Omen of Clarity": {
-        name: "Omen of Clarity",
+	        "Insect Swarm": {
+        name: "Insect Swarm",
         pos: "c3",
-        icon: icons["spell_nature_crystalball"],
+        icon: icons["spell_nature_insectswarm"],
         maxRank: 1,
         reqPoints: 10,
-        prereq: "Natural Weapons",
-        arrows: [{ dir: "down", from: "b3", to: "c3" }],
-        description: talentText`Imbues the druid with natural energy. Each of the Druid's melee attacks has a chance of causing the caster to enter a Clearcasting state. The Clearcasting state reduces the Mana, Rage, or Energy cost of your next damage or healing spell or offensive ability by 100%. Lasts 10 min.`,
+        description: talentText`The enemy is swarmed by insects, decreasing their chance to hit by 2% and causing 66 Nature damage over 12 sec.`,
       },
       "Nature's Reach": {
         name: "Nature's Reach",
@@ -134,13 +124,25 @@ export const data: TalentData = {
           20,
         ]}%.`,
       },
+	  "Moonfire Stun": {
+        name: "Improved Starfire",
+        pos: "d1",
+        icon: icons["spell_arcane_starfire"],
+        maxRank: 3,
+        reqPoints: 15,
+        description: talentText`Your starfire stuns targets under moonfire for ${[
+          0.3,
+          0.6,
+          1,
+		]}sec.`,
+      },
       Vengeance: {
         name: "Vengeance",
         pos: "d2",
         icon: icons["spell_nature_purge"],
         maxRank: 5,
         reqPoints: 15,
-        prereq: "Improved Moonfire",
+        prereq: "spell crit",
         arrows: [{ dir: "down", from: "b2", to: "d2" }],
         description: talentText`Increases the critical strike damage bonus of your Starfire, Moonfire, and Wrath spells by ${[
           20,
@@ -150,25 +152,16 @@ export const data: TalentData = {
           100,
         ]}%.`,
       },
-      "Improved Starfire": {
-        name: "Improved Starfire",
+	  "Interruption resist": {
+        name: "Interruption resist",
         pos: "d3",
-        icon: icons["spell_arcane_starfire"],
-        maxRank: 5,
+        icon: icons["spell_nature_healingwavegreater"],
+        maxRank: 2,
         reqPoints: 15,
-        description: talentText`Reduces the cast time of Starfire by ${[
-          0.1,
-          0.2,
-          0.3,
-          0.4,
-          0.5,
-        ]} sec and has a ${[
-          3,
-          6,
-          9,
-          12,
-          15,
-        ]}% chance to stun the target for 3 sec.`,
+        description: talentText`Gives you a ${[
+          30,
+          60,
+        ]}% chance to avoid interruption caused by damage while casting Wrath or Starfire.`,
       },
       "Nature's Grace": {
         name: "Nature's Grace",
@@ -178,9 +171,17 @@ export const data: TalentData = {
         reqPoints: 20,
         description: talentText`All spell criticals grace you with the blessing of nature, reducing the casting time of your next spell by 0.5 sec.`,
       },
+	        "Boomer Form": {
+        name: "Boomer Form",
+        pos: "e3",
+        icon: icons["spell_nature_forceofnature"],
+        maxRank: 1,
+        reqPoints: 30,
+        description: talentText`Transforms the Druid into Boomer Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 5%. The Moonkin can only cast Balance spells while shapeshifted.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.`,
+      },
       Moonglow: {
         name: "Moonglow",
-        pos: "e3",
+        pos: "e4",
         icon: icons["spell_nature_sentinal"],
         maxRank: 3,
         reqPoints: 20,
@@ -206,13 +207,20 @@ export const data: TalentData = {
           10,
         ]}%`,
       },
-      "Moonkin Form": {
+      "Blessing of Cenarius": {
         name: "Moonkin Form",
-        pos: "g2",
-        icon: icons["spell_nature_forceofnature"],
+        pos: "g3",
+        icon: icons["spell_nature_naturesblessing"],
         maxRank: 1,
         reqPoints: 30,
-        description: talentText`Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.`,
+		prereq: "Boomer Form",
+        arrows: [{ dir: "down", from: "e3", to: "g3" }],
+        description: talentText`Passive while in chicken. X% of proc on cast of spell. Next spell will have a special effect [could be for x seconds]
+-Wrath activates dreamstate like effect on druid for regenerating X% of total mana over X seconds
+-Moonfire is cast on the target and on all targets in 20 yard range around the druid
+-Starfire has an arcane dmg dot equal to X% of damage dealt [so like arcane ignite]
+-Insect Swarm increases spell dmg taken by the target by 2%
+-Hurricane turns from channeling to castable 1.5 sec ability`,
       },
     },
   },
@@ -521,14 +529,6 @@ export const data: TalentData = {
           15,
         ]}% of your Mana regeneration to continue while casting.`,
       },
-      "Insect Swarm": {
-        name: "Insect Swarm",
-        pos: "c3",
-        icon: icons["spell_nature_insectswarm"],
-        maxRank: 1,
-        reqPoints: 10,
-        description: talentText`The enemy is swarmed by insects, decreasing their chance to hit by 2% and causing 66 Nature damage over 12 sec.`,
-      },
       Subtlety: {
         name: "Subtlety",
         pos: "c4",
@@ -585,8 +585,6 @@ export const data: TalentData = {
         icon: icons["spell_nature_protectionformnature"],
         maxRank: 5,
         reqPoints: 20,
-        prereq: "Insect Swarm",
-        arrows: [{ dir: "down", from: "c3", to: "e3" }],
         description: talentText`Increases the effect of all healing spells by ${[
           2,
           4,
