@@ -174,7 +174,7 @@ export const data: TalentData = {
         pos: "e3",
         icon: icons["spell_nature_forceofnature"],
         maxRank: 1,
-        reqPoints: 30,
+        reqPoints: 20,
         description: talentText`Transforms the Druid into Boomer Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 5%. The Moonkin can only cast Balance spells while shapeshifted.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.`,
       },
       Moonglow: {
