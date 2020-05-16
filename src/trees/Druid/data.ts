@@ -205,15 +205,15 @@ export const data: TalentData = {
           10,
         ]}%`,
       },
-      "Blessing of Cenarius": {
+      "Boomer's Blessing": {
         name: "Moonkin Form",
         pos: "g3",
-        icon: icons["spell_nature_naturesblessing"],
+        icon: icons["spell_nature_merove"],
         maxRank: 1,
         reqPoints: 30,
 		prereq: "Boomer Form",
         arrows: [{ dir: "down", from: "e3", to: "g3" }],
-        description: talentText`Passive while in chicken. X% of proc on cast of spell. Next spell will have a special effect [could be for x seconds]
+        description: talentText`Passive while in Boomer. Become blessed by the ULTIMATE BOOMER. Next spell will have a special boomer effect.
 -Wrath activates dreamstate like effect on druid for regenerating X% of total mana over X seconds
 -Moonfire is cast on the target and on all targets in 20 yard range around the druid
 -Starfire has an arcane dmg dot equal to X% of damage dealt [so like arcane ignite]
