@@ -30,14 +30,12 @@ export const data: TalentData = {
         name: "Nature's Grasp",
         pos: "a3",
         icon: icons["spell_nature_natureswrath"],
-        maxRank: 5,
+        maxRank: 3,
         reqPoints: 0,
         description: talentText`Increase durations of Bleeds, Hots and Dots by ${[
-          0.1,
-          0.2,
-          0.3,
-          0.4,
-          0.5,
+          1,
+          2,
+          3,
         ]} sec.`,
       },
 	  "Natural Shapeshifter": {
