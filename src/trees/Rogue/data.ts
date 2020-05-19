@@ -729,6 +729,8 @@ export const data: TalentData = {
         icon: icons["spell_shadow_possession"],
         maxRank: 1,
         reqPoints: 30,
+        prereq: "Enveloping Shadows",
+        arrows: [{ dir: "down", from: "e2", to: "g2" }],
         description: talentText`Enter the Shadow Dance for 6 sec, allowing the use of Sap, Garrote, Ambush, Cheap Shot, Pickpocket and Disarm Trap regardless of being stealthed.`,
       },
     },
