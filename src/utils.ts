@@ -15,7 +15,7 @@ export const requireAll = (
   return requireContext.keys().reduce<Record<string, string>>((prev, key) => {
     // todo: this regex is quite brittle
     const name = key.replace(/\.\//, "").replace(/\.[^.]+$/, "");
-    prev[name] = requireContext(key);
+    prev[name] = requireContext(key).default;
     return prev;
   }, {});
 };

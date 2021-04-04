@@ -58,9 +58,11 @@ const KLASSES = [
 interface Props {}
 
 export const KlassList: React.FC<Props> = () => {
+  console.log(icons);
+
   return (
     <ul className="KlassList">
-      {KLASSES.map(klass => (
+      {KLASSES.map((klass) => (
         <li className="KlassList-item" key={klass.name}>
           <Link to={klass.path} replace>
             <SquareButton icon={klass.icon} />
